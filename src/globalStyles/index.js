@@ -10,7 +10,7 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    line-height: 1;
+    outline: none;
   }
 
   a{
@@ -22,8 +22,14 @@ const GlobalStyles = createGlobalStyle`
     color: ${colors.color1};
   }
 
+  svg {
+    fill: ${colors.color1};
+    width: 18px;
+    height: 18px;
+  }
+
   body{
-    background-color: ${colors.color8};
+    background-color: ${colors.color1};
 
     /* width */
     ::-webkit-scrollbar {
@@ -33,7 +39,7 @@ const GlobalStyles = createGlobalStyle`
 
     /* Track */
     ::-webkit-scrollbar-track {
-      background-color: ${colors.color8};
+      background-color: ${colors.color1};
     }
 
     /* Handle */

@@ -1,13 +1,12 @@
 /* eslint-disable */
 
-import { Element } from 'react-scroll';
-
-import { PortfolioContainer } from '../styled';
+import Main, { BgActiveRouter, PortfolioContainer } from '../styled';
 
 export default function Portfolio() {
   return (
-    <Element name="portfolio">
+    <Main>
+      <BgActiveRouter />
       <PortfolioContainer>Portfolio</PortfolioContainer>
-    </Element>
+    </Main>
   );
 }

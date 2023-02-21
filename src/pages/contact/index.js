@@ -1,13 +1,12 @@
 /* eslint-disable */
 
-import { Element } from 'react-scroll';
-
-import { ContactContainer } from '../styled';
+import Main, { BgActiveRouter, ContactContainer } from '../styled';
 
 export default function Contact() {
   return (
-    <Element name="contato">
+    <Main>
+      <BgActiveRouter />
       <ContactContainer>Contact</ContactContainer>
-    </Element>
+    </Main>
   );
 }
