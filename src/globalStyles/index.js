@@ -11,6 +11,10 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     outline: none;
+
+    &::selection{
+      background-color: ${colors.color3};
+    }
   }
 
   a{
@@ -26,6 +30,7 @@ const GlobalStyles = createGlobalStyle`
     fill: ${colors.color1};
     width: 18px;
     height: 18px;
+    display: inline-block;
   }
 
   body{

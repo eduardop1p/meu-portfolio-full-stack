@@ -36,7 +36,7 @@ export const HeaderContainer = styled.header`
     }
 
     & > .light-mode {
-      fill: ${colors.color3};
+      fill: ${colors.color1};
     }
 
     & > .dark-mode {

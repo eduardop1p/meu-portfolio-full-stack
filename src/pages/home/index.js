@@ -1,19 +1,130 @@
 /* eslint-disable */
 
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import myPhoto from '../../assets/img/31c8b9e24be5ad81c96331dcd7f26153.jpg';
-import Main, { HomeContainer, BgActiveRouter, BgsHomeContainer, ResumeMe } from '../styled';
+import Main, {
+  HomeContainer,
+  BgActiveRouter,
+  ButtonContainer,
+  BgsHomeContainer,
+  ResumeMe,
+} from '../styled';
 
 export default function Home() {
   const { darkMode } = useSelector(state => state.darkMode);
+  const [resumeShow, setResumeShow] = useState(false);
 
   return (
     <Main>
       <BgActiveRouter />
-      {/* <ResumeMe>
-        <div></div>
-  </ResumeMe> */}
+      <ResumeMe
+        onClick={event => event.target === event.currentTarget && setResumeShow(!resumeShow)}
+        className={resumeShow ? 'active-resume-me' : null}
+      >
+        <div className="resume-and-close" data-dark-mode={darkMode}>
+          <div className="close-resume" title="Fechar" onClick={() => setResumeShow(!resumeShow)}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960">
+              <path d="M249 862.566 193.434 807l231-231-231-231L249 289.434l231 231 231-231L766.566 345l-231 231 231 231L711 862.566l-231-231-231 231Z" />
+            </svg>
+          </div>
+
+          <div className="resume">
+            <div className="about">
+              <div className="about-titles">
+                <h1 data-dark-mode={darkMode}>Resumo</h1>
+                <h2 data-dark-mode={darkMode}>
+                  Sobre <span>Mim</span>
+                </h2>
+              </div>
+              <div className="personal-infos-container">
+                <div className="personal-infos">
+                  <h3>Informações pessoais</h3>
+                  <div className="infos">
+                    <div>
+                      <div>
+                        <h4>Primeiro nome:</h4>
+                        <h4>Eduardo</h4>
+                      </div>
+                      <div>
+                        <h4>Idade:</h4>
+                        <h4>{new Date().getFullYear() - 2002}</h4>
+                      </div>
+                      <div>
+                        <h4>Freelance:</h4>
+                        <h4 className="available">Disponível</h4>
+                      </div>
+                      <div>
+                        <h4>Celular:</h4>
+                        <h4>{'(99) 98532-9861'}</h4>
+                      </div>
+                      <div>
+                        <h4>GitHub:</h4>
+                        <a
+                          href="https://github.com/eduardop1p"
+                          target="_blank"
+                          className="link-github"
+                        >
+                          github.com/eduardop1p
+                        </a>
+                      </div>
+                    </div>
+                    <div>
+                      <div>
+                        <h4>Segundo nome:</h4>
+                        <h4>Lavoura</h4>
+                      </div>
+                      <div>
+                        <h4>Nacionalidade:</h4>
+                        <h4>Brasileira</h4>
+                      </div>
+                      <div>
+                        <h4>Endereço:</h4>
+                        <h4>Colinas - Ma, Bairo Trizidela, Rua Delfina Ribeiro, Nº 222</h4>
+                      </div>
+                      <div>
+                        <h4>Email:</h4>
+                        <h4>eduardop1p87@gmail.com</h4>
+                      </div>
+                      <div>
+                        <h4>Idiomas:</h4>
+                        <h4>Portugues - nativo, Ingles - intermediário, Espanhol - Básico</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <ButtonContainer data-dark-mode={darkMode}>
+                    Donwnload cv
+                    <span>
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+                      </svg>
+                    </span>
+                  </ButtonContainer>
+                </div>
+                <div className="experience-projects-customers-won">
+                  <div>
+                    <h2>2+</h2>
+                    <h3>Anos de experiência</h3>
+                  </div>
+                  <div>
+                    <h2>10+</h2>
+                    <h3>Projetos completos</h3>
+                  </div>
+                  <div>
+                    <h2>16+</h2>
+                    <h3>Clientes felizes</h3>
+                  </div>
+                  <div>
+                    <h2>0+</h2>
+                    <h3>Prêmios ganhos</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ResumeMe>
       <BgsHomeContainer>
         <div className="bg-yellow"></div>
         <div className="bg-dark" data-dark-mode={darkMode}></div>
@@ -78,14 +189,14 @@ export default function Home() {
               </a>
             </div>
 
-            <button data-dark-mode={darkMode}>
-              MAIS SOBRE MIM
+            <ButtonContainer data-dark-mode={darkMode} onClick={() => setResumeShow(!resumeShow)}>
+              Mais Sobre Mim
               <span>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                   <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
                 </svg>
               </span>
-            </button>
+            </ButtonContainer>
           </div>
         </div>
       </HomeContainer>

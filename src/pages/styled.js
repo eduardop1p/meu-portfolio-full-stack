@@ -1,8 +1,17 @@
 /* eslint-disable */
 
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 import * as colors from '../colors';
+
+const slideUpAnimation = keyframes`
+  0% {
+    transform: translateY(5rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+`;
 
 const Main = styled.main`
   width: 100%;
@@ -33,21 +42,12 @@ export const BgActiveRouter = styled.div`
 `;
 
 export const HomeContainer = styled.section`
-  @keyframes homeContainerAnimation {
-    0% {
-      transform: translateY(5rem);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  animation-name: homeContainerAnimation;
+  animation-name: ${slideUpAnimation};
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
 
@@ -150,64 +150,70 @@ export const HomeContainer = styled.section`
           }
         }
       }
+    }
+  }
+`;
 
-      & > button {
-        margin-top: 1.88rem;
-        width: fit-content;
-        cursor: pointer;
-        position: relative;
-        overflow: hidden;
-        border-radius: 2.2rem;
-        padding: 1rem 4.38rem 1rem 2.8rem;
-        border: 1px solid ${colors.color3};
-        background-color: transparent;
-        font-size: 1rem;
-        font-weight: 600;
-        color: ${colors.color1};
-        transition: color 0.25s ease-in-out;
+export const ButtonContainer = styled.div`
+  margin-top: 1.88rem;
+  width: fit-content;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2.2rem;
+  padding: 1rem 4.38rem 1rem 2.8rem;
+  border: 1px solid ${colors.color3};
+  background-color: transparent;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 600;
+  color: ${colors.color1};
+  transition: color 0.25s ease-in-out;
 
-        &[data-dark-mode='false'] {
-          color: ${colors.color6};
-        }
+  &[data-dark-mode='false'] {
+    color: ${colors.color6};
+  }
 
-        &::before {
-          content: '';
-          background-color: ${colors.color3};
-          position: absolute;
-          z-index: -1;
-          width: 0;
-          height: 100%;
-          visibility: hidden;
-          top: 0;
-          right: 0;
-          transition: width 0.25s ease-in-out, visibility 0.25s ease-in-out;
-        }
+  &::before {
+    content: '';
+    background-color: ${colors.color3};
+    position: absolute;
+    z-index: -1;
+    width: 0;
+    height: 100%;
+    visibility: hidden;
+    top: 0;
+    right: 0;
+    transition: width 0.25s ease-in-out, visibility 0.25s ease-in-out;
+  }
 
-        &:hover {
-          &::before {
-            width: 100%;
-            visibility: visible;
-          }
+  &:hover {
+    &::before {
+      width: 100%;
+      visibility: visible;
+    }
 
-          &[data-dark-mode='false'] {
-            color: ${colors.color1};
-          }
-        }
+    &[data-dark-mode='false'] {
+      color: ${colors.color1};
+    }
+  }
 
-        & > span {
-          position: absolute;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-shrink: 0;
-          width: 57px;
-          height: 57px;
-          border-radius: 100%;
-          background-color: ${colors.color3};
-          top: 0;
-          right: 0;
-        }
-      }
+  & > span {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 57px;
+    height: 57px;
+    border-radius: 100%;
+    background-color: ${colors.color3};
+    top: 0;
+    right: 0;
+
+    & > svg > path {
+      stroke: ${colors.color1};
+      stroke-width: 2rem;
     }
   }
 `;
@@ -247,16 +253,253 @@ export const ResumeMe = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   width: 100%;
   height: 100%;
   background-color: ${colors.color8};
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.2s ease-in-out, opacity 0.2s ease-in-out;
 
-  & > div {
+  &.active-resume-me {
+    visibility: visible;
+    opacity: 1;
+
+    & > .resume-and-close > .resume > .about {
+      animation-name: ${slideUpAnimation};
+      animation-duration: 0.8s;
+      animation-timing-function: ease-in-out;
+    }
+  }
+
+  & > .resume-and-close {
     border-radius: 10px;
     border: 2px solid ${colors.color7};
-    width: 900px;
     background-color: ${colors.color2};
+    width: 900px;
     height: calc(100% - 10rem);
+    position: relative;
+    transition: background 0.25s ease-in-out;
+
+    &[data-dark-mode='false'] {
+      background-color: ${colors.color1};
+    }
+
+    & > .close-resume {
+      position: absolute;
+      top: -3.5rem;
+      right: -2rem;
+      width: 45px;
+      height: 45px;
+      border-radius: 100%;
+      background-color: transparent;
+      border: 3px solid ${colors.color1};
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      & > svg {
+        fill: ${colors.color1};
+        width: 25px;
+        height: 25px;
+
+        & > path {
+          stroke: ${colors.color1};
+          stroke-width: 2rem;
+        }
+      }
+    }
+
+    & > .resume {
+      overflow: hidden scroll;
+      background-color: inherit;
+      border-radius: 10px;
+      width: 100%;
+      height: 100%;
+
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background-color: ${colors.color12};
+        border-radius: 0 10px 10px 0;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: ${colors.color11};
+        border: 1px solid #333;
+        border-radius: 2rem;
+      }
+
+      & > .about {
+        display: flex;
+        flex-direction: column;
+        padding: 0 1rem;
+
+        & > .about-titles {
+          margin: 7rem 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+
+          & > h1 {
+            color: ${colors.color9};
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            font-weight: 800;
+            font-size: 6.87rem;
+            position: absolute;
+            z-index: 1;
+            transition: color 0.25s ease-in-out;
+
+            &[data-dark-mode='false'] {
+              color: ${colors.color5};
+            }
+          }
+
+          & > h2 {
+            color: ${colors.color1};
+            text-transform: uppercase;
+            font-weight: 900;
+            font-size: 3.5rem;
+            position: absolute;
+            z-index: 2;
+            transition: color 0.25s ease-in-out;
+
+            &[data-dark-mode='false'] {
+              color: ${colors.color6};
+            }
+
+            & > span {
+              color: ${colors.color3};
+            }
+          }
+        }
+
+        & > .personal-infos-container {
+          display: flex;
+          justify-content: space-between;
+
+          & > .personal-infos {
+            display: flex;
+            flex-direction: column;
+            margin-right: 3rem;
+
+            & > h3 {
+              margin-bottom: 1.4rem;
+              font-size: 1.65rem;
+              color: ${colors.color1};
+              text-transform: uppercase;
+              font-weight: 600;
+            }
+
+            & > .infos {
+              display: flex;
+              justify-content: space-between;
+
+              & > :first-child {
+                margin-right: 2rem;
+              }
+
+              & > div {
+                display: flex;
+                flex-direction: column;
+
+                & > :not(:last-child) {
+                  margin-bottom: 1.25rem;
+                }
+
+                & > div {
+                  display: flex;
+                  flex-direction: column;
+
+                  & > :first-child {
+                    opacity: 0.8;
+                  }
+
+                  & > h4,
+                  & > a {
+                    font-family: 'Open Sans', sans-serif;
+                    font-weight: 500;
+                    color: ${colors.color1};
+                    font-size: 0.94rem;
+
+                    &.link-github {
+                      text-decoration: underline;
+                      font-weight: 400;
+                    }
+
+                    &.available {
+                      color: ${colors.color10};
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          & > .experience-projects-customers-won {
+            display: grid;
+            grid-template: repeat(2, 155px) / repeat(2, 190px);
+            grid-gap: 1.88rem;
+
+            /*
+            & > :nth-child(-n + 2) {
+              margin-bottom: 1.88rem;
+            }
+
+            & > :nth-child(odd) {
+              margin-right: 1.88rem;
+            } */
+
+            & > div {
+              background-color: transparent;
+              border: 1px solid ${colors.color7};
+              border-radius: 10px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+
+              & > h2 {
+                font-size: 3.12rem;
+                font-weight: 700;
+                color: ${colors.color3};
+                margin-right: 2rem;
+                margin-bottom: 2px;
+                line-height: 1;
+              }
+
+              & > h3 {
+                font-size: 15px;
+                font-weight: 500;
+                opacity: 0.8;
+                color: ${colors.color1};
+                font-family: 'Open Sans', sans-serif;
+                text-transform: uppercase;
+                position: relative;
+                padding-left: 2.8rem;
+                margin: 0 2rem;
+
+                &::before {
+                  content: '';
+                  position: absolute;
+                  left: 0;
+                  top: 13px;
+                  width: 30px;
+                  height: 2px;
+                  background-color: ${colors.color13};
+                  opacity: 0.8;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 `;
 
