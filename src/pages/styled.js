@@ -159,9 +159,10 @@ export const ButtonContainer = styled.div`
   width: fit-content;
   cursor: pointer;
   position: relative;
+  z-index: 2;
   overflow: hidden;
   border-radius: 2.2rem;
-  padding: 1rem 4.38rem 1rem 2.8rem;
+  padding: 1rem 4.37rem 1rem 2.18rem;
   border: 1px solid ${colors.color3};
   background-color: transparent;
   text-transform: uppercase;
@@ -176,9 +177,9 @@ export const ButtonContainer = styled.div`
 
   &::before {
     content: '';
+    z-index: -1;
     background-color: ${colors.color3};
     position: absolute;
-    z-index: -1;
     width: 0;
     height: 100%;
     visibility: hidden;
@@ -200,6 +201,7 @@ export const ButtonContainer = styled.div`
 
   & > span {
     position: absolute;
+    z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -213,7 +215,7 @@ export const ButtonContainer = styled.div`
 
     & > svg > path {
       stroke: ${colors.color1};
-      stroke-width: 2rem;
+      stroke-width: ${strokeWidth1rem => (strokeWidth1rem ? '1rem' : '2rem')};
     }
   }
 `;
@@ -283,6 +285,7 @@ export const ResumeMe = styled.div`
 
     &[data-dark-mode='false'] {
       background-color: ${colors.color1};
+      border: 2px solid ${colors.color15};
     }
 
     & > .close-resume {
@@ -329,14 +332,29 @@ export const ResumeMe = styled.div`
 
       ::-webkit-scrollbar-thumb {
         background-color: ${colors.color11};
-        border: 1px solid #333;
+        border: 1px solid ${colors.color12};
         border-radius: 2rem;
+      }
+
+      &[data-dark-mode='false'] {
+        ::-webkit-scrollbar-track {
+          background-color: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+          background-color: ${colors.color15};
+          border: 1px solid ${colors.color15};
+        }
       }
 
       & > .about {
         display: flex;
         flex-direction: column;
         padding: 0 1rem;
+
+        & > :nth-child(n + 2) {
+          margin-bottom: 4rem;
+        }
 
         & > .about-titles {
           margin: 7rem 0;
@@ -394,6 +412,11 @@ export const ResumeMe = styled.div`
               color: ${colors.color1};
               text-transform: uppercase;
               font-weight: 600;
+              transition: color 0.25s ease-in-out;
+
+              &[data-dark-mode='false'] {
+                color: ${colors.color6};
+              }
             }
 
             & > .infos {
@@ -402,6 +425,11 @@ export const ResumeMe = styled.div`
 
               & > :first-child {
                 margin-right: 2rem;
+              }
+
+              &[data-dark-mode='false'] > div h4,
+              &[data-dark-mode='false'] > div a {
+                color: ${colors.color6};
               }
 
               & > div {
@@ -426,6 +454,7 @@ export const ResumeMe = styled.div`
                     font-weight: 500;
                     color: ${colors.color1};
                     font-size: 0.94rem;
+                    transition: color 0.25s ease-in-out;
 
                     &.link-github {
                       text-decoration: underline;
@@ -438,6 +467,10 @@ export const ResumeMe = styled.div`
                   }
                 }
               }
+            }
+
+            & > .download-cv {
+              width: fit-content;
             }
           }
 
@@ -455,6 +488,14 @@ export const ResumeMe = styled.div`
               margin-right: 1.88rem;
             } */
 
+            &[data-dark-mode='false'] > div {
+              border: 1px solid ${colors.color14};
+
+              & > h3 {
+                color: ${colors.color6};
+              }
+            }
+
             & > div {
               background-color: transparent;
               border: 1px solid ${colors.color7};
@@ -463,6 +504,7 @@ export const ResumeMe = styled.div`
               justify-content: center;
               align-items: center;
               flex-direction: column;
+              transition: border 0.25s ease-in-out;
 
               & > h2 {
                 font-size: 3.12rem;
@@ -483,6 +525,7 @@ export const ResumeMe = styled.div`
                 position: relative;
                 padding-left: 2.8rem;
                 margin: 0 2rem;
+                transition: color 0.25s ease-in-out;
 
                 &::before {
                   content: '';
@@ -496,6 +539,18 @@ export const ResumeMe = styled.div`
                 }
               }
             }
+          }
+        }
+
+        & > .my-skills-container {
+          display: flex;
+          justify-content: center;
+
+          & > h2 {
+            text-transform: uppercase;
+            font-size: 1.7rem;
+            font-weight: 600;
+            color: ${colors.color1};
           }
         }
       }

@@ -14,6 +14,7 @@ const GlobalStyles = createGlobalStyle`
 
     &::selection{
       background-color: ${colors.color3};
+      color: ${colors.color1};
     }
   }
 

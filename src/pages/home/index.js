@@ -30,7 +30,7 @@ export default function Home() {
             </svg>
           </div>
 
-          <div className="resume">
+          <div className="resume" data-dark-mode={darkMode}>
             <div className="about">
               <div className="about-titles">
                 <h1 data-dark-mode={darkMode}>Resumo</h1>
@@ -40,8 +40,8 @@ export default function Home() {
               </div>
               <div className="personal-infos-container">
                 <div className="personal-infos">
-                  <h3>Informações pessoais</h3>
-                  <div className="infos">
+                  <h3 data-dark-mode={darkMode}>Informações pessoais</h3>
+                  <div className="infos" data-dark-mode={darkMode}>
                     <div>
                       <div>
                         <h4>Primeiro nome:</h4>
@@ -93,16 +93,22 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                  <ButtonContainer data-dark-mode={darkMode}>
-                    Donwnload cv
-                    <span>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                        <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
-                      </svg>
-                    </span>
-                  </ButtonContainer>
+                  <a
+                    className="download-cv"
+                    href={myPhoto}
+                    download="cv-eduardo-lavoura-dev-full-stack.png"
+                  >
+                    <ButtonContainer data-dark-mode={darkMode} strokeWidth1rem>
+                      Download cv
+                      <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                          <path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z" />
+                        </svg>
+                      </span>
+                    </ButtonContainer>
+                  </a>
                 </div>
-                <div className="experience-projects-customers-won">
+                <div className="experience-projects-customers-won" data-dark-mode={darkMode}>
                   <div>
                     <h2>2+</h2>
                     <h3>Anos de experiência</h3>
@@ -120,6 +126,9 @@ export default function Home() {
                     <h3>Prêmios ganhos</h3>
                   </div>
                 </div>
+              </div>
+              <div className="my-skills-container">
+                <h2>Minhas skills</h2>
               </div>
             </div>
           </div>

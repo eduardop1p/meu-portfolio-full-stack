@@ -11,6 +11,8 @@ const color10 = '#5be85b';
 const color11 = '#555';
 const color12 = '#333';
 const color13 = '#777';
+const color14 = '#ddd';
+const color15 = '#bbb';
 
 export {
   color1,
@@ -26,4 +28,6 @@ export {
   color11,
   color12,
   color13,
+  color14,
+  color15,
 };
