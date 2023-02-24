@@ -1,7 +1,10 @@
 /* eslint-disable */
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
+
+// aqui falta colocar um cv pra download
+// aqui falta colocar uma foto minha na thumb
 
 import myPhoto from '../../assets/img/31c8b9e24be5ad81c96331dcd7f26153.jpg';
 import Main, {
@@ -10,130 +13,18 @@ import Main, {
   ButtonContainer,
   BgsHomeContainer,
   ResumeMe,
+  MySkillsContainer,
 } from '../styled';
 
 export default function Home() {
   const { darkMode } = useSelector(state => state.darkMode);
   const [resumeShow, setResumeShow] = useState(false);
 
+  const htmlPercentage = useRef(40).current;
+
   return (
     <Main>
       <BgActiveRouter />
-      <ResumeMe
-        onClick={event => event.target === event.currentTarget && setResumeShow(!resumeShow)}
-        className={resumeShow ? 'active-resume-me' : null}
-      >
-        <div className="resume-and-close" data-dark-mode={darkMode}>
-          <div className="close-resume" title="Fechar" onClick={() => setResumeShow(!resumeShow)}>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960">
-              <path d="M249 862.566 193.434 807l231-231-231-231L249 289.434l231 231 231-231L766.566 345l-231 231 231 231L711 862.566l-231-231-231 231Z" />
-            </svg>
-          </div>
-
-          <div className="resume" data-dark-mode={darkMode}>
-            <div className="about">
-              <div className="about-titles">
-                <h1 data-dark-mode={darkMode}>Resumo</h1>
-                <h2 data-dark-mode={darkMode}>
-                  Sobre <span>Mim</span>
-                </h2>
-              </div>
-              <div className="personal-infos-container">
-                <div className="personal-infos">
-                  <h3 data-dark-mode={darkMode}>Informações pessoais</h3>
-                  <div className="infos" data-dark-mode={darkMode}>
-                    <div>
-                      <div>
-                        <h4>Primeiro nome:</h4>
-                        <h4>Eduardo</h4>
-                      </div>
-                      <div>
-                        <h4>Idade:</h4>
-                        <h4>{new Date().getFullYear() - 2002}</h4>
-                      </div>
-                      <div>
-                        <h4>Freelance:</h4>
-                        <h4 className="available">Disponível</h4>
-                      </div>
-                      <div>
-                        <h4>Celular:</h4>
-                        <h4>{'(99) 98532-9861'}</h4>
-                      </div>
-                      <div>
-                        <h4>GitHub:</h4>
-                        <a
-                          href="https://github.com/eduardop1p"
-                          target="_blank"
-                          className="link-github"
-                        >
-                          github.com/eduardop1p
-                        </a>
-                      </div>
-                    </div>
-                    <div>
-                      <div>
-                        <h4>Segundo nome:</h4>
-                        <h4>Lavoura</h4>
-                      </div>
-                      <div>
-                        <h4>Nacionalidade:</h4>
-                        <h4>Brasileira</h4>
-                      </div>
-                      <div>
-                        <h4>Endereço:</h4>
-                        <h4>Colinas - Ma, Bairo Trizidela, Rua Delfina Ribeiro, Nº 222</h4>
-                      </div>
-                      <div>
-                        <h4>Email:</h4>
-                        <h4>eduardop1p87@gmail.com</h4>
-                      </div>
-                      <div>
-                        <h4>Idiomas:</h4>
-                        <h4>Portugues - nativo, Ingles - intermediário, Espanhol - Básico</h4>
-                      </div>
-                    </div>
-                  </div>
-                  <a
-                    className="download-cv"
-                    href={myPhoto}
-                    download="cv-eduardo-lavoura-dev-full-stack.png"
-                  >
-                    <ButtonContainer data-dark-mode={darkMode} strokeWidth1rem>
-                      Download cv
-                      <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                          <path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z" />
-                        </svg>
-                      </span>
-                    </ButtonContainer>
-                  </a>
-                </div>
-                <div className="experience-projects-customers-won" data-dark-mode={darkMode}>
-                  <div>
-                    <h2>2+</h2>
-                    <h3>Anos de experiência</h3>
-                  </div>
-                  <div>
-                    <h2>10+</h2>
-                    <h3>Projetos completos</h3>
-                  </div>
-                  <div>
-                    <h2>16+</h2>
-                    <h3>Clientes felizes</h3>
-                  </div>
-                  <div>
-                    <h2>0+</h2>
-                    <h3>Prêmios ganhos</h3>
-                  </div>
-                </div>
-              </div>
-              <div className="my-skills-container">
-                <h2>Minhas skills</h2>
-              </div>
-            </div>
-          </div>
-        </div>
-      </ResumeMe>
       <BgsHomeContainer>
         <div className="bg-yellow"></div>
         <div className="bg-dark" data-dark-mode={darkMode}></div>
@@ -206,6 +97,137 @@ export default function Home() {
                 </svg>
               </span>
             </ButtonContainer>
+            <ResumeMe
+              onClick={event => event.target === event.currentTarget && setResumeShow(!resumeShow)}
+              className={resumeShow ? 'active-resume-me' : null}
+            >
+              <div className="resume-and-close" data-dark-mode={darkMode}>
+                <div
+                  className="close-resume"
+                  title="Fechar"
+                  onClick={() => setResumeShow(!resumeShow)}
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960">
+                    <path d="M249 862.566 193.434 807l231-231-231-231L249 289.434l231 231 231-231L766.566 345l-231 231 231 231L711 862.566l-231-231-231 231Z" />
+                  </svg>
+                </div>
+
+                <div className="resume" data-dark-mode={darkMode}>
+                  <div className="about">
+                    <div className="about-titles">
+                      <h1 data-dark-mode={darkMode}>Resumo</h1>
+                      <h2 data-dark-mode={darkMode}>
+                        Sobre <span>Mim</span>
+                      </h2>
+                    </div>
+                    <div className="personal-infos-container">
+                      <div className="personal-infos">
+                        <h3 data-dark-mode={darkMode}>Informações pessoais</h3>
+                        <div className="infos" data-dark-mode={darkMode}>
+                          <div>
+                            <div>
+                              <h4>Primeiro nome:</h4>
+                              <h4>Eduardo</h4>
+                            </div>
+                            <div>
+                              <h4>Idade:</h4>
+                              <h4>{new Date().getFullYear() - 2002}</h4>
+                            </div>
+                            <div>
+                              <h4>Freelance:</h4>
+                              <h4 className="available">Disponível</h4>
+                            </div>
+                            <div>
+                              <h4>Celular:</h4>
+                              <h4>{'(99) 98532-9861'}</h4>
+                            </div>
+                            <div>
+                              <h4>GitHub:</h4>
+                              <a
+                                href="https://github.com/eduardop1p"
+                                target="_blank"
+                                className="link-github"
+                              >
+                                github.com/eduardop1p
+                              </a>
+                            </div>
+                          </div>
+                          <div>
+                            <div>
+                              <h4>Segundo nome:</h4>
+                              <h4>Lavoura</h4>
+                            </div>
+                            <div>
+                              <h4>Nacionalidade:</h4>
+                              <h4>Brasileira</h4>
+                            </div>
+                            <div>
+                              <h4>Endereço:</h4>
+                              <h4>Colinas - Ma, Bairro Trizidela, Rua Delfina Ribeiro, Nº 222</h4>
+                            </div>
+                            <div>
+                              <h4>Email:</h4>
+                              <h4>eduardop1p87@gmail.com</h4>
+                            </div>
+                            <div>
+                              <h4>Idiomas:</h4>
+                              <h4>Portugues - nativo, Ingles - intermediário, Espanhol - Básico</h4>
+                            </div>
+                          </div>
+                        </div>
+                        <a
+                          className="download-cv"
+                          href={myPhoto}
+                          download="cv-eduardo-lavoura-dev-full-stack.png"
+                        >
+                          <ButtonContainer data-dark-mode={darkMode} strokeWidth1rem>
+                            Download cv
+                            <span>
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z" />
+                              </svg>
+                            </span>
+                          </ButtonContainer>
+                        </a>
+                      </div>
+                      <div className="experience-projects-customers-won" data-dark-mode={darkMode}>
+                        <div>
+                          <h2>2+</h2>
+                          <h3>Anos de experiência</h3>
+                        </div>
+                        <div>
+                          <h2>10+</h2>
+                          <h3>Projetos completos</h3>
+                        </div>
+                        <div>
+                          <h2>16+</h2>
+                          <h3>Clientes felizes</h3>
+                        </div>
+                        <div>
+                          <h2>0+</h2>
+                          <h3>Prêmios ganhos</h3>
+                        </div>
+                      </div>
+                    </div>
+                    <MySkillsContainer htmlPercentage={htmlPercentage}>
+                      <h2>Minhas skills</h2>
+                      <div className="my-skills">
+                        <div>
+                          <span>{htmlPercentage}%</span>
+                        </div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                      </div>
+                    </MySkillsContainer>
+                  </div>
+                </div>
+              </div>
+            </ResumeMe>
           </div>
         </div>
       </HomeContainer>

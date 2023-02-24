@@ -251,6 +251,8 @@ export const BgsHomeContainer = styled.div`
 
 export const ResumeMe = styled.div`
   position: fixed;
+  top: 0;
+  left: 0;
   z-index: 5;
   display: flex;
   justify-content: center;
@@ -353,7 +355,7 @@ export const ResumeMe = styled.div`
         padding: 0 1rem;
 
         & > :nth-child(n + 2) {
-          margin-bottom: 4rem;
+          margin-bottom: 3rem;
         }
 
         & > .about-titles {
@@ -541,18 +543,66 @@ export const ResumeMe = styled.div`
             }
           }
         }
+      }
+    }
+  }
+`;
 
-        & > .my-skills-container {
-          display: flex;
-          justify-content: center;
+export const MySkillsContainer = styled.section`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 
-          & > h2 {
-            text-transform: uppercase;
-            font-size: 1.7rem;
-            font-weight: 600;
-            color: ${colors.color1};
-          }
-        }
+  & > h2 {
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: ${colors.color1};
+    margin-bottom: 1rem;
+  }
+
+  & > .my-skills {
+    display: grid;
+    grid-template: repeat(2, 120px) / repeat(4, 120px);
+    grid-gap: 2rem;
+
+    & > div {
+      box-shadow: inset 0 0 0 9px ${colors.color16};
+      background-color: ${colors.color2};
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+
+      &::before {
+        content: '';
+        position: absolute;
+        background-image: conic-gradient(
+          from 0deg,
+          ${colors.color3} ${({ htmlPercentage }) => `${htmlPercentage}%`},
+          transparent 0
+        );
+        border-radius: 100%;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+      }
+
+      & > span {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 100px;
+        z-index: 3;
+        background-color: inherit;
+        border-radius: 100%;
+        font-size: 1.5rem;
+        color: ${colors.color1};
+        font-weight: 500;
       }
     }
   }
