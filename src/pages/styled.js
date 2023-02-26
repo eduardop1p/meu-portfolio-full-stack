@@ -155,7 +155,7 @@ export const HomeContainer = styled.section`
 `;
 
 export const ButtonContainer = styled.div`
-  margin-top: 1.88rem;
+  margin-top: 1.5rem;
   width: fit-content;
   cursor: pointer;
   position: relative;
@@ -355,7 +355,7 @@ export const ResumeMe = styled.div`
         padding: 0 1rem;
 
         & > :nth-child(n + 2) {
-          margin-bottom: 3rem;
+          margin-bottom: 4rem;
         }
 
         & > .about-titles {
@@ -543,66 +543,122 @@ export const ResumeMe = styled.div`
             }
           }
         }
-      }
-    }
-  }
-`;
 
-export const MySkillsContainer = styled.section`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+        & > .experience-education-container {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
 
-  & > h2 {
-    text-transform: uppercase;
-    font-size: 1.7rem;
-    font-weight: 600;
-    color: ${colors.color1};
-    margin-bottom: 1rem;
-  }
+          & > h2 {
+            text-transform: uppercase;
+            font-size: 1.7rem;
+            font-weight: 600;
+            color: ${colors.color1};
+            margin-bottom: 2rem;
+            transition: color 0.25s ease-in-out;
 
-  & > .my-skills {
-    display: grid;
-    grid-template: repeat(2, 120px) / repeat(4, 120px);
-    grid-gap: 2rem;
+            &[data-dark-mode='false'] {
+              color: ${colors.color6};
+            }
+          }
 
-    & > div {
-      box-shadow: inset 0 0 0 9px ${colors.color16};
-      background-color: ${colors.color2};
-      border-radius: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      z-index: 1;
+          & > .experience-education {
+            display: flex;
+            justify-content: space-between;
+            width: calc(100% - 2.5rem);
 
-      &::before {
-        content: '';
-        position: absolute;
-        background-image: conic-gradient(
-          from 0deg,
-          ${colors.color3} ${({ htmlPercentage }) => `${htmlPercentage}%`},
-          transparent 0
-        );
-        border-radius: 100%;
-        width: 100%;
-        height: 100%;
-        z-index: 2;
-      }
+            & > :first-child {
+              margin-right: 4rem;
+            }
 
-      & > span {
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100px;
-        height: 100px;
-        z-index: 3;
-        background-color: inherit;
-        border-radius: 100%;
-        font-size: 1.5rem;
-        color: ${colors.color1};
-        font-weight: 500;
+            & > .experience,
+            & > .education {
+              display: flex;
+              flex-direction: column;
+
+              & > :not(:last-child) {
+                margin-bottom: 1.5rem;
+              }
+
+              & > div {
+                border-left: 1px solid ${colors.color16};
+                position: relative;
+                transition: boder 0.25s ease-in-out;
+
+                &[data-dark-mode='false'] {
+                  border-left: 1px solid ${colors.color15};
+
+                  & > :last-child {
+                    & > h3 {
+                      background-color: ${colors.color5};
+                      color: ${colors.color6};
+                    }
+
+                    & > h1 {
+                      color: ${colors.color6};
+                    }
+
+                    & > p {
+                      color: ${colors.color6};
+                    }
+                  }
+                }
+
+                & > :first-child {
+                  background-color: ${colors.color3};
+                  border-radius: 100%;
+                  width: 40px;
+                  height: 40px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  position: absolute;
+                  top: -2px;
+                  left: -20px;
+
+                  & > svg {
+                    width: 15px;
+                    height: 15px;
+                    fill: ${colors.color1};
+                  }
+                }
+
+                & > :last-child {
+                  margin-left: 2.25rem;
+
+                  & > h3 {
+                    padding: 2px 10px;
+                    background-color: ${colors.color16};
+                    color: ${colors.color1};
+                    border-radius: 20px;
+                    opacity: 0.8;
+                    font-size: 0.75em;
+                    font-weight: 600;
+                    width: fit-content;
+                    text-transform: uppercase;
+                    font-family: 'Open Sans', sans-serif;
+                  }
+
+                  & > h1 {
+                    color: ${colors.color1};
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    margin: 0.5rem 0;
+                  }
+
+                  & > p {
+                    color: ${colors.color1};
+                    opacity: 0.8;
+                    font-size: 0.85rem;
+                    font-weight: 400;
+                    font-family: 'Open Sans', sans-serif;
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
