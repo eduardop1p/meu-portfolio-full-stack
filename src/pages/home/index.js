@@ -3,11 +3,14 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 
-// aqui falta colocar um cv pra download
 // aqui falta colocar uma foto minha na thumb
 
+import AboutTitles from '../../components/aboutTitles';
+import PersonalInfos from '../../components/personalInfos';
 import MySkills from '../../components/mySkills';
+import ExperienceEducation from '../../components/experienceEducation';
 import myPhoto from '../../assets/img/31c8b9e24be5ad81c96331dcd7f26153.jpg';
+
 import Main, {
   HomeContainer,
   BgActiveRouter,
@@ -22,7 +25,7 @@ export default function Home() {
 
   return (
     <Main>
-      <BgActiveRouter />
+      <BgActiveRouter data-dark-mode={darkMode} />
       <BgsHomeContainer>
         <div className="bg-yellow"></div>
         <div className="bg-dark" data-dark-mode={darkMode}></div>
@@ -111,169 +114,10 @@ export default function Home() {
                 </div>
                 <div className="resume" data-dark-mode={darkMode}>
                   <div className="about">
-                    <div className="about-titles">
-                      <h1 data-dark-mode={darkMode}>Resumo</h1>
-                      <h2 data-dark-mode={darkMode}>
-                        Sobre <span>Mim</span>
-                      </h2>
-                    </div>
-                    <div className="personal-infos-container">
-                      <div className="personal-infos">
-                        <h3 data-dark-mode={darkMode}>Informações pessoais</h3>
-                        <div className="infos" data-dark-mode={darkMode}>
-                          <div>
-                            <div>
-                              <h4>Primeiro nome:</h4>
-                              <h4>Eduardo</h4>
-                            </div>
-                            <div>
-                              <h4>Idade:</h4>
-                              <h4>{new Date().getFullYear() - 2002}</h4>
-                            </div>
-                            <div>
-                              <h4>Freelance:</h4>
-                              <h4 className="available">Disponível</h4>
-                            </div>
-                            <div>
-                              <h4>Celular:</h4>
-                              <h4>{'(99) 98532-9861'}</h4>
-                            </div>
-                            <div>
-                              <h4>GitHub:</h4>
-                              <a
-                                href="https://github.com/eduardop1p"
-                                target="_blank"
-                                className="link-github"
-                              >
-                                github.com/eduardop1p
-                              </a>
-                            </div>
-                          </div>
-                          <div>
-                            <div>
-                              <h4>Segundo nome:</h4>
-                              <h4>Lavoura</h4>
-                            </div>
-                            <div>
-                              <h4>Nacionalidade:</h4>
-                              <h4>Brasileira</h4>
-                            </div>
-                            <div>
-                              <h4>Endereço:</h4>
-                              <h4>Colinas - Ma, Bairro Trizidela, Rua Delfina Ribeiro, Nº 222</h4>
-                            </div>
-                            <div>
-                              <h4>Email:</h4>
-                              <h4>eduardop1p87@gmail.com</h4>
-                            </div>
-                            <div>
-                              <h4>Idiomas:</h4>
-                              <h4>Portugues - nativo, Ingles - intermediário, Espanhol - Básico</h4>
-                            </div>
-                          </div>
-                        </div>
-                        <a
-                          className="download-cv"
-                          href={myPhoto}
-                          download="cv-eduardo-lavoura-dev-full-stack.png"
-                        >
-                          <ButtonContainer data-dark-mode={darkMode} strokeWidth1rem>
-                            Download cv
-                            <span>
-                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                <path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z" />
-                              </svg>
-                            </span>
-                          </ButtonContainer>
-                        </a>
-                      </div>
-                      <div className="experience-projects-customers-won" data-dark-mode={darkMode}>
-                        <div>
-                          <h2>2+</h2>
-                          <h3>Anos de experiência</h3>
-                        </div>
-                        <div>
-                          <h2>10+</h2>
-                          <h3>Projetos completos</h3>
-                        </div>
-                        <div>
-                          <h2>16+</h2>
-                          <h3>Clientes felizes</h3>
-                        </div>
-                        <div>
-                          <h2>0+</h2>
-                          <h3>Prêmios ganhos</h3>
-                        </div>
-                      </div>
-                    </div>
+                    <AboutTitles darkMode={darkMode} />
+                    <PersonalInfos darkMode={darkMode} />
                     <MySkills darkMode={darkMode} />
-
-                    <div className="experience-education-container">
-                      <h2 data-dark-mode={darkMode}>Experiência & Educação</h2>
-                      <div className="experience-education">
-                        <div className="experience">
-                          <div data-dark-mode={darkMode}>
-                            <div>
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 512 512"
-                                data-dark-mode={darkMode}
-                              >
-                                <path d="M184 48H328c4.4 0 8 3.6 8 8V96H176V56c0-4.4 3.6-8 8-8zm-56 8V96H64C28.7 96 0 124.7 0 160v96H192 320 512V160c0-35.3-28.7-64-64-64H384V56c0-30.9-25.1-56-56-56H184c-30.9 0-56 25.1-56 56zM512 288H320v32c0 17.7-14.3 32-32 32H224c-17.7 0-32-14.3-32-32V288H0V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V288z" />
-                              </svg>
-                            </div>
-                            <div>
-                              <h3>2019 - Atualmente</h3>
-                              <h1>Desenvolvedor web - Projetos pessoais</h1>
-                              <p>
-                                Coloco em pratica todo meu conhecimento desenvolvendo aplicações web
-                                com as tecnologias atuais
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="education">
-                          <div data-dark-mode={darkMode}>
-                            <div>
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 512 512"
-                                data-dark-mode={darkMode}
-                              >
-                                <path d="M184 48H328c4.4 0 8 3.6 8 8V96H176V56c0-4.4 3.6-8 8-8zm-56 8V96H64C28.7 96 0 124.7 0 160v96H192 320 512V160c0-35.3-28.7-64-64-64H384V56c0-30.9-25.1-56-56-56H184c-30.9 0-56 25.1-56 56zM512 288H320v32c0 17.7-14.3 32-32 32H224c-17.7 0-32-14.3-32-32V288H0V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V288z" />
-                              </svg>
-                            </div>
-                            <div>
-                              <h3>2020 - Atualmente</h3>
-                              <h1>Analise e desenvolvimento de sistemas - Pitágoras unopar</h1>
-                              <p>
-                                Curso superior de tecnologo, estou cursando o último semestre no
-                                momento
-                              </p>
-                            </div>
-                          </div>
-                          <div data-dark-mode={darkMode}>
-                            <div>
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 512 512"
-                                data-dark-mode={darkMode}
-                              >
-                                <path d="M184 48H328c4.4 0 8 3.6 8 8V96H176V56c0-4.4 3.6-8 8-8zm-56 8V96H64C28.7 96 0 124.7 0 160v96H192 320 512V160c0-35.3-28.7-64-64-64H384V56c0-30.9-25.1-56-56-56H184c-30.9 0-56 25.1-56 56zM512 288H320v32c0 17.7-14.3 32-32 32H224c-17.7 0-32-14.3-32-32V288H0V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V288z" />
-                              </svg>
-                            </div>
-                            <div>
-                              <h3>2020 - 2022</h3>
-                              <h1>Desenvolvedor Full Stack - Luiz otávio Miranda</h1>
-                              <p>
-                                Curso completo de desenvolvimento web Full Stack do básico ao
-                                avançado
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <ExperienceEducation darkMode={darkMode} />
                   </div>
                 </div>
               </div>

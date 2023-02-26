@@ -4,7 +4,7 @@ import { useState, useRef } from 'react';
 
 import MySkillsContainer, { SkillPercentageTitle } from './styled';
 
-export default function MySkills({ darkMode }) {
+export default function MySkills({ darkMode, aboutRouter }) {
   const mySkills = useRef([
     { name: 'Html', percentage: 100 },
     { name: 'Css', percentage: 95 },
@@ -22,7 +22,7 @@ export default function MySkills({ darkMode }) {
   return (
     <MySkillsContainer mySkills={mySkills}>
       <h2 data-dark-mode={darkMode}>Minhas skills</h2>
-      <div className="my-skills">
+      <div className={aboutRouter ? 'my-skills-100-grid' : 'my-skills'}>
         {mySkills.map(skill => (
           <SkillPercentageTitle percentageSkill={skill.percentage} key={skill.name}>
             <div data-dark-mode={darkMode}>

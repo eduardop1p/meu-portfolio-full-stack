@@ -8,7 +8,7 @@ export const HeaderContainer = styled.header`
   position: fixed;
   right: 2rem;
   top: 1rem;
-  height: 60%;
+  height: 400px;
   z-index: 2;
   display: flex;
   flex-direction: column;

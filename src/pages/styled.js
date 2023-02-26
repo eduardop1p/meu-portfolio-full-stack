@@ -39,6 +39,11 @@ export const BgActiveRouter = styled.div`
   animation-duration: 0.8s;
   animation-timing-function: ease-in-out;
   touch-action: none;
+  transition: background 0.25s ease-in-out;
+
+  &[data-dark-mode='false'] {
+    background-color: ${colors.color14};
+  }
 `;
 
 export const HomeContainer = styled.section`
@@ -281,7 +286,7 @@ export const ResumeMe = styled.div`
     border: 2px solid ${colors.color7};
     background-color: ${colors.color2};
     width: 900px;
-    height: calc(100% - 10rem);
+    height: 500px;
     position: relative;
     transition: background 0.25s ease-in-out;
 
@@ -357,314 +362,51 @@ export const ResumeMe = styled.div`
         & > :nth-child(n + 2) {
           margin-bottom: 4rem;
         }
-
-        & > .about-titles {
-          margin: 7rem 0;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          position: relative;
-
-          & > h1 {
-            color: ${colors.color9};
-            text-transform: uppercase;
-            letter-spacing: 10px;
-            font-weight: 800;
-            font-size: 6.87rem;
-            position: absolute;
-            z-index: 1;
-            transition: color 0.25s ease-in-out;
-
-            &[data-dark-mode='false'] {
-              color: ${colors.color5};
-            }
-          }
-
-          & > h2 {
-            color: ${colors.color1};
-            text-transform: uppercase;
-            font-weight: 900;
-            font-size: 3.5rem;
-            position: absolute;
-            z-index: 2;
-            transition: color 0.25s ease-in-out;
-
-            &[data-dark-mode='false'] {
-              color: ${colors.color6};
-            }
-
-            & > span {
-              color: ${colors.color3};
-            }
-          }
-        }
-
-        & > .personal-infos-container {
-          display: flex;
-          justify-content: space-between;
-
-          & > .personal-infos {
-            display: flex;
-            flex-direction: column;
-            margin-right: 3rem;
-
-            & > h3 {
-              margin-bottom: 1.4rem;
-              font-size: 1.65rem;
-              color: ${colors.color1};
-              text-transform: uppercase;
-              font-weight: 600;
-              transition: color 0.25s ease-in-out;
-
-              &[data-dark-mode='false'] {
-                color: ${colors.color6};
-              }
-            }
-
-            & > .infos {
-              display: flex;
-              justify-content: space-between;
-
-              & > :first-child {
-                margin-right: 2rem;
-              }
-
-              &[data-dark-mode='false'] > div h4,
-              &[data-dark-mode='false'] > div a {
-                color: ${colors.color6};
-              }
-
-              & > div {
-                display: flex;
-                flex-direction: column;
-
-                & > :not(:last-child) {
-                  margin-bottom: 1.25rem;
-                }
-
-                & > div {
-                  display: flex;
-                  flex-direction: column;
-
-                  & > :first-child {
-                    opacity: 0.8;
-                  }
-
-                  & > h4,
-                  & > a {
-                    font-family: 'Open Sans', sans-serif;
-                    font-weight: 500;
-                    color: ${colors.color1};
-                    font-size: 0.94rem;
-                    transition: color 0.25s ease-in-out;
-
-                    &.link-github {
-                      text-decoration: underline;
-                      font-weight: 400;
-                    }
-
-                    &.available {
-                      color: ${colors.color10};
-                    }
-                  }
-                }
-              }
-            }
-
-            & > .download-cv {
-              width: fit-content;
-            }
-          }
-
-          & > .experience-projects-customers-won {
-            display: grid;
-            grid-template: repeat(2, 155px) / repeat(2, 190px);
-            grid-gap: 1.88rem;
-
-            /*
-            & > :nth-child(-n + 2) {
-              margin-bottom: 1.88rem;
-            }
-
-            & > :nth-child(odd) {
-              margin-right: 1.88rem;
-            } */
-
-            &[data-dark-mode='false'] > div {
-              border: 1px solid ${colors.color14};
-
-              & > h3 {
-                color: ${colors.color6};
-              }
-            }
-
-            & > div {
-              background-color: transparent;
-              border: 1px solid ${colors.color7};
-              border-radius: 10px;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              flex-direction: column;
-              transition: border 0.25s ease-in-out;
-
-              & > h2 {
-                font-size: 3.12rem;
-                font-weight: 700;
-                color: ${colors.color3};
-                margin-right: 2rem;
-                margin-bottom: 2px;
-                line-height: 1;
-              }
-
-              & > h3 {
-                font-size: 15px;
-                font-weight: 500;
-                opacity: 0.8;
-                color: ${colors.color1};
-                font-family: 'Open Sans', sans-serif;
-                text-transform: uppercase;
-                position: relative;
-                padding-left: 2.8rem;
-                margin: 0 2rem;
-                transition: color 0.25s ease-in-out;
-
-                &::before {
-                  content: '';
-                  position: absolute;
-                  left: 0;
-                  top: 13px;
-                  width: 30px;
-                  height: 2px;
-                  background-color: ${colors.color13};
-                  opacity: 0.8;
-                }
-              }
-            }
-          }
-        }
-
-        & > .experience-education-container {
-          display: flex;
-          align-items: center;
-          flex-direction: column;
-
-          & > h2 {
-            text-transform: uppercase;
-            font-size: 1.7rem;
-            font-weight: 600;
-            color: ${colors.color1};
-            margin-bottom: 2rem;
-            transition: color 0.25s ease-in-out;
-
-            &[data-dark-mode='false'] {
-              color: ${colors.color6};
-            }
-          }
-
-          & > .experience-education {
-            display: flex;
-            justify-content: space-between;
-            width: calc(100% - 2.5rem);
-
-            & > :first-child {
-              margin-right: 4rem;
-            }
-
-            & > .experience,
-            & > .education {
-              display: flex;
-              flex-direction: column;
-
-              & > :not(:last-child) {
-                margin-bottom: 1.5rem;
-              }
-
-              & > div {
-                border-left: 1px solid ${colors.color16};
-                position: relative;
-                transition: boder 0.25s ease-in-out;
-
-                &[data-dark-mode='false'] {
-                  border-left: 1px solid ${colors.color15};
-
-                  & > :last-child {
-                    & > h3 {
-                      background-color: ${colors.color5};
-                      color: ${colors.color6};
-                    }
-
-                    & > h1 {
-                      color: ${colors.color6};
-                    }
-
-                    & > p {
-                      color: ${colors.color6};
-                    }
-                  }
-                }
-
-                & > :first-child {
-                  background-color: ${colors.color3};
-                  border-radius: 100%;
-                  width: 40px;
-                  height: 40px;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  position: absolute;
-                  top: -2px;
-                  left: -20px;
-
-                  & > svg {
-                    width: 15px;
-                    height: 15px;
-                    fill: ${colors.color1};
-                  }
-                }
-
-                & > :last-child {
-                  margin-left: 2.25rem;
-
-                  & > h3 {
-                    padding: 2px 10px;
-                    background-color: ${colors.color16};
-                    color: ${colors.color1};
-                    border-radius: 20px;
-                    opacity: 0.8;
-                    font-size: 0.75em;
-                    font-weight: 600;
-                    width: fit-content;
-                    text-transform: uppercase;
-                    font-family: 'Open Sans', sans-serif;
-                  }
-
-                  & > h1 {
-                    color: ${colors.color1};
-                    font-size: 1.2rem;
-                    font-weight: 500;
-                    text-transform: uppercase;
-                    margin: 0.5rem 0;
-                  }
-
-                  & > p {
-                    color: ${colors.color1};
-                    opacity: 0.8;
-                    font-size: 0.85rem;
-                    font-weight: 400;
-                    font-family: 'Open Sans', sans-serif;
-                  }
-                }
-              }
-            }
-          }
-        }
       }
     }
   }
 `;
 
-export const AboutContainer = styled.section``;
+export const AboutContainer = styled.section`
+  background-color: ${colors.color2};
+  width: 100%;
+  height: 100vh;
+  overflow: hidden visible;
+  transition: background 0.25s ease-in-out;
+
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: ${colors.color12};
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: ${colors.color11};
+    border: 3px solid ${colors.color12};
+    border-radius: 2rem;
+  }
+
+  &[data-dark-mode='false'] {
+    background-color: ${colors.color1};
+  }
+
+  & > .about {
+    background-color: inherit;
+    width: calc(100% - 12.5rem);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    animation-name: ${slideUpAnimation};
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+
+    & > :nth-child(n + 2) {
+      margin-bottom: 5rem;
+    }
+  }
+`;
 
 export const PortfolioContainer = styled.section``;
 

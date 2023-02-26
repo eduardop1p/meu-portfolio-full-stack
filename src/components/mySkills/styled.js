@@ -22,11 +22,19 @@ const MySkillsContainer = styled.div`
     }
   }
 
+  & > .my-skills-100-grid {
+    display: grid;
+    grid-template: repeat(2, auto) / repeat(4, auto);
+    width: calc(100% - 5rem);
+    justify-content: space-between;
+    row-gap: 3.5rem;
+  }
+
   & > .my-skills {
     display: grid;
     grid-template: repeat(2, auto) / repeat(4, auto);
-    grid-column-gap: 4.5rem;
-    grid-row-gap: 3rem;
+    column-gap: 4.5rem;
+    row-gap: 3rem;
   }
 `;
 
@@ -54,6 +62,7 @@ export const SkillPercentageTitle = styled.div`
 
       & > span {
         color: ${colors.color6};
+        font-weight: 600;
       }
     }
 
@@ -83,8 +92,9 @@ export const SkillPercentageTitle = styled.div`
       border-radius: 100%;
       font-size: 1.5rem;
       color: ${colors.color1};
-      font-weight: 600;
-      transition: color 0.25s ease-in-out;
+      font-weight: 500;
+      font-family: 'Open Sans', sans-serif;
+      transition: color 0.25s ease-in-out, font-weight 0.25s ease-in-out;
     }
   }
 
