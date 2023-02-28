@@ -344,13 +344,17 @@ export const ResumeMe = styled.div`
       }
 
       &[data-dark-mode='false'] {
+        ::-webkit-scrollbar {
+          width: 6px;
+        }
+
         ::-webkit-scrollbar-track {
           background-color: transparent;
         }
 
         ::-webkit-scrollbar-thumb {
           background-color: ${colors.color15};
-          border: 1px solid ${colors.color15};
+          border: none;
         }
       }
 
@@ -363,6 +367,47 @@ export const ResumeMe = styled.div`
           margin-bottom: 4rem;
         }
       }
+    }
+  }
+`;
+
+export const TitlePagesContainer = styled.section`
+  margin: 7rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  & > h1 {
+    color: ${colors.color9};
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-weight: 800;
+    font-size: 6.87rem;
+    position: absolute;
+    z-index: 1;
+    transition: color 0.25s ease-in-out;
+
+    &[data-dark-mode='false'] {
+      color: ${colors.color5};
+    }
+  }
+
+  & > h2 {
+    color: ${colors.color1};
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 3.5rem;
+    position: absolute;
+    z-index: 2;
+    transition: color 0.25s ease-in-out;
+
+    &[data-dark-mode='false'] {
+      color: ${colors.color6};
+    }
+
+    & > span {
+      color: ${colors.color3};
     }
   }
 `;
@@ -390,6 +435,19 @@ export const AboutContainer = styled.section`
 
   &[data-dark-mode='false'] {
     background-color: ${colors.color1};
+
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: ${colors.color15};
+      border: none;
+    }
   }
 
   & > .about {
@@ -408,7 +466,62 @@ export const AboutContainer = styled.section`
   }
 `;
 
-export const PortfolioContainer = styled.section``;
+export const PortfolioContainer = styled.section`
+  background-color: ${colors.color2};
+  width: 100%;
+  height: 100vh;
+  overflow: hidden visible;
+  transition: background 0.25s ease-in-out;
+
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: ${colors.color12};
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: ${colors.color11};
+    border: 3px solid ${colors.color12};
+    border-radius: 2rem;
+  }
+
+  &[data-dark-mode='false'] {
+    background-color: ${colors.color1};
+
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: ${colors.color15};
+      border: none;
+    }
+  }
+
+  & > .portfolio {
+    background-color: inherit;
+    width: calc(100% - 12.5rem);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    animation-name: ${slideUpAnimation};
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+
+    & > .projects {
+      & > iframe {
+        width: 375px;
+        height: 230px;
+      }
+    }
+  }
+`;
 
 export const ContactContainer = styled.section``;
 

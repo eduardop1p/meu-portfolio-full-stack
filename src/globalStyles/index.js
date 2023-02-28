@@ -18,22 +18,6 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 
-  a{
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-  img{
-    color: ${colors.color1};
-  }
-
-  svg {
-    fill: ${colors.color1};
-    width: 18px;
-    height: 18px;
-    display: inline-block;
-  }
-
   body{
     background-color: ${colors.color1};
 
@@ -54,6 +38,23 @@ const GlobalStyles = createGlobalStyle`
       border-radius: 2rem;
     }
   }
+
+  a{
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  img{
+    color: ${colors.color1};
+  }
+
+  svg {
+    fill: ${colors.color1};
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+  }
+
 `;
 
 export default GlobalStyles;

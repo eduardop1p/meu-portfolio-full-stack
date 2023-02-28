@@ -98,6 +98,8 @@ const ExperienceEducationContainer = styled.div`
             width: fit-content;
             text-transform: uppercase;
             font-family: 'Open Sans', sans-serif;
+            transition: color 0.25s ease-in-out, font-weight 0.25s ease-in-out,
+              background 0.25s ease-in-out;
           }
 
           & > h1 {
@@ -106,6 +108,7 @@ const ExperienceEducationContainer = styled.div`
             font-weight: 500;
             text-transform: uppercase;
             margin: 0.5rem 0;
+            transition: color 0.25s ease-in-out;
           }
 
           & > p {
@@ -114,6 +117,7 @@ const ExperienceEducationContainer = styled.div`
             font-size: 0.85rem;
             font-weight: 400;
             font-family: 'Open Sans', sans-serif;
+            transition: color 0.25s ease-in-out;
           }
         }
       }
