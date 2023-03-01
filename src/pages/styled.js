@@ -286,7 +286,7 @@ export const ResumeMe = styled.div`
     border: 2px solid ${colors.color7};
     background-color: ${colors.color2};
     width: 900px;
-    height: 500px;
+    height: calc(100% - 10rem);
     position: relative;
     transition: background 0.25s ease-in-out;
 
@@ -510,14 +510,150 @@ export const PortfolioContainer = styled.section`
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    margin-bottom: 5rem;
     animation-name: ${slideUpAnimation};
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
 
     & > .projects {
-      & > iframe {
-        width: 375px;
-        height: 230px;
+      @keyframes projectsAnimation {
+        0% {
+          transform: translateX(-5rem);
+          column-gap: 5px;
+        }
+        20% {
+          column-gap: 10px;
+        }
+        40% {
+          column-gap: 15px;
+        }
+        60% {
+          column-gap: 20px;
+        }
+        80% {
+          column-gap: 25px;
+        }
+        100% {
+          transform: translateX(0);
+          column-gap: 32px;
+        }
+      }
+
+      display: grid;
+      grid-template: repeat(3, 230px) / repeat(3, 1fr);
+      gap: 2rem;
+
+      animation-name: projectsAnimation;
+      animation-duration: 1s;
+      animation-timing-function: ease-in-out;
+
+      & > div {
+        background-color: ${colors.color12};
+        border-radius: 10px;
+        cursor: pointer;
+        overflow: hidden;
+        position: relative;
+
+        &:hover {
+          & > .project-details {
+            opacity: 1;
+
+            & > h2 {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        }
+
+        & > .project-details {
+          background-color: ${colors.color3};
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          opacity: 0;
+          transition: opacity 0.4s ease-in-out;
+
+          & > h2 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: ${colors.color1};
+            text-transform: uppercase;
+            transform: translateY(-20px);
+            opacity: 0;
+            transition: transform 0.5s ease-in-out, opacity 0.7s ease-in-out;
+          }
+        }
+      }
+
+      /* & > img {
+        width: 400px;
+        height: auto;
+      } */
+    }
+  }
+`;
+
+export const PortfolioDetailsContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: ${colors.color8};
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.2s ease-in-out, opacity 0.2s ease-in-out;
+
+  &.active-portfolio-details {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  & > .portfolio-details-and-close {
+    border-radius: 10px;
+    border: 2px solid ${colors.color7};
+    background-color: ${colors.color2};
+    width: 680px;
+    height: calc(100% - 10rem);
+    position: relative;
+    transition: background 0.25s ease-in-out;
+
+    &[data-dark-mode='false'] {
+      background-color: ${colors.color1};
+      border: 2px solid ${colors.color15};
+    }
+
+    & > .close-portfolio-details {
+      position: absolute;
+      top: -3.5rem;
+      right: -2rem;
+      width: 45px;
+      height: 45px;
+      border-radius: 100%;
+      background-color: transparent;
+      border: 3px solid ${colors.color1};
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      & > svg {
+        fill: ${colors.color1};
+        width: 25px;
+        height: 25px;
+
+        & > path {
+          stroke: ${colors.color1};
+          stroke-width: 2rem;
+        }
       }
     }
   }
