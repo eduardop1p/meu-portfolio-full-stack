@@ -521,21 +521,9 @@ export const PortfolioContainer = styled.section`
           transform: translateX(-5rem);
           column-gap: 5px;
         }
-        20% {
-          column-gap: 10px;
-        }
-        40% {
-          column-gap: 15px;
-        }
-        60% {
-          column-gap: 20px;
-        }
-        80% {
-          column-gap: 25px;
-        }
         100% {
           transform: translateX(0);
-          column-gap: 32px;
+          column-gap: 2rem;
         }
       }
 
@@ -554,7 +542,8 @@ export const PortfolioContainer = styled.section`
         overflow: hidden;
         position: relative;
 
-        &:hover {
+        &:hover,
+        &.an-portfolio-details {
           & > .project-details {
             opacity: 1;
 
