@@ -14,12 +14,14 @@ import Main, {
 
 export default function Portfolio() {
   const projects = useRef([
-    { name: 'Project 1' },
-    { name: 'Project 2' },
-    { name: 'Project 3' },
-    { name: 'Project 4' },
-    { name: 'Project 5' },
-    { name: 'Project 6' },
+    { name: 'Mflix app', imgUrl: mflixAppProject },
+    { name: 'Api mflix server', imgUrl: '' },
+    { name: 'Meu protfólio', imgUrl: '' },
+    { name: 'Calculadora de descontos', imgUrl: '' },
+    { name: 'Landing page do usuário', imgUrl: '' },
+    { name: 'Rastreador de endereços ip', imgUrl: '' },
+    { name: 'Card resumo de pedido', imgUrl: '' },
+    { name: 'Form simples de login', imgUrl: '' },
   ]).current;
 
   let projectDetails = useRef(null);
@@ -49,12 +51,12 @@ export default function Portfolio() {
                   setProjectDetailsShow(!projectDetailsShow);
                 }}
               >
+                <img src={project.imgUrl} alt={project.name} />
                 <div className="project-details">
                   <h2>{project.name}</h2>
                 </div>
               </div>
             ))}
-            {/* <img src={mflixAppProject} alt="mflix-app-project" /> */}
           </div>
           <PortfolioDetailsContainer
             onClick={event => {

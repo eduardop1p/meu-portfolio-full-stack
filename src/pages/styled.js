@@ -554,6 +554,14 @@ export const PortfolioContainer = styled.section`
           }
         }
 
+        & > img {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          object-fit: contain;
+          z-index: 1;
+        }
+
         & > .project-details {
           background-color: ${colors.color3};
           display: flex;
@@ -563,11 +571,15 @@ export const PortfolioContainer = styled.section`
           height: 100%;
           position: absolute;
           opacity: 0;
+          z-index: 2;
           transition: opacity 0.4s ease-in-out;
 
           & > h2 {
             font-size: 1.25rem;
             font-weight: 500;
+            width: 70%;
+            line-height: 1.2;
+            text-align: center;
             color: ${colors.color1};
             text-transform: uppercase;
             transform: translateY(-20px);
