@@ -59,11 +59,7 @@ export default function PersonalInfos({ darkMode }) {
             </div>
           </div>
         </div>
-        <a
-          className="download-cv"
-          href={cvDawnload}
-          download="cv-eduardo-lavoura-dev-full-stack.png"
-        >
+        <a className="download-cv" href={cvDawnload} download="cv-eduardo-lavoura-dev-full-stack">
           <ButtonContainer data-dark-mode={darkMode} strokeWidth1rem>
             Download cv
             <span>

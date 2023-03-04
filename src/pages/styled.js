@@ -536,11 +536,14 @@ export const PortfolioContainer = styled.section`
       animation-timing-function: ease-in-out;
 
       & > div {
-        background-color: ${colors.color12};
+        background-color: ${colors.color9};
         border-radius: 10px;
         cursor: pointer;
         overflow: hidden;
         position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         &:hover,
         &.an-portfolio-details {
@@ -555,8 +558,8 @@ export const PortfolioContainer = styled.section`
         }
 
         & > img {
-          width: 100%;
-          height: 100%;
+          width: 40%;
+          height: auto;
           position: absolute;
           object-fit: contain;
           z-index: 1;
@@ -654,6 +657,42 @@ export const PortfolioDetailsContainer = styled.div`
         & > path {
           stroke: ${colors.color1};
           stroke-width: 2rem;
+        }
+      }
+    }
+
+    & > .details {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      & > h1 {
+        color: ${colors.color3};
+        text-transform: uppercase;
+        font-size: 2rem;
+        margin-bottom: 1.7rem;
+      }
+
+      & > .info {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        & > div {
+          display: flex;
+          flex-direction: column;
+
+          & > :not(:last-child) {
+            margin-bottom: 5px;
+          }
+
+          & > h2 {
+            color: ${colors.color1};
+            font-size: 0.95rem;
+            font-weight: 500;
+            font-family: 'Open Sans', sans-serif;
+          }
         }
       }
     }
