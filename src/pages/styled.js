@@ -538,56 +538,64 @@ export const PortfolioContainer = styled.section`
       & > div {
         background-color: ${colors.color9};
         border-radius: 10px;
-        cursor: pointer;
         overflow: hidden;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        width: 100%;
+        height: 100%;
 
-        &:hover,
-        &.an-portfolio-details {
-          & > .project-details {
-            opacity: 1;
-
-            & > h2 {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-        }
-
-        & > img {
-          width: 40%;
-          height: auto;
-          position: absolute;
-          object-fit: contain;
-          z-index: 1;
-        }
-
-        & > .project-details {
-          background-color: ${colors.color3};
+        & > .on-project {
+          cursor: pointer;
+          background-color: inherit;
+          position: relative;
           display: flex;
           justify-content: center;
           align-items: center;
           width: 100%;
           height: 100%;
-          position: absolute;
-          opacity: 0;
-          z-index: 2;
-          transition: opacity 0.4s ease-in-out;
 
-          & > h2 {
-            font-size: 1.25rem;
-            font-weight: 500;
-            width: 70%;
-            line-height: 1.2;
-            text-align: center;
-            color: ${colors.color1};
-            text-transform: uppercase;
-            transform: translateY(-20px);
+          &:hover,
+          &.an-portfolio-details {
+            & > .project-details {
+              opacity: 1;
+
+              & > h2 {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
+          }
+
+          & > img {
+            width: 40%;
+            height: auto;
+            position: absolute;
+            object-fit: contain;
+            z-index: 1;
+          }
+
+          & > .project-details {
+            background-color: ${colors.color3};
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            position: absolute;
             opacity: 0;
-            transition: transform 0.5s ease-in-out, opacity 0.7s ease-in-out;
+            z-index: 2;
+            transition: opacity 0.4s ease-in-out;
+
+            & > h2 {
+              font-size: 1.25rem;
+              font-weight: 500;
+              width: 70%;
+              line-height: 1.2;
+              text-align: center;
+              color: ${colors.color1};
+              text-transform: uppercase;
+              transform: translateY(-20px);
+              opacity: 0;
+              transition: transform 0.5s ease-in-out, opacity 0.7s ease-in-out;
+            }
           }
         }
       }
