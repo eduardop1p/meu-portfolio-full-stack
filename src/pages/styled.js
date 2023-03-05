@@ -622,11 +622,10 @@ export const PortfolioDetailsContainer = styled.div`
   }
 
   & > .portfolio-details-and-close {
-    border-radius: 10px;
-    border: 2px solid ${colors.color7};
-    background-color: ${colors.color2};
-    width: 680px;
-    height: calc(100% - 10rem);
+    border-radius: 1rem;
+    background-color: ${colors.color16};
+    width: 750px;
+    height: calc(100% - 9rem);
     position: relative;
     transition: background 0.25s ease-in-out;
 
@@ -666,6 +665,7 @@ export const PortfolioDetailsContainer = styled.div`
       display: flex;
       flex-direction: column;
       align-items: center;
+      height: 100%;
 
       & > h1 {
         color: ${colors.color3};
@@ -679,20 +679,58 @@ export const PortfolioDetailsContainer = styled.div`
         justify-content: space-between;
         width: 100%;
 
+        & > :first-child {
+          margin-right: 3rem;
+        }
+
         & > div {
           display: flex;
           flex-direction: column;
 
           & > :not(:last-child) {
-            margin-bottom: 5px;
+            margin-bottom: 10px;
           }
 
-          & > h2 {
-            color: ${colors.color1};
-            font-size: 0.95rem;
-            font-weight: 500;
-            font-family: 'Open Sans', sans-serif;
+          & > div {
+            display: flex;
+            align-items: center;
+
+            & > svg {
+              width: 17px;
+              height: 17px;
+              margin-right: 0.5rem;
+              fill: ${colors.color1};
+              flex: none;
+            }
+
+            & > h2 {
+              color: ${colors.color1};
+              font-size: 0.95rem;
+              font-weight: 500;
+              font-family: 'Open Sans', sans-serif;
+
+              & > a {
+                color: ${colors.color3};
+                font-family: 'Open Sans', sans-serif;
+                text-decoration: underline;
+              }
+            }
           }
+        }
+      }
+
+      & > .site-iframe {
+        background-color: ${colors.color2};
+        width: 100%;
+        height: 100%;
+        margin-top: 2rem;
+        border-radius: 10px;
+        overflow: hidden;
+
+        & > iframe {
+          width: 100%;
+          height: 100%;
+          border: none;
         }
       }
     }
