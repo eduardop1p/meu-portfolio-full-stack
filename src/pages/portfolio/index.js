@@ -3,10 +3,12 @@
 import { useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { Skeleton } from '@mui/material';
 
 import mflixAppProject from '../../assets/projectsImgs/mflix-app-project.png';
 import movie from '../../assets/projectsImgs/movie.png';
 import api from '../../assets/projectsImgs/api.png';
+import apiServer from '../../assets/projectsImgs/api-server.png';
 import portfolio from '../../assets/projectsImgs/portfolio.png';
 import discount from '../../assets/projectsImgs/desconto.png';
 import landingPage from '../../assets/projectsImgs/landing-page.png';
@@ -90,6 +92,16 @@ export default function Portfolio() {
 
   const { darkMode } = useSelector(state => state.darkMode);
 
+  function handleClickOnProject(event, link) {
+    projectDetails.current = event.currentTarget;
+    event.currentTarget.classList.add('an-portfolio-details');
+    const nextElementSibling = event.currentTarget.nextElementSibling;
+    const iframeNextElementSibling = nextElementSibling.querySelector('iframe');
+    iframeNextElementSibling.src = link;
+    nextElementSibling.classList.add('active-portfolio-details');
+    iframeNextElementSibling.onload = () => iframeNextElementSibling.nextElementSibling.remove();
+  }
+
   return (
     <Main>
       <BgActiveRouter data-dark-mode={darkMode} />
@@ -105,13 +117,7 @@ export default function Portfolio() {
             {projects.map(project => (
               <div key={project.name}>
                 <div
-                  onClick={event => {
-                    projectDetails.current = event.currentTarget;
-                    event.currentTarget.classList.add('an-portfolio-details');
-                    event.currentTarget.nextElementSibling.classList.add(
-                      'active-portfolio-details'
-                    );
-                  }}
+                  onClick={event => handleClickOnProject(event, project.link)}
                   className="on-project"
                 >
                   <img src={project.imgUrl} alt={project.name} />
@@ -186,7 +192,17 @@ export default function Portfolio() {
                         </div>
                       </div>
                       <div className="site-iframe">
-                        <iframe src={project.link} loading="lazy"></iframe>
+                        <iframe
+                          loading="lazy"
+                          className={project.projectType === 'API' ? 'api-iframe-color-fff' : null}
+                        ></iframe>
+                        <Skeleton
+                          sx={{ bgcolor: 'grey.900' }}
+                          variant="rectangular"
+                          animation="wave"
+                          width="100%"
+                          height="100%"
+                        />
                       </div>
                     </div>
                   </div>

@@ -734,11 +734,22 @@ export const PortfolioDetailsContainer = styled.div`
         margin-top: 2rem;
         border-radius: 10px;
         overflow: hidden;
+        position: relative;
 
         & > iframe {
           width: 100%;
           height: 100%;
           border: none;
+
+          &.api-iframe-color-fff {
+            background-color: ${colors.color1};
+          }
+        }
+
+        & > span {
+          position: absolute;
+          z-index: 3;
+          top: 0;
         }
       }
     }
