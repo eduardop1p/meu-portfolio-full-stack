@@ -833,6 +833,7 @@ export const ContactContainer = styled.section`
     & > .contact-and-info {
       display: flex;
       justify-content: space-between;
+      width: 100%;
 
       & > :first-child {
         & > h1 {
@@ -847,7 +848,90 @@ export const ContactContainer = styled.section`
           font-family: 'Open Sans', sans-serif;
           font-size: 0.95rem;
           color: ${colors.color1};
-          margin-bottom: 1.5rem;
+        }
+
+        & > .address-mail-phone {
+          display: flex;
+          flex-direction: column;
+          margin: 1.75rem 0;
+
+          & > :not(:last-child) {
+            margin-bottom: 1.5rem;
+          }
+
+          & > div {
+            display: flex;
+
+            & > svg {
+              fill: ${colors.color3};
+              width: 35px;
+              height: 35px;
+
+              &.phone {
+                width: 40px;
+                height: 40px;
+              }
+            }
+
+            & > div {
+              display: flex;
+              flex-direction: column;
+              margin-left: 1rem;
+
+              & > h2 {
+                color: ${colors.color1};
+                text-transform: uppercase;
+                opacity: 0.8;
+                font-weight: 500;
+                font-size: 0.95rem;
+                font-family: 'Open Sans', sans-serif;
+                margin-bottom: 5px;
+              }
+
+              & > h3,
+              & > a {
+                color: ${colors.color1};
+                font-weight: 500;
+                font-size: 0.95rem;
+                font-family: 'Open Sans', sans-serif;
+              }
+            }
+          }
+        }
+
+        & > .social-links {
+          display: flex;
+
+          & > :not(:last-child) {
+            margin-right: 10px;
+          }
+
+          & > a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 100%;
+            background-color: ${colors.color4};
+            transition: background 0.25s ease-in-out;
+
+            & > svg {
+              transition: fill 0.25s ease-in-out;
+
+              &[data-dark-mode='false'] {
+                fill: ${colors.color6};
+              }
+            }
+
+            &:hover {
+              background-color: ${colors.color3};
+
+              & > [data-dark-mode='false'] {
+                fill: ${colors.color1};
+              }
+            }
+          }
         }
       }
     }
