@@ -535,12 +535,17 @@ export const PortfolioContainer = styled.section`
       animation-duration: 1s;
       animation-timing-function: ease-in-out;
 
+      &[data-dark-mode='false'] > div {
+        background-color: ${colors.color15};
+      }
+
       & > div {
         background-color: ${colors.color9};
         border-radius: 10px;
         overflow: hidden;
         width: 100%;
         height: 100%;
+        transition: background 0.25s ease-in-out;
 
         & > .on-project {
           cursor: pointer;
@@ -633,7 +638,7 @@ export const PortfolioDetailsContainer = styled.div`
     border-radius: 1rem;
     background-color: ${colors.color16};
     width: 750px;
-    height: calc(100% - 9rem);
+    height: calc(100% - 5rem);
     position: relative;
     transition: background 0.25s ease-in-out;
 
@@ -644,8 +649,8 @@ export const PortfolioDetailsContainer = styled.div`
 
     & > .close-portfolio-details {
       position: absolute;
-      top: -3.5rem;
-      right: -2rem;
+      top: -1.5rem;
+      right: -3.5rem;
       width: 45px;
       height: 45px;
       border-radius: 100%;
@@ -687,6 +692,16 @@ export const PortfolioDetailsContainer = styled.div`
         justify-content: space-between;
         width: 100%;
 
+        &[data-dark-mode='false'] > div > div {
+          & > svg {
+            fill: ${colors.color6};
+          }
+
+          & > h2 {
+            color: ${colors.color6};
+          }
+        }
+
         & > :first-child {
           margin-right: 3rem;
         }
@@ -701,7 +716,6 @@ export const PortfolioDetailsContainer = styled.div`
 
           & > div {
             display: flex;
-            align-items: center;
 
             & > svg {
               width: 17px;
@@ -709,6 +723,8 @@ export const PortfolioDetailsContainer = styled.div`
               margin-right: 0.5rem;
               fill: ${colors.color1};
               flex: none;
+              margin-top: 3px;
+              transition: fill 0.25s ease-in-out;
             }
 
             & > h2 {
@@ -716,10 +732,19 @@ export const PortfolioDetailsContainer = styled.div`
               font-size: 0.95rem;
               font-weight: 500;
               font-family: 'Open Sans', sans-serif;
+              transition: color 0.25s ease-in-out;
+
+              & > * {
+                font-family: 'Open Sans', sans-serif;
+                font-weight: 600;
+              }
+
+              & > span {
+                color: inherit;
+              }
 
               & > a {
                 color: ${colors.color3};
-                font-family: 'Open Sans', sans-serif;
                 text-decoration: underline;
               }
             }
@@ -746,7 +771,7 @@ export const PortfolioDetailsContainer = styled.div`
           }
         }
 
-        & > span {
+        & > .MuiSkeleton-root {
           position: absolute;
           z-index: 3;
           top: 0;
@@ -756,6 +781,77 @@ export const PortfolioDetailsContainer = styled.div`
   }
 `;
 
-export const ContactContainer = styled.section``;
+export const ContactContainer = styled.section`
+  background-color: ${colors.color2};
+  width: 100%;
+  height: 100vh;
+  overflow: hidden visible;
+  transition: background 0.25s ease-in-out;
+
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: ${colors.color12};
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: ${colors.color11};
+    border: 3px solid ${colors.color12};
+    border-radius: 2rem;
+  }
+
+  &[data-dark-mode='false'] {
+    background-color: ${colors.color1};
+
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: ${colors.color15};
+      border: none;
+    }
+  }
+
+  & > .contact {
+    background-color: inherit;
+    width: calc(100% - 12.5rem);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5rem;
+    animation-name: ${slideUpAnimation};
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+
+    & > .contact-and-info {
+      display: flex;
+      justify-content: space-between;
+
+      & > :first-child {
+        & > h1 {
+          font-size: 1.6rem;
+          font-weight: 600;
+          color: ${colors.color1};
+          text-transform: uppercase;
+          margin-bottom: 1rem;
+        }
+
+        & > p {
+          font-family: 'Open Sans', sans-serif;
+          font-size: 0.95rem;
+          color: ${colors.color1};
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
+  }
+`;
 
 export default Main;
