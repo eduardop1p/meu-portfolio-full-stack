@@ -159,7 +159,7 @@ export const HomeContainer = styled.section`
   }
 `;
 
-export const ButtonContainer = styled.div`
+export const ButtonContainer = styled.button`
   margin-top: 1.5rem;
   width: fit-content;
   cursor: pointer;
@@ -220,7 +220,7 @@ export const ButtonContainer = styled.div`
 
     & > svg > path {
       stroke: ${colors.color1};
-      stroke-width: ${strokeWidth1rem => (strokeWidth1rem ? '1rem' : '2rem')};
+      stroke-width: 1rem;
     }
   }
 `;
@@ -835,19 +835,55 @@ export const ContactContainer = styled.section`
       justify-content: space-between;
       width: 100%;
 
-      & > :first-child {
+      & > div {
+        width: 350px;
+        margin-right: 3rem;
+
+        &[data-dark-mode='false'] {
+          & > h1,
+          & > p {
+            color: ${colors.color6};
+          }
+
+          & > .address-mail-phone > div > div {
+            & > h2,
+            & > h3,
+            & > a {
+              color: ${colors.color6};
+            }
+          }
+
+          & > .social-links {
+            & > a {
+              background-color: ${colors.color5};
+
+              & > svg {
+                fill: ${colors.color6};
+              }
+
+              &:hover {
+                & > svg {
+                  fill: ${colors.color1};
+                }
+              }
+            }
+          }
+        }
+
         & > h1 {
           font-size: 1.6rem;
           font-weight: 600;
           color: ${colors.color1};
           text-transform: uppercase;
           margin-bottom: 1rem;
+          transition: color 0.25s ease-in-out;
         }
 
         & > p {
           font-family: 'Open Sans', sans-serif;
           font-size: 0.95rem;
           color: ${colors.color1};
+          transition: color 0.25s ease-in-out;
         }
 
         & > .address-mail-phone {
@@ -866,6 +902,7 @@ export const ContactContainer = styled.section`
               fill: ${colors.color3};
               width: 35px;
               height: 35px;
+              flex: none;
 
               &.phone {
                 width: 40px;
@@ -886,6 +923,7 @@ export const ContactContainer = styled.section`
                 font-size: 0.95rem;
                 font-family: 'Open Sans', sans-serif;
                 margin-bottom: 5px;
+                transition: color 0.25s ease-in-out;
               }
 
               & > h3,
@@ -894,6 +932,7 @@ export const ContactContainer = styled.section`
                 font-weight: 500;
                 font-size: 0.95rem;
                 font-family: 'Open Sans', sans-serif;
+                transition: color 0.25s ease-in-out;
               }
             }
           }
@@ -917,20 +956,113 @@ export const ContactContainer = styled.section`
             transition: background 0.25s ease-in-out;
 
             & > svg {
+              width: 17px;
+              height: 17px;
+              fill: ${colors.color1};
               transition: fill 0.25s ease-in-out;
-
-              &[data-dark-mode='false'] {
-                fill: ${colors.color6};
-              }
             }
 
             &:hover {
               background-color: ${colors.color3};
-
-              & > [data-dark-mode='false'] {
-                fill: ${colors.color1};
-              }
             }
+          }
+        }
+      }
+
+      & > form {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+
+        &[data-dark-mode='false'] {
+          & > .your-name-and-email {
+            & > input {
+              border: 1px solid ${colors.color14};
+              background-color: ${colors.color1};
+              color: ${colors.color6};
+              font-weight: 500;
+            }
+          }
+
+          & > input,
+          & > textarea {
+            border: 1px solid ${colors.color14};
+            background-color: ${colors.color1};
+            color: ${colors.color6};
+            font-weight: 500;
+          }
+        }
+
+        & > .your-name-and-email {
+          display: flex;
+
+          & > :first-child {
+            margin-right: 1.5rem;
+          }
+
+          & > input {
+            width: 100%;
+            border: 1px solid ${colors.color2};
+            background-color: ${colors.color16};
+            color: ${colors.color1};
+            padding: 0.65rem 1.6rem;
+            font-size: 0.95rem;
+            border-radius: 2rem;
+            transition: border 0.25s ease-in-out, background 0.25s ease-in-out,
+              color 0.25s ease-in-out;
+
+            &::placeholder {
+              text-transform: uppercase;
+              font-size: inherit;
+            }
+            &:focus {
+              border: 1px solid ${colors.color3};
+            }
+          }
+        }
+
+        & > input {
+          margin: 1.75rem 0;
+          width: 100%;
+          border: 1px solid ${colors.color2};
+          background-color: ${colors.color16};
+          color: ${colors.color1};
+          padding: 0.65rem 1.6rem;
+          font-size: 0.95rem;
+          border-radius: 2rem;
+          transition: border 0.25s ease-in-out, background 0.25s ease-in-out,
+            color 0.25s ease-in-out;
+
+          &::placeholder {
+            text-transform: uppercase;
+            font-size: inherit;
+          }
+          &:focus {
+            border: 1px solid ${colors.color3};
+          }
+        }
+
+        & > textarea {
+          max-width: 100%;
+          min-width: 100%;
+          height: 250px;
+          max-height: 600px;
+          min-height: 100px;
+          border: 1px solid ${colors.color2};
+          background-color: ${colors.color16};
+          color: ${colors.color1};
+          padding: 0.7rem 1.6rem;
+          font-size: 0.95rem;
+          border-radius: 2rem;
+          transition: border 0.25s ease-in-out, background 0.25s ease-in-out,
+            color 0.25s ease-in-out;
+
+          &::placeholder {
+            text-transform: uppercase;
+            font-size: inherit;
+          }
+          &:focus {
+            border: 1px solid ${colors.color3};
           }
         }
       }

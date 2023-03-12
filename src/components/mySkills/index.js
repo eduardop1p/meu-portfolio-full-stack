@@ -21,7 +21,7 @@ export default function MySkills({ darkMode, aboutRouter }) {
 
   return (
     <MySkillsContainer mySkills={mySkills}>
-      <h2 data-dark-mode={darkMode}>Minhas skills</h2>
+      <h2 data-dark-mode={darkMode}>Minhas principais skills</h2>
       <div className={aboutRouter ? 'my-skills-100-grid' : 'my-skills'}>
         {mySkills.map(skill => (
           <SkillPercentageTitle percentageSkill={skill.percentage} key={skill.name}>

@@ -60,7 +60,7 @@ export default function PersonalInfos({ darkMode }) {
           </div>
         </div>
         <a className="download-cv" href={cvDawnload} download="cv-eduardo-lavoura-dev-full-stack">
-          <ButtonContainer data-dark-mode={darkMode} strokeWidth1rem>
+          <ButtonContainer data-dark-mode={darkMode}>
             Download cv
             <span>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -72,20 +72,20 @@ export default function PersonalInfos({ darkMode }) {
       </div>
       <div className="experience-projects-customers-won" data-dark-mode={darkMode}>
         <div>
-          <h2>2+</h2>
+          <h2>+2</h2>
           <h3>Anos de experiência</h3>
         </div>
         <div>
-          <h2>10+</h2>
+          <h2>+10</h2>
           <h3>Projetos completos</h3>
         </div>
         <div>
-          <h2>16+</h2>
-          <h3>Clientes felizes</h3>
+          <h2>+40</h2>
+          <h3>Skills no asernal</h3>
         </div>
         <div>
-          <h2>0+</h2>
-          <h3>Prêmios ganhos</h3>
+          <h2>+70</h2>
+          <h3>Commits no GitHub</h3>
         </div>
       </div>
     </PersonalInfosContainer>
