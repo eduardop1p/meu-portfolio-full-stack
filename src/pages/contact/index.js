@@ -1,5 +1,6 @@
 /* eslint-disable */
 import { useSelector } from 'react-redux';
+import emailjs from '@emailjs/browser';
 
 import Main, {
   BgActiveRouter,
@@ -11,8 +12,25 @@ import Main, {
 export default function Contact() {
   const { darkMode } = useSelector(state => state.darkMode);
 
-  function handleSubmitForm(event) {
+  async function handleSubmitForm(event) {
     event.preventDefault();
+    const name = event.target.querySelector('input[name="name"]').value;
+    const emailClient = event.target.querySelector('input[name="email"]').value;
+    const subject = event.target.querySelector('input[name="subject"]').value;
+    const message = event.target.querySelector('textarea[name="message"]').value;
+
+    try {
+      const send = await emailjs.send(
+        process.env.REACT_APP_SERVICE_ID,
+        process.env.REACT_APP_TEMPLATE_ID,
+        { name, emailClient, subject, message },
+        process.env.REACT_APP_PUBLIC_KEY
+      );
+
+      console.log(send);
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   return (
@@ -113,6 +131,7 @@ export default function Contact() {
               </div>
               <input name="subject" type="text" placeholder="Seu assunto" required />
               <textarea name="message" placeholder="Sua mensagem" required></textarea>
+
               <ButtonContainer data-dark-mode={darkMode} type="submit">
                 Enviar mensagem
                 <span>

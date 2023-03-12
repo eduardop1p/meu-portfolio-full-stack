@@ -84,7 +84,7 @@ export default function PersonalInfos({ darkMode }) {
           <h3>Skills no asernal</h3>
         </div>
         <div>
-          <h2>+70</h2>
+          <h2>+441</h2>
           <h3>Commits no GitHub</h3>
         </div>
       </div>

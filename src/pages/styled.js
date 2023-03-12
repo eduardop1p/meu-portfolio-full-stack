@@ -835,8 +835,12 @@ export const ContactContainer = styled.section`
       justify-content: space-between;
       width: 100%;
 
+      & > * {
+        flex: none;
+      }
+
       & > div {
-        width: 350px;
+        width: 30%;
         margin-right: 3rem;
 
         &[data-dark-mode='false'] {
@@ -972,7 +976,7 @@ export const ContactContainer = styled.section`
       & > form {
         display: flex;
         flex-direction: column;
-        width: 70%;
+        width: 64%;
 
         &[data-dark-mode='false'] {
           & > .your-name-and-email {
@@ -1046,6 +1050,7 @@ export const ContactContainer = styled.section`
           max-width: 100%;
           min-width: 100%;
           height: 250px;
+          overflow: hidden;
           max-height: 600px;
           min-height: 100px;
           border: 1px solid ${colors.color2};
