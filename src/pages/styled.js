@@ -528,7 +528,7 @@ export const PortfolioContainer = styled.section`
       }
 
       display: grid;
-      grid-template: repeat(3, 230px) / repeat(3, 1fr);
+      grid-template: repeat(3, 204px) / repeat(3, 1fr);
       gap: 2rem;
 
       animation-name: projectsAnimation;
@@ -570,7 +570,7 @@ export const PortfolioContainer = styled.section`
           }
 
           & > img {
-            width: 40%;
+            width: 100%;
             height: auto;
             position: absolute;
             object-fit: contain;

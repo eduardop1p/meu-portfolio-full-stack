@@ -5,12 +5,14 @@ import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { Skeleton } from '@mui/material';
 
-import mflixAppProject from '../../assets/projectsImgs/mflix-app-project.png';
 import movie from '../../assets/projectsImgs/movie.png';
 import api from '../../assets/projectsImgs/api.png';
-import portfolio from '../../assets/projectsImgs/portfolio.png';
-import discount from '../../assets/projectsImgs/desconto.png';
-import landingPage from '../../assets/projectsImgs/landing-page.png';
+// import portfolio from '';
+import discount from '../../assets/projectsImgs/discount.png';
+import landingPage from '../../assets/projectsImgs/landingpage.png';
+import cardResume from '../../assets/projectsImgs/card-resumo.png';
+import formSimple from '../../assets/projectsImgs/form-simples.png';
+import ipTracker from '../../assets/projectsImgs/ip-tracker.png';
 import { color5 } from '../../colors';
 import Main, {
   BgActiveRouter,
@@ -39,7 +41,7 @@ export default function Portfolio() {
     },
     {
       name: 'Meu protfólio',
-      imgUrl: portfolio,
+      imgUrl: '',
       projectType: 'Web site',
       languages: ['HTML', 'CSS', 'JavaScript', 'React', 'Styled components'],
       repositorie: 'https://github.com/eduardop1p/meu-portfolio-full-stack',
@@ -63,7 +65,7 @@ export default function Portfolio() {
     },
     {
       name: 'Rastreador de endereços ip',
-      imgUrl: '',
+      imgUrl: ipTracker,
       projectType: 'Web app',
       languages: ['HTML', 'CSS', 'JavaScript'],
       repositorie: 'https://github.com/eduardop1p/IP-Address-Tracker-Rastreador-de-Enderecos-IP',
@@ -71,7 +73,7 @@ export default function Portfolio() {
     },
     {
       name: 'Card resumo de pedido',
-      imgUrl: mflixAppProject,
+      imgUrl: cardResume,
       projectType: 'Web site',
       languages: ['HTML', 'CSS'],
       repositorie: 'https://github.com/eduardop1p/FrontEnd-card-resumo-de-pedido',
@@ -79,11 +81,11 @@ export default function Portfolio() {
     },
     {
       name: 'Form simples de login',
-      imgUrl: '',
+      imgUrl: formSimple,
       projectType: 'Web site',
       languages: ['HTML', 'CSS', 'JavaScript'],
-      repositorie: 'Projeto pessoal',
-      link: 'https://github.com/eduardop1p/form-simples-facul',
+      repositorie: 'https://github.com/eduardop1p/form-simples-facul',
+      link: 'https://eduardop1p.github.io/form-simples-facul/',
     },
   ]).current;
 
