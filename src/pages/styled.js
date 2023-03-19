@@ -163,7 +163,6 @@ export const ButtonContainer = styled.button`
   margin-top: 1.5rem;
   width: fit-content;
   cursor: pointer;
-  position: relative;
   z-index: 2;
   overflow: hidden;
   border-radius: 2.2rem;
@@ -175,6 +174,7 @@ export const ButtonContainer = styled.button`
   font-weight: 600;
   color: ${colors.color1};
   transition: color 0.25s ease-in-out;
+  position: relative;
 
   &[data-dark-mode='false'] {
     color: ${colors.color6};
