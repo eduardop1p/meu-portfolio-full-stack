@@ -2,7 +2,7 @@
 
 // aqui falta colocar um cv pra download
 
-import myCv from '../../assets/cv/my-cv-full-stack.pdf';
+import myCv from '../../assets/cv/my_cv_full_stack.pdf';
 import { ButtonContainer } from '../../pages/styled';
 import PersonalInfosContainer from './styled';
 
