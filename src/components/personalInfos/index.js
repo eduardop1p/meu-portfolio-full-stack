@@ -2,7 +2,7 @@
 
 // aqui falta colocar um cv pra download
 
-import cvDawnload from '../../assets/img/31c8b9e24be5ad81c96331dcd7f26153.jpg';
+import myCv from '../../assets/cv/my-cv-full-stack.pdf';
 import { ButtonContainer } from '../../pages/styled';
 import PersonalInfosContainer from './styled';
 
@@ -59,7 +59,7 @@ export default function PersonalInfos({ darkMode }) {
             </div>
           </div>
         </div>
-        <a className="download-cv" href={cvDawnload} download="cv-eduardo-lavoura-dev-full-stack">
+        <a className="download-cv" href={myCv} download="cv-eduardo-lavoura-dev-full-stack">
           <ButtonContainer data-dark-mode={darkMode}>
             Download cv
             <span>

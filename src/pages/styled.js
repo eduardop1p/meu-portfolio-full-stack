@@ -63,7 +63,7 @@ export const HomeContainer = styled.section`
 
     & > img {
       height: calc(100vh - 5rem);
-      max-width: 455px;
+      max-width: 450px;
       object-fit: cover;
       box-shadow: 0 0 7px rgb(0 0 0 / 90%);
       border-radius: 2rem;
@@ -528,7 +528,7 @@ export const PortfolioContainer = styled.section`
       }
 
       display: grid;
-      grid-template: repeat(3, 204px) / repeat(3, 1fr);
+      grid-template: repeat(3, 180px) / repeat(3, 320px);
       gap: 2rem;
 
       animation-name: projectsAnimation;
@@ -571,7 +571,7 @@ export const PortfolioContainer = styled.section`
 
           & > img {
             width: 100%;
-            height: auto;
+            height: 100%;
             position: absolute;
             object-fit: contain;
             z-index: 1;
@@ -763,7 +763,7 @@ export const PortfolioDetailsContainer = styled.div`
 
         & > iframe {
           width: 100%;
-          height: 100%;
+          height: 280px;
           border: none;
 
           &.api-iframe-color-fff {

@@ -24,7 +24,7 @@ import Main, {
 export default function Portfolio() {
   const projects = useRef([
     {
-      name: 'Mflix app',
+      name: 'Mflix app de filmes e series',
       imgUrl: movie,
       projectType: 'Web app',
       languages: ['HTML', 'CSS', 'JavaScript', 'React', 'Styled components'],
@@ -32,7 +32,7 @@ export default function Portfolio() {
       link: 'https://mflix-app.vercel.app',
     },
     {
-      name: 'Api mflix server',
+      name: 'API com CRUD de usuário completo',
       imgUrl: api,
       projectType: 'API',
       languages: ['NodeJs', 'Express', 'MongoDb', 'Multer'],
