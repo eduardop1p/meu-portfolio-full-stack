@@ -15,7 +15,6 @@ const slideUpAnimation = keyframes`
 
 const Main = styled.main`
   width: 100%;
-  overflow: hidden;
   position: relative;
   z-index: 1;
 `;
