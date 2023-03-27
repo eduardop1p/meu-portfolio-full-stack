@@ -1,8 +1,6 @@
 /* eslint-disable */
 
-// aqui falta colocar um cv pra download
-
-import myCv from '../../assets/cv/my_cv_full_stack.pdf';
+import myCv from '../../assets/cv/Web_Developer.pdf';
 import { ButtonContainer } from '../../pages/styled';
 import PersonalInfosContainer from './styled';
 
@@ -55,11 +53,11 @@ export default function PersonalInfos({ darkMode }) {
             </div>
             <div>
               <h4>Idiomas:</h4>
-              <h4>Portugues - nativo, Ingles - intermediário, Espanhol - Básico</h4>
+              <h4>Portugues - nativo, Ingles - Básico, Espanhol - Básico</h4>
             </div>
           </div>
         </div>
-        <a className="download-cv" href={myCv} download="cv-eduardo-lavoura-dev-full-stack">
+        <a className="download-cv" href={myCv} download="cv_eduardo_lavoura_dev_full_stack">
           <ButtonContainer data-dark-mode={darkMode}>
             Download cv
             <span>
@@ -72,7 +70,7 @@ export default function PersonalInfos({ darkMode }) {
       </div>
       <div className="experience-projects-customers-won" data-dark-mode={darkMode}>
         <div>
-          <h2>+2</h2>
+          <h2>+{new Date().getFullYear() - 2021}</h2>
           <h3>Anos de experiência</h3>
         </div>
         <div>
@@ -84,7 +82,7 @@ export default function PersonalInfos({ darkMode }) {
           <h3>Skills no asernal</h3>
         </div>
         <div>
-          <h2>+441</h2>
+          <h2>+500</h2>
           <h3>Commits no GitHub</h3>
         </div>
       </div>
