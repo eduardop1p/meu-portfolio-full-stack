@@ -16,6 +16,8 @@ const slideUpAnimation = keyframes`
 const Main = styled.main`
   width: 100%;
   overflow: hidden;
+  position: relative;
+  z-index: 1;
 `;
 
 export const BgActiveRouter = styled.div`
@@ -56,24 +58,104 @@ export const HomeContainer = styled.section`
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
 
+  @media (max-width: 1200px) {
+    overflow: hidden scroll;
+
+    ::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background-color: ${colors.color12};
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: ${colors.color11};
+      border: 3px solid ${colors.color12};
+      border-radius: 2rem;
+    }
+
+    &[data-dark-mode='false'] {
+      background-color: ${colors.color1};
+
+      ::-webkit-scrollbar {
+        width: 7px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: ${colors.color15};
+        border: none;
+      }
+    }
+  }
+
   & > .photo-and-more-information {
     display: flex;
     align-items: center;
     margin: 2.5rem;
 
+    @media (max-width: 1200px) {
+      flex-direction: column;
+      margin-top: 13rem;
+      margin-bottom: 5rem;
+    }
+    @media (max-width: 600px) {
+      margin-top: 15rem;
+    }
+    @media (max-width: 511px) {
+      margin-top: 18rem;
+    }
+    @media (max-width: 500px) {
+      margin-top: 23rem;
+    }
+    @media (max-width: 467px) {
+      margin-top: 26rem;
+    }
+    @media (max-width: 423px) {
+      margin-top: 28rem;
+    }
+
     & > img {
       height: calc(100vh - 5rem);
-      max-width: 450px;
+      max-width: 35%;
       object-fit: cover;
       box-shadow: 0 0 7px rgb(0 0 0 / 90%);
       border-radius: 2rem;
+
+      @media (max-width: 1200px) {
+        border-radius: 100%;
+        width: 270px;
+        height: 270px;
+        max-width: 270px;
+        margin: 0 auto 25px;
+        border: 4px solid ${colors.color16};
+        box-shadow: none;
+      }
+      @media (max-width: 700px) {
+        width: 250px;
+        height: 250px;
+      }
+      @media (max-width: 500px) {
+        width: 230px;
+        height: 230px;
+      }
     }
 
     & > .more-information {
       display: flex;
       flex-direction: column;
       width: 50%;
-      margin-left: 5rem;
+      margin-left: 4rem;
+
+      @media (max-width: 1200px) {
+        width: fit-content;
+        margin-left: 0;
+        align-items: center;
+      }
 
       & > h1 {
         font-size: 3.15rem;
@@ -84,19 +166,27 @@ export const HomeContainer = styled.section`
         line-height: 1.2;
         transition: color 0.25s ease-in-out;
 
+        @media (max-width: 1200px) {
+          font-size: 2.37rem;
+          padding-left: 0;
+          text-align: center;
+        }
+
         &[data-dark-mode='false'] {
           color: ${colors.color6};
         }
 
-        &::before {
-          content: '';
-          position: absolute;
-          width: 2.5rem;
-          height: 4px;
-          background-color: ${colors.color3};
-          border-radius: 10px;
-          top: 1.87rem;
-          left: 0;
+        @media (min-width: 1200px) {
+          &::before {
+            content: '';
+            position: absolute;
+            width: 2.5rem;
+            height: 4px;
+            background-color: ${colors.color3};
+            border-radius: 10px;
+            top: 1.87rem;
+            left: 0;
+          }
         }
 
         & > span {
@@ -115,6 +205,12 @@ export const HomeContainer = styled.section`
         margin: 0.65rem 0;
         transition: color 0.25s ease-in-out;
 
+        @media (max-width: 1200px) {
+          font-size: 0.95rem;
+          text-align: center;
+          width: 80%;
+        }
+
         &[data-dark-mode='false'] {
           color: ${colors.color6};
         }
@@ -123,11 +219,24 @@ export const HomeContainer = styled.section`
       & > .social-links {
         display: flex;
 
-        & > :not(:last-child) {
+        @media (max-width: 500px) {
+          flex-direction: column;
+          align-items: center;
+
+          & > div {
+            display: flex;
+          }
+
+          a:not([type='tel']) {
+            margin-bottom: 10px;
+          }
+        }
+
+        a:not(:last-child) {
           margin-right: 10px;
         }
 
-        & > a {
+        a {
           display: flex;
           justify-content: center;
           align-items: center;
@@ -238,6 +347,10 @@ export const BgsHomeContainer = styled.div`
     width: 50%;
     height: 100%;
     z-index: -2;
+
+    @media (max-width: 1200px) {
+      display: none;
+    }
   }
 
   & > .bg-dark {

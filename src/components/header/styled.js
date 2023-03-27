@@ -4,44 +4,18 @@ import styled from 'styled-components';
 
 import * as colors from '../../colors';
 
-export const HeaderContainer = styled.header`
+const HeaderContainer = styled.header`
   position: fixed;
   right: 2rem;
   top: 1rem;
-  height: 400px;
+  height: 60%;
   z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
-  & > .darkmode {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: fit-content;
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
-    cursor: pointer;
-    background-color: ${colors.color4};
-    transition: background 0.25s ease-in-out, fill 0.25s ease-in-out;
-
-    &[data-dark-mode='false'] {
-      background-color: ${colors.color5};
-    }
-
-    & > svg {
-      width: 25px;
-      height: 25px;
-    }
-
-    & > .light-mode {
-      fill: ${colors.color1};
-    }
-
-    & > .dark-mode {
-      fill: ${colors.color6};
-    }
+  @media (max-width: 1200px) {
+    height: fit-content;
   }
 
   & > nav {
@@ -144,6 +118,70 @@ export const HeaderContainer = styled.header`
         &[data-dark-mode='false'] {
           fill: ${colors.color6};
         }
+      }
+    }
+  }
+`;
+
+export const MobileNavContainer = styled.div`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: ${colors.color4};
+
+  &[data-dark-mode='false'] {
+    background-color: ${colors.color1};
+  }
+
+  & > nav {
+    display: flex;
+    padding: 8px;
+    width: 100%;
+    justify-content: space-around;
+
+    /* & > :not(:last-child) {
+      margin-right: 1.25rem;
+    } */
+
+    & > a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 45px;
+      height: 45px;
+      border-radius: 100%;
+      background-color: ${colors.color17};
+      position: relative;
+      transition: background 0.25s ease-in-out;
+
+      &[data-dark-mode='false'] {
+        background-color: ${colors.color5};
+
+        & > svg {
+          fill: ${colors.color6};
+        }
+      }
+
+      &.nav-link-active {
+        background-color: ${colors.color3};
+
+        & > [data-dark-mode='false'] {
+          fill: ${colors.color1};
+        }
+      }
+
+      &:hover {
+        background-color: ${colors.color3};
+
+        & > [data-dark-mode='false'] {
+          fill: ${colors.color1};
+        }
+      }
+
+      & > svg {
+        width: 17px;
+        height: 17px;
       }
     }
   }
