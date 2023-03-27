@@ -100,10 +100,10 @@ export const HomeContainer = styled.section`
 
     @media (max-width: 1200px) {
       flex-direction: column;
-      margin-top: 13rem;
+      margin-top: 3rem;
       margin-bottom: 5rem;
     }
-    @media (max-width: 600px) {
+    /* @media (max-width: 600px) {
       margin-top: 15rem;
     }
     @media (max-width: 511px) {
@@ -117,7 +117,7 @@ export const HomeContainer = styled.section`
     }
     @media (max-width: 423px) {
       margin-top: 28rem;
-    }
+    } */
 
     & > img {
       height: calc(100vh - 5rem);
