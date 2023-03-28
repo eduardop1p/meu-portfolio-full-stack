@@ -407,6 +407,10 @@ export const ResumeMe = styled.div`
     position: relative;
     transition: background 0.25s ease-in-out;
 
+    @media (max-width: 1050px) {
+      width: calc(100% - 15rem);
+    }
+
     &[data-dark-mode='false'] {
       background-color: ${colors.color1};
       border: 2px solid ${colors.color15};
@@ -495,6 +499,10 @@ export const TitlePagesContainer = styled.section`
   align-items: center;
   position: relative;
 
+  @media (max-width: 367px) {
+    margin: 10rem 0;
+  }
+
   & > h1 {
     color: ${colors.color9};
     text-transform: uppercase;
@@ -504,6 +512,13 @@ export const TitlePagesContainer = styled.section`
     position: absolute;
     z-index: 1;
     transition: color 0.25s ease-in-out;
+
+    @media (max-width: 580px) {
+      word-wrap: break-word;
+      line-height: 0.9;
+      text-align: center;
+      width: calc(100% - 10px);
+    }
 
     &[data-dark-mode='false'] {
       color: ${colors.color5};
