@@ -20,14 +20,32 @@ const MySkillsContainer = styled.div`
     &[data-dark-mode='false'] {
       color: ${colors.color6};
     }
+
+    @media (max-width: 955px) {
+      text-align: center;
+    }
   }
 
   & > .my-skills-100-grid {
     display: grid;
-    grid-template: repeat(2, auto) / repeat(4, auto);
+    grid-template: repeat(3, auto) / repeat(4, auto);
     width: calc(100% - 5rem);
     justify-content: space-between;
     row-gap: 3.5rem;
+
+    @media (max-width: 880px) {
+      grid-template: repeat(4, auto) / repeat(3, auto);
+    }
+    @media (max-width: 630px) {
+      grid-template: repeat(6, auto) / repeat(2, auto);
+    }
+    @media (max-width: 450px) {
+      width: calc(100% - 1rem);
+    }
+    @media (max-width: 370px) {
+      grid-template: repeat(8, auto) / repeat(1, auto);
+      justify-content: center;
+    }
   }
 
   & > .my-skills {

@@ -20,6 +20,10 @@ const ExperienceEducationContainer = styled.div`
     &[data-dark-mode='false'] {
       color: ${colors.color6};
     }
+
+    @media (max-width: 955px) {
+      text-align: center;
+    }
   }
 
   & > .experience-education {
@@ -27,14 +31,31 @@ const ExperienceEducationContainer = styled.div`
     justify-content: space-between;
     width: calc(100% - 2.5rem);
 
+    @media (max-width: 630px) {
+      flex-direction: column;
+    }
+
     & > :first-child {
       margin-right: 4rem;
+
+      @media (max-width: 950px) {
+        margin-right: 2rem;
+      }
+      @media (max-width: 630px) {
+        margin-right: 0;
+        margin-bottom: 2rem;
+      }
     }
 
     & > .experience,
     & > .education {
       display: flex;
       flex-direction: column;
+      width: 50%;
+
+      @media (max-width: 630px) {
+        width: 100%;
+      }
 
       & > :not(:last-child) {
         margin-bottom: 1.5rem;

@@ -514,6 +514,8 @@ export const TitlePagesContainer = styled.section`
     color: ${colors.color1};
     text-transform: uppercase;
     font-weight: 900;
+    text-align: center;
+    line-height: 1;
     font-size: 3.5rem;
     position: absolute;
     z-index: 2;
@@ -576,6 +578,13 @@ export const AboutContainer = styled.section`
     animation-name: ${slideUpAnimation};
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
+
+    @media (max-width: 1100px) {
+      width: calc(100% - 5rem);
+    }
+    @media (max-width: 500px) {
+      width: calc(100% - 3rem);
+    }
 
     & > :nth-child(n + 2) {
       margin-bottom: 5rem;

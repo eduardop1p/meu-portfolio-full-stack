@@ -8,10 +8,19 @@ const PersonalInfosContainer = styled.div`
   display: flex;
   justify-content: space-between;
 
+  @media (max-width: 955px) {
+    flex-direction: column;
+  }
+
   & > .personal-infos {
     display: flex;
     flex-direction: column;
     margin-right: 2rem;
+
+    @media (max-width: 955px) {
+      margin-right: 0;
+      margin-bottom: 1.5rem;
+    }
 
     & > h3 {
       margin-bottom: 1.4rem;
@@ -24,14 +33,29 @@ const PersonalInfosContainer = styled.div`
       &[data-dark-mode='false'] {
         color: ${colors.color6};
       }
+
+      @media (max-width: 955px) {
+        text-align: center;
+      }
     }
 
     & > .infos {
       display: flex;
       justify-content: space-between;
 
+      @media (max-width: 455px) {
+        flex-direction: column;
+        justify-content: normal;
+        align-items: left;
+      }
+
       & > :first-child {
         margin-right: 2rem;
+
+        @media (max-width: 455px) {
+          margin-right: 0;
+          margin-bottom: 1.25rem;
+        }
       }
 
       &[data-dark-mode='false'] > div h4,
@@ -85,6 +109,16 @@ const PersonalInfosContainer = styled.div`
     display: grid;
     grid-template: repeat(2, 155px) / repeat(2, minmax(200px, 270px));
     gap: 1.88rem;
+
+    @media (max-width: 955px) {
+      grid-template: repeat(2, 155px) / repeat(2, minmax(200px, 300px));
+      justify-content: center;
+    }
+
+    @media (max-width: 495px) {
+      grid-template: repeat(4, 155px) / repeat(1, minmax(200px, 300px));
+      justify-content: center;
+    }
 
     /*
       & > :nth-child(-n + 2) {
