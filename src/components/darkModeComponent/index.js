@@ -1,5 +1,6 @@
 /* eslint-disable */
 
+import { useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { darkModeSuccess, darkModeFailure } from '../../redux/modules/darkMode/actions';
@@ -9,6 +10,7 @@ export default function DarkMode() {
   const dispatch = useDispatch();
 
   const { darkMode } = useSelector(state => state.darkMode);
+  const { resumeActive } = useSelector(state => state.resume);
 
   return (
     <DarkModeContainer
@@ -18,6 +20,7 @@ export default function DarkMode() {
       }
       title={darkMode ? 'Light mode' : 'Dark mode'}
       data-dark-mode={darkMode}
+      data-resume-active={resumeActive}
     >
       {darkMode ? (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960" className="light-mode">

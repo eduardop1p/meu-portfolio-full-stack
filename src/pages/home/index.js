@@ -1,7 +1,8 @@
 /* eslint-disable */
 
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
 
 // aqui falta colocar uma foto minha na thumb
@@ -11,6 +12,7 @@ import PersonalInfos from '../../components/personalInfos';
 import MySkills from '../../components/mySkills';
 import ExperienceEducation from '../../components/experienceEducation';
 import myPhoto from '../../assets/img/31c8b9e24be5ad81c96331dcd7f26153.jpg';
+import * as actions from '../../redux/modules/resume/actions';
 
 import Main, {
   HomeContainer,
@@ -21,8 +23,25 @@ import Main, {
 } from '../styled';
 
 export default function Home() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const { darkMode } = useSelector(state => state.darkMode);
   const [resumeShow, setResumeShow] = useState(false);
+
+  const breakpoint700 = useMediaQuery({ maxWidth: 700 });
+
+  useEffect(() => {
+    function manageResume() {
+      if (resumeShow) {
+        dispatch(actions.resumeSuccess({ resumeActive: true }));
+        return;
+      }
+      dispatch(actions.resumeFailure());
+      return;
+    }
+    manageResume();
+  }, [resumeShow]);
 
   return (
     <Main>
@@ -45,7 +64,13 @@ export default function Home() {
             </p>
             <SocialLink darkMode={darkMode} />
 
-            <ButtonContainer data-dark-mode={darkMode} onClick={() => setResumeShow(!resumeShow)}>
+            <ButtonContainer
+              data-dark-mode={darkMode}
+              onClick={() => {
+                if (breakpoint700) return navigate('/sobre');
+                setResumeShow(!resumeShow);
+              }}
+            >
               Mais Sobre Mim
               <span>
                 <svg

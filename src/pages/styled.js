@@ -387,6 +387,10 @@ export const ResumeMe = styled.div`
   opacity: 0;
   transition: visibility 0.2s ease-in-out, opacity 0.2s ease-in-out;
 
+  @media (max-width: 700px) {
+    display: none;
+  }
+
   &.active-resume-me {
     visibility: visible;
     opacity: 1;
@@ -403,12 +407,12 @@ export const ResumeMe = styled.div`
     border: 2px solid ${colors.color7};
     background-color: ${colors.color2};
     width: 900px;
-    height: calc(100% - 10rem);
+    height: calc(100% - 9rem);
     position: relative;
     transition: background 0.25s ease-in-out;
 
     @media (max-width: 1050px) {
-      width: calc(100% - 15rem);
+      width: calc(100% - 8rem);
     }
 
     &[data-dark-mode='false'] {
@@ -487,12 +491,43 @@ export const ResumeMe = styled.div`
         & > :nth-child(n + 2) {
           margin-bottom: 4rem;
         }
+
+        @media (max-width: 1030px) and (min-width: 955px) {
+          & > :nth-child(2) {
+            flex-direction: column;
+
+            & > :first-child {
+              margin-right: 0;
+              margin-bottom: 1.5rem;
+            }
+
+            & > :last-child {
+              grid-template: repeat(2, 155px) / repeat(2, minmax(200px, 300px));
+              justify-content: center;
+            }
+          }
+        }
+
+        @media (max-width: 950px) {
+          & > :nth-child(3) {
+            & > .my-skills {
+              grid-template: repeat(4, auto) / repeat(3, auto);
+            }
+          }
+        }
+        @media (max-width: 750px) {
+          & > :nth-child(3) {
+            & > .my-skills {
+              grid-template: repeat(6, auto) / repeat(2, auto);
+            }
+          }
+        }
       }
     }
   }
 `;
 
-export const TitlePagesContainer = styled.section`
+export const TitlePagesContainer = styled.div`
   margin: 7rem 0;
   display: flex;
   justify-content: center;
