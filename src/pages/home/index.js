@@ -33,7 +33,7 @@ export default function Home() {
       </BgsHomeContainer>
       <HomeContainer>
         <div className="photo-and-more-information">
-          <img src={myPhoto} alt="my-photo" />
+          <img data-dark-mode={darkMode} src={myPhoto} alt="my-photo" />
           <div className="more-information">
             <h1 data-dark-mode={darkMode}>
               <span>EDUARDO LAVOURA</span> DESENVOLVEDOR WEB

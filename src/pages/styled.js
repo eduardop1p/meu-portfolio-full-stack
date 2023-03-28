@@ -133,6 +133,11 @@ export const HomeContainer = styled.section`
         margin: 0 auto 25px;
         border: 4px solid ${colors.color16};
         box-shadow: none;
+        transition: border 0.25s ease-in-out;
+
+        &[data-dark-mode='false'] {
+          border: 4px solid ${colors.color5};
+        }
       }
       @media (max-width: 700px) {
         width: 250px;
