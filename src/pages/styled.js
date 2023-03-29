@@ -733,7 +733,7 @@ export const PortfolioContainer = styled.section`
         gap: 1rem;
       }
       @media (max-width: 600px) {
-        grid-template: repeat(12, 45vw) / repeat(1, 100%);
+        grid-template: repeat(8, 45vw) / repeat(1, 100%);
       }
 
       animation-name: projectsAnimation;
