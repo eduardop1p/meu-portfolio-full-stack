@@ -1,13 +1,10 @@
 /* eslint-disable */
 
 import { useState, useRef } from 'react';
-import { useMediaQuery } from 'react-responsive';
 
 import MySkillsContainer, { SkillPercentageTitle } from './styled';
 
 export default function MySkills({ darkMode, aboutRouter }) {
-  const breakpoint950 = useMediaQuery({ maxWidth: 950 });
-
   const mySkills = useRef([
     { name: 'Html', percentage: 100 },
     { name: 'Css', percentage: 95 },

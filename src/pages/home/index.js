@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
@@ -31,17 +31,15 @@ export default function Home() {
 
   const breakpoint700 = useMediaQuery({ maxWidth: 700 });
 
-  useEffect(() => {
-    function manageResume() {
-      if (resumeShow) {
-        dispatch(actions.resumeSuccess({ resumeActive: true }));
-        return;
-      }
-      dispatch(actions.resumeFailure());
+  function manageResume() {
+    if (breakpoint700) {
+      navigate('/sobre');
       return;
     }
-    manageResume();
-  }, [resumeShow]);
+    setResumeShow(!resumeShow);
+    if (resumeShow) dispatch(actions.resumeSuccess({ resumeActive: true }));
+    dispatch(actions.resumeFailure());
+  }
 
   return (
     <Main>
@@ -50,7 +48,7 @@ export default function Home() {
         <div className="bg-yellow"></div>
         <div className="bg-dark" data-dark-mode={darkMode}></div>
       </BgsHomeContainer>
-      <HomeContainer>
+      <HomeContainer data-dark-mode={darkMode}>
         <div className="photo-and-more-information">
           <img data-dark-mode={darkMode} src={myPhoto} alt="my-photo" />
           <div className="more-information">
@@ -64,13 +62,7 @@ export default function Home() {
             </p>
             <SocialLink darkMode={darkMode} />
 
-            <ButtonContainer
-              data-dark-mode={darkMode}
-              onClick={() => {
-                if (breakpoint700) return navigate('/sobre');
-                setResumeShow(!resumeShow);
-              }}
-            >
+            <ButtonContainer data-dark-mode={darkMode} onClick={manageResume}>
               Mais Sobre Mim
               <span>
                 <svg
