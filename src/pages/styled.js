@@ -534,10 +534,6 @@ export const TitlePagesContainer = styled.div`
   align-items: center;
   position: relative;
 
-  @media (max-width: 367px) {
-    margin: 10rem 0;
-  }
-
   & > h1 {
     color: ${colors.color9};
     text-transform: uppercase;
@@ -548,12 +544,12 @@ export const TitlePagesContainer = styled.div`
     z-index: 1;
     transition: color 0.25s ease-in-out;
 
-    @media (max-width: 580px) {
+    /* @media (max-width: 725px) {
       word-wrap: break-word;
       line-height: 0.9;
       text-align: center;
       width: calc(100% - 10px);
-    }
+    } */
 
     &[data-dark-mode='false'] {
       color: ${colors.color5};
@@ -691,6 +687,13 @@ export const PortfolioContainer = styled.section`
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
 
+    @media (max-width: 1100px) {
+      width: calc(100% - 5rem);
+    }
+    @media (max-width: 500px) {
+      width: calc(100% - 3rem);
+    }
+
     & > .projects {
       @keyframes projectsAnimation {
         0% {
@@ -703,9 +706,35 @@ export const PortfolioContainer = styled.section`
         }
       }
 
+      @media (max-width: 800px) {
+        @keyframes projectsAnimation {
+          0% {
+            transform: translateX(-5rem);
+            column-gap: 5px;
+          }
+          100% {
+            transform: translateX(0);
+            column-gap: 1rem;
+          }
+        }
+      }
+
       display: grid;
-      grid-template: repeat(3, 180px) / repeat(3, 320px);
+      grid-template: repeat(3, 175px) / repeat(3, 310px);
       gap: 2rem;
+
+      @media (max-width: 1200px) {
+        grid-template: repeat(4, 22vw) / repeat(2, calc(100% / 2.09));
+      }
+      @media (max-width: 1100px) {
+        grid-template: repeat(4, 25vw) / repeat(2, calc(100% / 2.07));
+      }
+      @media (max-width: 800px) {
+        gap: 1rem;
+      }
+      @media (max-width: 600px) {
+        grid-template: repeat(12, 45vw) / repeat(1, 100%);
+      }
 
       animation-name: projectsAnimation;
       animation-duration: 1s;
@@ -749,7 +778,7 @@ export const PortfolioContainer = styled.section`
             width: 100%;
             height: 100%;
             position: absolute;
-            object-fit: contain;
+            object-fit: cover;
             z-index: 1;
           }
 
