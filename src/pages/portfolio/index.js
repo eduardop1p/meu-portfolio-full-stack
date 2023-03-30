@@ -1,13 +1,13 @@
 /* eslint-disable */
 
-import { useRef } from 'react';
-import { useSelector } from 'react-redux';
+import { useRef, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { Skeleton } from '@mui/material';
 
+import * as actions from '../../redux/modules/hideDarkMode/actions';
 import movie from '../../assets/projectsImgs/movie.png';
 import api from '../../assets/projectsImgs/api.png';
-// import portfolio from '';
 import discount from '../../assets/projectsImgs/discount.png';
 import landingPage from '../../assets/projectsImgs/landingpage.png';
 import cardResume from '../../assets/projectsImgs/card-resumo.png';
@@ -22,6 +22,8 @@ import Main, {
 } from '../styled';
 
 export default function Portfolio() {
+  const dispatch = useDispatch();
+
   const projects = useRef([
     {
       name: 'Mflix app de filmes e series',
@@ -94,13 +96,17 @@ export default function Portfolio() {
   const { darkMode } = useSelector(state => state.darkMode);
 
   function handleClickOnProject(event, link) {
+    dispatch(actions.hideDarkModeSuccess({ hideDarkMode: true }));
     projectDetails.current = event.currentTarget;
     event.currentTarget.classList.add('an-portfolio-details');
     const nextElementSibling = event.currentTarget.nextElementSibling;
     const iframeNextElementSibling = nextElementSibling.querySelector('iframe');
-    iframeNextElementSibling.src = link;
     nextElementSibling.classList.add('active-portfolio-details');
-    iframeNextElementSibling.onload = () => iframeNextElementSibling.nextElementSibling.remove();
+    if (iframeNextElementSibling.src) return;
+    iframeNextElementSibling.src = link;
+    iframeNextElementSibling.onload = () =>
+      iframeNextElementSibling.nextElementSibling &&
+      iframeNextElementSibling.nextElementSibling.remove();
   }
 
   return (
@@ -131,6 +137,7 @@ export default function Portfolio() {
                     if (event.target === event.currentTarget) {
                       projectDetails.current.classList.remove('an-portfolio-details');
                       event.currentTarget.classList.remove('active-portfolio-details');
+                      dispatch(actions.hideDarkModeFailure());
                     }
                   }}
                 >
@@ -143,6 +150,7 @@ export default function Portfolio() {
                         event.currentTarget.parentElement.parentElement.classList.remove(
                           'active-portfolio-details'
                         );
+                        dispatch(actions.hideDarkModeFailure());
                       }}
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960">

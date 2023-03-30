@@ -16,7 +16,7 @@ const DarkModeContainer = styled.div`
   background-color: ${colors.color4};
   transition: background 0.25s ease-in-out, fill 0.25s ease-in-out;
 
-  &[data-resume-active='true'] {
+  &[data-hide-darkmode='true'] {
     display: none;
   }
 

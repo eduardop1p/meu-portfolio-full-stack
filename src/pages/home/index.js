@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
@@ -12,7 +12,7 @@ import PersonalInfos from '../../components/personalInfos';
 import MySkills from '../../components/mySkills';
 import ExperienceEducation from '../../components/experienceEducation';
 import myPhoto from '../../assets/img/31c8b9e24be5ad81c96331dcd7f26153.jpg';
-import * as actions from '../../redux/modules/resume/actions';
+import * as actions from '../../redux/modules/hideDarkMode/actions';
 
 import Main, {
   HomeContainer,
@@ -31,14 +31,20 @@ export default function Home() {
 
   const breakpoint700 = useMediaQuery({ maxWidth: 700 });
 
-  function manageResume() {
+  useEffect(() => {
+    if (resumeShow) {
+      dispatch(actions.hideDarkModeSuccess({ hideDarkMode: true }));
+    } else {
+      dispatch(actions.hideDarkModeFailure());
+    }
+  }, [resumeShow]);
+
+  function handleManageResume() {
     if (breakpoint700) {
       navigate('/sobre');
       return;
     }
     setResumeShow(!resumeShow);
-    if (resumeShow) dispatch(actions.resumeSuccess({ resumeActive: true }));
-    dispatch(actions.resumeFailure());
   }
 
   return (
@@ -62,7 +68,7 @@ export default function Home() {
             </p>
             <SocialLink darkMode={darkMode} />
 
-            <ButtonContainer data-dark-mode={darkMode} onClick={manageResume}>
+            <ButtonContainer data-dark-mode={darkMode} onClick={handleManageResume}>
               Mais Sobre Mim
               <span>
                 <svg

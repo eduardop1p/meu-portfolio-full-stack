@@ -3,18 +3,18 @@
 import * as types from '../../types';
 
 const initialState = {
-  resumeActive: false,
+  hideDarkMode: false,
 };
 
-export default function resume(state = initialState, action) {
+export default function hideDarkMode(state = initialState, action) {
   switch (action.type) {
-    case types.RESUME_ACTIVE_SUCCESS: {
+    case types.HIDE_DARK_MODE_SUCCESS: {
       const newState = { ...initialState };
-      newState.resumeActive = action.payload.resumeActive;
+      newState.hideDarkMode = action.payload.hideDarkMode;
 
       return newState;
     }
-    case types.RESUME_ACTIVE_FAILURE: {
+    case types.HIDE_DARK_MODE_FAILURE: {
       return initialState;
     }
     default: {

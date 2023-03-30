@@ -968,7 +968,7 @@ export const PortfolioDetailsContainer = styled.div`
 
         & > iframe {
           width: 100%;
-          height: 280px;
+          height: 100%;
           border: none;
 
           &.api-iframe-color-fff {
