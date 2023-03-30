@@ -1,7 +1,6 @@
 /* eslint-disable */
 
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
 
@@ -24,12 +23,9 @@ import Main, {
 
 export default function Home() {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const { darkMode } = useSelector(state => state.darkMode);
   const [resumeShow, setResumeShow] = useState(false);
-
-  const breakpoint700 = useMediaQuery({ maxWidth: 700 });
 
   useEffect(() => {
     if (resumeShow) {
@@ -38,14 +34,6 @@ export default function Home() {
       dispatch(actions.hideDarkModeFailure());
     }
   }, [resumeShow]);
-
-  function handleManageResume() {
-    if (breakpoint700) {
-      navigate('/sobre');
-      return;
-    }
-    setResumeShow(!resumeShow);
-  }
 
   return (
     <Main>
@@ -68,7 +56,7 @@ export default function Home() {
             </p>
             <SocialLink darkMode={darkMode} />
 
-            <ButtonContainer data-dark-mode={darkMode} onClick={handleManageResume}>
+            <ButtonContainer data-dark-mode={darkMode} onClick={() => setResumeShow(!resumeShow)}>
               Mais Sobre Mim
               <span>
                 <svg

@@ -388,7 +388,8 @@ export const ResumeMe = styled.div`
   transition: visibility 0.2s ease-in-out, opacity 0.2s ease-in-out;
 
   @media (max-width: 700px) {
-    display: none;
+    justify-content: normal;
+    align-items: normal;
   }
 
   &.active-resume-me {
@@ -407,12 +408,22 @@ export const ResumeMe = styled.div`
     border: 2px solid ${colors.color7};
     background-color: ${colors.color2};
     width: 900px;
-    height: calc(100% - 9rem);
+    height: calc(100% - 5rem);
     position: relative;
     transition: background 0.25s ease-in-out;
 
     @media (max-width: 1050px) {
       width: calc(100% - 8rem);
+    }
+
+    @media (max-width: 950px) {
+      width: calc(100% - 10rem);
+    }
+
+    @media (max-width: 700px) {
+      width: 100%;
+      height: 90%;
+      border-radius: 0;
     }
 
     &[data-dark-mode='false'] {
@@ -422,8 +433,8 @@ export const ResumeMe = styled.div`
 
     & > .close-resume {
       position: absolute;
-      top: -3.5rem;
-      right: -2rem;
+      top: -1.5rem;
+      right: -3.5rem;
       width: 45px;
       height: 45px;
       border-radius: 100%;
@@ -434,6 +445,10 @@ export const ResumeMe = styled.div`
       align-items: center;
       cursor: pointer;
 
+      @media (max-width: 700px) {
+        right: 1rem;
+        top: 0.5rem;
+      }
       & > svg {
         fill: ${colors.color1};
         width: 25px;
@@ -834,6 +849,11 @@ export const PortfolioDetailsContainer = styled.div`
   opacity: 0;
   transition: visibility 0.2s ease-in-out, opacity 0.2s ease-in-out;
 
+  @media (max-width: 700px) {
+    justify-content: normal;
+    align-items: normal;
+  }
+
   &.active-portfolio-details {
     visibility: visible;
     opacity: 1;
@@ -846,6 +866,16 @@ export const PortfolioDetailsContainer = styled.div`
     height: calc(100% - 5rem);
     position: relative;
     transition: background 0.25s ease-in-out;
+
+    @media (max-width: 950px) {
+      width: calc(100% - 10rem);
+    }
+
+    @media (max-width: 700px) {
+      width: 100%;
+      height: 90%;
+      border-radius: 0;
+    }
 
     &[data-dark-mode='false'] {
       background-color: ${colors.color1};
@@ -865,6 +895,11 @@ export const PortfolioDetailsContainer = styled.div`
       justify-content: center;
       align-items: center;
       cursor: pointer;
+
+      @media (max-width: 700px) {
+        right: 1rem;
+        top: 0.5rem;
+      }
 
       & > svg {
         fill: ${colors.color1};

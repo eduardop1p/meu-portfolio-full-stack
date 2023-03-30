@@ -7,8 +7,6 @@ const initialState = {
 };
 
 export default function darkMode(state = initialState, action) {
-  console.log(action);
-
   switch (action.type) {
     case types.DARK_MODE_SUCCESS: {
       return initialState;
