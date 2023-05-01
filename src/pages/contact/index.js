@@ -2,6 +2,7 @@
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import isEmail from 'validator/lib/isemail';
 import { ToastContainer, toast } from 'react-toastify';
 
 import Loading from '../../components/loader/index';
@@ -25,10 +26,24 @@ export default function Contact() {
       return;
     }
 
-    const name = event.target.querySelector('input[name="name"]').value;
-    const emailClient = event.target.querySelector('input[name="email"]').value;
-    const subject = event.target.querySelector('input[name="subject"]').value;
-    const message = event.target.querySelector('textarea[name="message"]').value;
+    const name = event.target.querySelector('input[name="name"]').value.trim();
+    const emailClient = event.target.querySelector('input[name="email"]').value.trim();
+    const subject = event.target.querySelector('input[name="subject"]').value.trim();
+    const message = event.target.querySelector('textarea[name="message"]').value.trim();
+
+    if (!isEmail(emailClient)) {
+      toast.error('Formato de e-mail inválido!', {
+        position: 'top-center',
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: darkMode ? 'light' : 'dark',
+      });
+      return;
+    }
 
     try {
       setIsLoading(true);
