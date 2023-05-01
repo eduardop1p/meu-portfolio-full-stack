@@ -113,6 +113,10 @@ const HeaderContainer = styled.header`
       }
 
       & > svg {
+        width: 18px;
+        height: 18px;
+        fill: ${colors.color1};
+        display: inline-block;
         transition: fill 0.25s ease-in-out;
 
         &[data-dark-mode='false'] {
@@ -182,6 +186,8 @@ export const MobileNavContainer = styled.div`
       & > svg {
         width: 17px;
         height: 17px;
+        fill: ${colors.color1};
+        display: inline-block;
       }
     }
   }

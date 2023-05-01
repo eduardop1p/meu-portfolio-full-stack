@@ -253,6 +253,10 @@ export const HomeContainer = styled.section`
 
           & > svg {
             transition: fill 0.25s ease-in-out;
+            fill: ${colors.color1};
+            width: 18px;
+            height: 18px;
+            display: inline-block;
 
             &[data-dark-mode='false'] {
               fill: ${colors.color6};
@@ -330,6 +334,13 @@ export const ButtonContainer = styled.button`
     background-color: ${colors.color3};
     top: 0;
     right: 0;
+
+    svg {
+      fill: ${colors.color1};
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+    }
 
     & > svg > path {
       stroke: ${colors.color1};
@@ -1096,10 +1107,21 @@ export const ContactContainer = styled.section`
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
 
+    @media (max-width: 1100px) {
+      width: calc(100% - 5rem);
+    }
+    @media (max-width: 500px) {
+      width: calc(100% - 3rem);
+    }
+
     & > .contact-and-info {
       display: flex;
       justify-content: space-between;
       width: 100%;
+
+      @media (max-width: 800px) {
+        flex-direction: column;
+      }
 
       & > * {
         flex: none;
@@ -1108,6 +1130,10 @@ export const ContactContainer = styled.section`
       & > div {
         width: 30%;
         margin-right: 3rem;
+
+        @media (max-width: 800px) {
+          width: 100%;
+        }
 
         &[data-dark-mode='false'] {
           & > h1,
@@ -1244,6 +1270,11 @@ export const ContactContainer = styled.section`
         flex-direction: column;
         width: 64%;
 
+        @media (max-width: 800px) {
+          width: 100%;
+          margin-top: 1.5rem;
+        }
+
         &[data-dark-mode='false'] {
           & > .your-name-and-email {
             & > input {
@@ -1267,7 +1298,7 @@ export const ContactContainer = styled.section`
           display: flex;
 
           & > :first-child {
-            margin-right: 1.5rem;
+            margin-right: 1rem;
           }
 
           & > input {
@@ -1292,7 +1323,7 @@ export const ContactContainer = styled.section`
         }
 
         & > input {
-          margin: 1.75rem 0;
+          margin: 1.5rem 0;
           width: 100%;
           border: 1px solid ${colors.color2};
           background-color: ${colors.color16};

@@ -50,12 +50,7 @@ const GlobalStyles = createGlobalStyle`
     color: ${colors.color1};
   }
 
-  svg {
-    fill: ${colors.color1};
-    width: 18px;
-    height: 18px;
-    display: inline-block;
-  }
+
 
 `;
 

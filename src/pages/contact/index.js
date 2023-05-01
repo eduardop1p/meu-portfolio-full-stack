@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 import Loading from '../../components/loader/index';
 
@@ -21,6 +20,7 @@ export default function Contact() {
 
   async function handleSubmitForm(event) {
     event.preventDefault();
+
     if (isLoading) {
       return;
     }
@@ -41,9 +41,9 @@ export default function Contact() {
       );
 
       toast.success('E-mail enviado com sucesso!', {
-        position: 'top-right',
+        position: 'top-center',
         autoClose: 5000,
-        hideProgressBar: false,
+        hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
@@ -52,9 +52,9 @@ export default function Contact() {
       });
     } catch (err) {
       toast.error('Erro ao enviar E-mail!', {
-        position: 'top-right',
+        position: 'top-center',
         autoClose: 5000,
-        hideProgressBar: false,
+        hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
@@ -71,9 +71,9 @@ export default function Contact() {
     <Main>
       <BgActiveRouter data-dark-mode={darkMode} />
       <ToastContainer
-        position="top-right"
+        position="top-center"
         autoClose={5000}
-        hideProgressBar={false}
+        hideProgressBar={true}
         newestOnTop={false}
         closeOnClick
         rtl={false}
