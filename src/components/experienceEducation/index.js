@@ -20,7 +20,7 @@ export default function ExperienceEducation({ darkMode }) {
             </div>
             <div>
               <h3>10/2022 - Atualmente</h3>
-              <h1>Freelance como Desenvolvedor web</h1>
+              <h1>Freelancer como Desenvolvedor web</h1>
               <p>
                 Atualização de pacotes em servidores, desenvolvendo novas funcionalidades para
                 sistema existentes, correções de bugs em aplicações, desenvolvimento de novas

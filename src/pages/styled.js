@@ -418,11 +418,14 @@ export const ResumeMe = styled.div`
     border-radius: 10px;
     border: 2px solid ${colors.color7};
     background-color: ${colors.color2};
-    width: 900px;
+    width: calc(100% - 28rem);
     height: calc(100% - 5rem);
     position: relative;
     transition: background 0.25s ease-in-out;
 
+    @media (max-width: 1360px) {
+      width: 900px;
+    }
     @media (max-width: 1050px) {
       width: calc(100% - 8rem);
     }
@@ -455,6 +458,7 @@ export const ResumeMe = styled.div`
       justify-content: center;
       align-items: center;
       cursor: pointer;
+      z-index: 2;
 
       @media (max-width: 700px) {
         right: 1rem;
