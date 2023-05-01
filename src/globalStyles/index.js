@@ -20,6 +20,8 @@ const GlobalStyles = createGlobalStyle`
 
   body{
     background-color: ${colors.color1};
+    max-width: 2500px;
+    margin: 0 auto;
 
     /* width */
     ::-webkit-scrollbar {

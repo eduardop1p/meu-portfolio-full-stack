@@ -737,7 +737,11 @@ export const PortfolioContainer = styled.section`
       display: grid;
       grid-template: repeat(3, 175px) / repeat(3, 310px);
       gap: 2rem;
+      justify-content: center;
 
+      @media (min-width: 1600px) {
+        grid-template: repeat(2, 175px) / repeat(4, 310px);
+      }
       @media (max-width: 1200px) {
         grid-template: repeat(4, 22vw) / repeat(2, calc(100% / 2.09));
       }
@@ -862,11 +866,14 @@ export const PortfolioDetailsContainer = styled.div`
   & > .portfolio-details-and-close {
     border-radius: 1rem;
     background-color: ${colors.color16};
-    width: 750px;
+    width: calc(100% - 35rem);
     height: calc(100% - 5rem);
     position: relative;
     transition: background 0.25s ease-in-out;
 
+    @media (max-width: 1360px) {
+      width: 800px;
+    }
     @media (max-width: 950px) {
       width: calc(100% - 10rem);
     }
@@ -921,6 +928,7 @@ export const PortfolioDetailsContainer = styled.div`
       height: 100%;
 
       & > h1 {
+        text-align: center;
         color: ${colors.color3};
         text-transform: uppercase;
         font-size: 2rem;
@@ -931,6 +939,10 @@ export const PortfolioDetailsContainer = styled.div`
         display: flex;
         justify-content: space-between;
         width: 100%;
+
+        @media (max-width: 500px) {
+          flex-direction: column;
+        }
 
         &[data-dark-mode='false'] > div > div {
           & > svg {
@@ -944,18 +956,25 @@ export const PortfolioDetailsContainer = styled.div`
 
         & > :first-child {
           margin-right: 3rem;
+
+          @media (max-width: 500px) {
+            margin-right: 0;
+          }
         }
 
         & > div {
           display: flex;
           flex-direction: column;
+          width: 50%;
+          overflow: hidden;
 
-          & > :not(:last-child) {
-            margin-bottom: 10px;
+          @media (max-width: 500px) {
+            width: 100%;
           }
 
           & > div {
             display: flex;
+            margin-bottom: 10px;
 
             & > svg {
               width: 17px;
@@ -986,6 +1005,13 @@ export const PortfolioDetailsContainer = styled.div`
               & > a {
                 color: ${colors.color3};
                 text-decoration: underline;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                max-width: 100%;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                word-break: break-all;
               }
             }
           }
@@ -996,7 +1022,7 @@ export const PortfolioDetailsContainer = styled.div`
         background-color: ${colors.color2};
         width: 100%;
         height: 100%;
-        margin-top: 2rem;
+        margin-top: 1.8rem;
         border-radius: 10px;
         overflow: hidden;
         position: relative;
