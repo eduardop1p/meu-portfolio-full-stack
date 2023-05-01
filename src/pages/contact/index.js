@@ -2,7 +2,7 @@
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
-import isEmail from 'validator/lib/isemail';
+import { isEmail } from 'validator/validator';
 import { ToastContainer, toast } from 'react-toastify';
 
 import Loading from '../../components/loader/index';
