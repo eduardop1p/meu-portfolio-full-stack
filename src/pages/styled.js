@@ -464,6 +464,19 @@ export const ResumeMe = styled.div`
         right: 1rem;
         top: 0.5rem;
       }
+
+      &[data-dark-mode='false'] {
+        border: 3px solid ${colors.color5};
+
+        & > svg {
+          fill: ${colors.color18};
+
+          & > path {
+            stroke: ${colors.color18};
+          }
+        }
+      }
+
       & > svg {
         fill: ${colors.color1};
         width: 25px;
@@ -921,6 +934,18 @@ export const PortfolioDetailsContainer = styled.div`
       @media (max-width: 700px) {
         right: 1rem;
         top: 0.5rem;
+      }
+
+      &[data-dark-mode='false'] {
+        border: 3px solid ${colors.color5};
+
+        & > svg {
+          fill: ${colors.color18};
+
+          & > path {
+            stroke: ${colors.color18};
+          }
+        }
       }
 
       & > svg {
