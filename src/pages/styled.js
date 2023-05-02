@@ -966,6 +966,37 @@ export const PortfolioDetailsContainer = styled.div`
       flex-direction: column;
       align-items: center;
       height: 100%;
+      overflow: hidden scroll;
+
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background-color: ${colors.color12};
+        border-radius: 0 10px 10px 0;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: ${colors.color11};
+        border: 1px solid ${colors.color12};
+        border-radius: 2rem;
+      }
+
+      &[data-dark-mode='false'] {
+        ::-webkit-scrollbar {
+          width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+          background-color: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+          background-color: ${colors.color15};
+          border: none;
+        }
+      }
 
       & > h1 {
         text-align: center;
@@ -1061,10 +1092,11 @@ export const PortfolioDetailsContainer = styled.div`
       & > .site-iframe {
         background-color: ${colors.color2};
         width: 100%;
-        height: 100%;
+        height: 500px;
         margin-top: 1.8rem;
         border-radius: 10px;
         overflow: hidden;
+        flex: none;
         position: relative;
 
         & > iframe {
