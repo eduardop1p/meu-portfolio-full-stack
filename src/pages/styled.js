@@ -466,7 +466,7 @@ export const ResumeMe = styled.div`
       }
 
       &[data-dark-mode='false'] {
-        border: 3px solid ${colors.color5};
+        border: 3px solid ${colors.color18};
 
         & > svg {
           fill: ${colors.color18};
@@ -937,7 +937,7 @@ export const PortfolioDetailsContainer = styled.div`
       }
 
       &[data-dark-mode='false'] {
-        border: 3px solid ${colors.color5};
+        border: 3px solid ${colors.color18};
 
         & > svg {
           fill: ${colors.color18};
