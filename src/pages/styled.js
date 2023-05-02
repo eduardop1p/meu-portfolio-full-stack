@@ -930,6 +930,7 @@ export const PortfolioDetailsContainer = styled.div`
       justify-content: center;
       align-items: center;
       cursor: pointer;
+      z-index: 2;
 
       @media (max-width: 700px) {
         right: 1rem;
@@ -1092,7 +1093,7 @@ export const PortfolioDetailsContainer = styled.div`
       & > .site-iframe {
         background-color: ${colors.color2};
         width: 100%;
-        height: 500px;
+        height: 400px;
         margin-top: 1.8rem;
         border-radius: 10px;
         overflow: hidden;
