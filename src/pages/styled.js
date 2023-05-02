@@ -969,7 +969,7 @@ export const PortfolioDetailsContainer = styled.div`
       overflow: hidden scroll;
 
       ::-webkit-scrollbar {
-        width: 8px;
+        width: 13px;
       }
 
       ::-webkit-scrollbar-track {
@@ -979,7 +979,7 @@ export const PortfolioDetailsContainer = styled.div`
 
       ::-webkit-scrollbar-thumb {
         background-color: ${colors.color11};
-        border: 1px solid ${colors.color12};
+        border: 3px solid ${colors.color12};
         border-radius: 2rem;
       }
 
