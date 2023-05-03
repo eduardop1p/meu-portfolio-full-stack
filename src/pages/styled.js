@@ -119,8 +119,10 @@ export const HomeContainer = styled.section`
     }
 
     & > img {
-      height: calc(100vh - 5rem);
-      max-width: 35%;
+      height: 37vw;
+      width: 30%;
+      max-height: 505px;
+      max-width: 385px;
       object-fit: cover;
       box-shadow: 0 0 7px rgb(0 0 0 / 90%);
       border-radius: 2rem;
@@ -152,7 +154,7 @@ export const HomeContainer = styled.section`
     & > .more-information {
       display: flex;
       flex-direction: column;
-      width: 50%;
+      width: 55%;
       margin-left: 4rem;
 
       @media (max-width: 1200px) {

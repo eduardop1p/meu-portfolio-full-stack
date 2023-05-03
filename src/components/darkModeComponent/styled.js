@@ -13,6 +13,8 @@ const DarkModeContainer = styled.div`
   height: 50px;
   border-radius: 100%;
   cursor: pointer;
+  flex: none;
+  margin-bottom: 3rem;
   background-color: ${colors.color4};
   transition: background 0.25s ease-in-out, fill 0.25s ease-in-out;
 

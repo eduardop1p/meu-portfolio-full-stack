@@ -4,14 +4,14 @@ import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
 
-// aqui falta colocar uma foto minha na thumb
-
 import AboutTitles from '../../components/aboutTitles';
 import PersonalInfos from '../../components/personalInfos';
 import MySkills from '../../components/mySkills';
 import ExperienceEducation from '../../components/experienceEducation';
-import myPhoto from '../../assets/img/31c8b9e24be5ad81c96331dcd7f26153.jpg';
 import * as actions from '../../redux/modules/hideDarkMode/actions';
+
+// aqui falta colocar uma foto minha aqui
+import myPhoto from '../../assets/img/progamer-boy.png';
 
 import Main, {
   HomeContainer,
