@@ -13,6 +13,9 @@ import landingPage from '../../assets/projectsImgs/landingpage.png';
 import cardResume from '../../assets/projectsImgs/card-resumo.png';
 import formSimple from '../../assets/projectsImgs/form-simples.png';
 import ipTracker from '../../assets/projectsImgs/ip-tracker.png';
+import portfolioImg from '../../assets/projectsImgs/potfolio.png';
+import mygrid from '../../assets/projectsImgs/mygrid.png';
+
 import { color5 } from '../../colors';
 import Main, {
   BgActiveRouter,
@@ -34,6 +37,14 @@ export default function Portfolio() {
       link: 'https://mflix-app.vercel.app',
     },
     {
+      name: 'Grid com modal',
+      imgUrl: mygrid,
+      projectType: 'Gallery',
+      languages: ['HTML', 'CSS', 'JavaScript', 'React', 'Styled components'],
+      repositorie: 'https://github.com/eduardop1p/grid-modal-react',
+      link: 'https://grid-modal-react.vercel.app/',
+    },
+    {
       name: 'API com CRUD de usuário completo',
       imgUrl: api,
       projectType: 'API',
@@ -43,7 +54,7 @@ export default function Portfolio() {
     },
     {
       name: 'Meu protfólio',
-      imgUrl: '',
+      imgUrl: portfolioImg,
       projectType: 'Web site',
       languages: ['HTML', 'CSS', 'JavaScript', 'React', 'Styled components'],
       repositorie: 'https://github.com/eduardop1p/meu-portfolio-full-stack',
