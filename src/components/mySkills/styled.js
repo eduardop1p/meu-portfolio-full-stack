@@ -28,11 +28,11 @@ const MySkillsContainer = styled.div`
 
   & > .my-skills-100-grid {
     display: grid;
-    grid-template: repeat(3, auto) / repeat(4, auto);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
     width: calc(100% - 5rem);
     justify-content: space-between;
     row-gap: 3.5rem;
-
+    /*
     @media (max-width: 880px) {
       grid-template: repeat(4, auto) / repeat(3, auto);
     }
@@ -45,7 +45,7 @@ const MySkillsContainer = styled.div`
     @media (max-width: 370px) {
       grid-template: repeat(8, auto) / repeat(1, auto);
       justify-content: center;
-    }
+    } */
   }
 
   & > .my-skills {

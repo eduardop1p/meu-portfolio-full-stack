@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import myCv from '../../assets/cv/Web_Developer.pdf';
+import myCv from '../../assets/cv/web-developer-30072023.pdf';
 import { ButtonContainer } from '../../pages/styled';
 import PersonalInfosContainer from './styled';
 
@@ -70,15 +70,15 @@ export default function PersonalInfos({ darkMode }) {
       </div>
       <div className="experience-projects-customers-won" data-dark-mode={darkMode}>
         <div>
-          <h2>+{new Date().getFullYear() - 2021}</h2>
+          <h2>+{new Date().getFullYear() - 2020}</h2>
           <h3>Anos de experiência</h3>
         </div>
         <div>
-          <h2>+10</h2>
+          <h2>+15</h2>
           <h3>Projetos completos</h3>
         </div>
         <div>
-          <h2>+40</h2>
+          <h2>+45</h2>
           <h3>Skills no asernal</h3>
         </div>
         <div>
