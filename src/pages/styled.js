@@ -740,6 +740,18 @@ export const PortfolioContainer = styled.section`
     }
 
     & > .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 2rem;
+      justify-content: center;
+      animation-name: projectsAnimation;
+      animation-duration: 1s;
+      animation-timing-function: ease-in-out;
+
+      &[data-dark-mode='false'] > div {
+        background-color: ${colors.color15};
+      }
+
       @keyframes projectsAnimation {
         0% {
           transform: translateX(-5rem);
@@ -764,25 +776,12 @@ export const PortfolioContainer = styled.section`
         }
       }
 
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-      /* grid-template-columns: repeat(auto, 175px) / repeat(3, 310px); */
-      gap: 2rem;
-      justify-content: center;
-      animation-name: projectsAnimation;
-      animation-duration: 1s;
-      animation-timing-function: ease-in-out;
-
-      &[data-dark-mode='false'] > div {
-        background-color: ${colors.color15};
-      }
-
       & > div {
         background-color: ${colors.color9};
         border-radius: 10px;
         overflow: hidden;
         width: 100%;
-        height: 225px;
+        height: 100%;
         transition: background 0.25s ease-in-out;
 
         & > .on-project {
@@ -809,8 +808,7 @@ export const PortfolioContainer = styled.section`
 
           & > img {
             width: 100%;
-            height: 100%;
-            position: absolute;
+            height: auto;
             object-fit: cover;
             z-index: 1;
           }
