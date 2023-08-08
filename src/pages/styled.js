@@ -765,26 +765,10 @@ export const PortfolioContainer = styled.section`
       }
 
       display: grid;
-      grid-template: repeat(3, 175px) / repeat(3, 310px);
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      /* grid-template-columns: repeat(auto, 175px) / repeat(3, 310px); */
       gap: 2rem;
       justify-content: center;
-
-      @media (min-width: 1600px) {
-        grid-template: repeat(2, 175px) / repeat(4, 310px);
-      }
-      @media (max-width: 1200px) {
-        grid-template: repeat(4, 22vw) / repeat(2, calc(100% / 2.09));
-      }
-      @media (max-width: 1100px) {
-        grid-template: repeat(4, 25vw) / repeat(2, calc(100% / 2.07));
-      }
-      @media (max-width: 800px) {
-        gap: 1rem;
-      }
-      @media (max-width: 600px) {
-        grid-template: repeat(8, 45vw) / repeat(1, 100%);
-      }
-
       animation-name: projectsAnimation;
       animation-duration: 1s;
       animation-timing-function: ease-in-out;
@@ -798,7 +782,7 @@ export const PortfolioContainer = styled.section`
         border-radius: 10px;
         overflow: hidden;
         width: 100%;
-        height: 100%;
+        height: 225px;
         transition: background 0.25s ease-in-out;
 
         & > .on-project {

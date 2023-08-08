@@ -15,6 +15,7 @@ import formSimple from '../../assets/projectsImgs/form-simples.png';
 import ipTracker from '../../assets/projectsImgs/ip-tracker.png';
 import portfolioImg from '../../assets/projectsImgs/potfolio.png';
 import mygrid from '../../assets/projectsImgs/mygrid.png';
+import criptoMining from '../../assets/projectsImgs/cripto-mining.png';
 
 import { color5 } from '../../colors';
 import Main, {
@@ -35,6 +36,14 @@ export default function Portfolio() {
       languages: ['HTML', 'CSS', 'JavaScript', 'React', 'Styled components'],
       repositorie: 'https://github.com/eduardop1p/mflix-app',
       link: 'https://mflix-app.vercel.app',
+    },
+    {
+      name: 'Cripto mining',
+      imgUrl: criptoMining,
+      projectType: 'Web service',
+      languages: ['HTML', 'CSS', 'JavaScript', 'React', 'NextJs', 'Styled components'],
+      repositorie: 'https://github.com/eduardop1p/cryptomining',
+      link: 'https://x-project-blush.vercel.app/',
     },
     {
       name: 'Grid com modal',
