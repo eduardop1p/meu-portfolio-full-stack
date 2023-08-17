@@ -778,10 +778,9 @@ export const PortfolioContainer = styled.section`
 
       & > div {
         background-color: ${colors.color9};
-        border-radius: 10px;
-        /* overflow: hidden; */
         width: 100%;
         height: 100%;
+        border-radius: 10px;
         transition: background 0.25s ease-in-out;
 
         & > .on-project {
@@ -789,6 +788,8 @@ export const PortfolioContainer = styled.section`
           background-color: inherit;
           position: relative;
           display: flex;
+          overflow: hidden;
+          border-radius: 10px;
           justify-content: center;
           align-items: center;
           width: 100%;
