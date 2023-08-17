@@ -779,7 +779,7 @@ export const PortfolioContainer = styled.section`
       & > div {
         background-color: ${colors.color9};
         border-radius: 10px;
-        overflow: hidden;
+        /* overflow: hidden; */
         width: 100%;
         height: 100%;
         transition: background 0.25s ease-in-out;
