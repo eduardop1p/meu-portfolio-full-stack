@@ -809,6 +809,7 @@ export const PortfolioContainer = styled.section`
           & > img {
             width: 100%;
             height: auto;
+            min-height: 177px;
             object-fit: cover;
             z-index: 1;
           }
