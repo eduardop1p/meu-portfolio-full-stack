@@ -121,6 +121,7 @@ export const HomeContainer = styled.section`
     & > img {
       height: 37vw;
       width: 30%;
+      object-position: bottom;
       max-height: 505px;
       max-width: 385px;
       object-fit: cover;

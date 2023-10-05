@@ -11,7 +11,7 @@ import ExperienceEducation from '../../components/experienceEducation';
 import * as actions from '../../redux/modules/hideDarkMode/actions';
 
 // aqui falta colocar uma foto minha aqui
-import myPhoto from '../../assets/img/progamer-boy.png';
+import myPhoto from '../../assets/img/progamer-boy-2.jpg';
 
 import Main, {
   HomeContainer,
