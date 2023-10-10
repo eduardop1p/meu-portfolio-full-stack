@@ -29,13 +29,14 @@ const MySkillsContainer = styled.div`
   & > .my-skills-100-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
-    width: calc(100% - 5rem);
+    width: calc(100% - 3rem);
     justify-content: space-between;
     row-gap: 3.5rem;
-    /*
-    @media (max-width: 880px) {
-      grid-template: repeat(4, auto) / repeat(3, auto);
+
+    @media (max-width: 640px) {
+      grid-template-columns: 100%;
     }
+    /*
     @media (max-width: 630px) {
       grid-template: repeat(6, auto) / repeat(2, auto);
     }
