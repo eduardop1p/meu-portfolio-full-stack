@@ -60,9 +60,9 @@ export default function ExperienceEducation({ darkMode }) {
               </svg>
             </div>
             <div>
-              <h3>2020 - Atualmente</h3>
+              <h3>2020 - 2023</h3>
               <h1>Analise e desenvolvimento de sistemas - Pitágoras unopar</h1>
-              <p>Curso superior de tecnologo, estou cursando o último semestre no momento</p>
+              <p>Curso superior de tecnólogo</p>
             </div>
           </div>
           <div data-dark-mode={darkMode}>
@@ -76,7 +76,7 @@ export default function ExperienceEducation({ darkMode }) {
               </svg>
             </div>
             <div>
-              <h3>2021 - 07/2022</h3>
+              <h3>2021 - 06/2023</h3>
               <h1>Desenvolvedor Full Stack - Luiz otávio Miranda</h1>
               <p>Curso completo de desenvolvimento web Full Stack do básico ao avançado</p>
             </div>

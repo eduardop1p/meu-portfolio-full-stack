@@ -16,6 +16,9 @@ import ipTracker from '../../assets/projectsImgs/ip-tracker.png';
 import portfolioImg from '../../assets/projectsImgs/potfolio.png';
 import mygrid from '../../assets/projectsImgs/mygrid.png';
 import criptoMining from '../../assets/projectsImgs/cripto-mining.png';
+import policyPornonly from '../../assets/projectsImgs/policy-pornonly.png';
+import pornonly from '../../assets/projectsImgs/pornonly.png';
+import pornonlyApi from '../../assets/projectsImgs/pornonly-api.png';
 
 import { color5 } from '../../colors';
 import Main, {
@@ -30,10 +33,34 @@ export default function Portfolio() {
 
   const projects = useRef([
     {
+      name: 'Pornonly',
+      imgUrl: pornonly,
+      projectType: 'Web app',
+      languages: ['HTML', 'CSS', 'JavaScript', 'TypesScript', 'NextJs', 'ReactJs'],
+      repositorie: 'https://github.com/eduardop1p/pornonly-app',
+      link: 'https://pornonly.xyz',
+    },
+    {
+      name: 'Politicas pornonly',
+      imgUrl: policyPornonly,
+      projectType: 'Web site',
+      languages: ['HTML', 'CSS', 'JavaScript', 'TypesScript', 'NextJs', 'ReactJs'],
+      repositorie: 'https://github.com/eduardop1p/pornonly-policys',
+      link: 'https://policy.pornonly.xyz',
+    },
+    {
+      name: 'API Pornonly upload midia e CRUD',
+      imgUrl: pornonlyApi,
+      projectType: 'API',
+      languages: ['JavaScript', 'NodeJs', 'MongoDB', 'ExpressJs'],
+      repositorie: 'https://github.com/eduardop1p/pornonly-api',
+      link: 'https://server.pornonly-api.shop/',
+    },
+    {
       name: 'Mflix app de filmes e series',
       imgUrl: movie,
       projectType: 'Web app',
-      languages: ['HTML', 'CSS', 'JavaScript', 'React', 'Styled components'],
+      languages: ['HTML', 'CSS', 'JavaScript', 'ReactJs'],
       repositorie: 'https://github.com/eduardop1p/mflix-app',
       link: 'https://mflix-app.vercel.app',
     },
@@ -41,7 +68,7 @@ export default function Portfolio() {
       name: 'Cripto mining',
       imgUrl: criptoMining,
       projectType: 'Web service',
-      languages: ['HTML', 'CSS', 'JavaScript', 'React', 'NextJs', 'Styled components'],
+      languages: ['HTML', 'CSS', 'JavaScript', 'ReactJs', 'NextJs'],
       repositorie: 'https://github.com/eduardop1p/cryptomining',
       link: 'https://x-project-blush.vercel.app/',
     },
@@ -49,7 +76,7 @@ export default function Portfolio() {
       name: 'Grid com modal',
       imgUrl: mygrid,
       projectType: 'Gallery',
-      languages: ['HTML', 'CSS', 'JavaScript', 'React', 'Styled components'],
+      languages: ['HTML', 'CSS', 'JavaScript', 'ReactJs'],
       repositorie: 'https://github.com/eduardop1p/grid-modal-react',
       link: 'https://grid-modal-react.vercel.app/',
     },
@@ -57,7 +84,7 @@ export default function Portfolio() {
       name: 'API com CRUD de usuário completo',
       imgUrl: api,
       projectType: 'API',
-      languages: ['NodeJs', 'Express', 'MongoDb', 'Multer'],
+      languages: ['NodeJs', 'ExpressJs', 'MongoDb', 'MulterJs'],
       repositorie: 'https://github.com/eduardop1p/api-rest-crud-usuario-completo',
       link: 'https://mflix-server.vercel.app',
     },
@@ -65,7 +92,7 @@ export default function Portfolio() {
       name: 'Meu protfólio',
       imgUrl: portfolioImg,
       projectType: 'Web site',
-      languages: ['HTML', 'CSS', 'JavaScript', 'React', 'Styled components'],
+      languages: ['HTML', 'CSS', 'JavaScript', 'ReactJs'],
       repositorie: 'https://github.com/eduardop1p/meu-portfolio-full-stack',
       link: 'https://eduardo-lavoura.vercel.app',
     },
