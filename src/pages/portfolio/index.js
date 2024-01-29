@@ -19,6 +19,7 @@ import criptoMining from '../../assets/projectsImgs/cripto-mining.png';
 import policyPornonly from '../../assets/projectsImgs/policy-pornonly.png';
 import pornonly from '../../assets/projectsImgs/pornonly.png';
 import pornonlyApi from '../../assets/projectsImgs/pornonly-api.png';
+import veloApp from '../../assets/projectsImgs/velo-app.png';
 
 import { color5 } from '../../colors';
 import Main, {
@@ -32,6 +33,14 @@ export default function Portfolio() {
   const dispatch = useDispatch();
 
   const projects = useRef([
+    {
+      name: 'Velo',
+      imgUrl: veloApp,
+      projectType: 'Web app',
+      languages: ['HTML', 'CSS', 'JavaScript', 'TypesScript', 'NextJs', 'ReactJs', 'TAILWIND CSS'],
+      repositorie: 'https://github.com/eduardop1p/velo-app',
+      link: 'https://velo-app-pi.vercel.app/',
+    },
     {
       name: 'Pornonly',
       imgUrl: pornonly,

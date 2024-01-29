@@ -70,7 +70,7 @@ export default function PersonalInfos({ darkMode }) {
       </div>
       <div className="experience-projects-customers-won" data-dark-mode={darkMode}>
         <div>
-          <h2>+{new Date().getFullYear() - 2020}</h2>
+          <h2>+{new Date().getFullYear() - 2021}</h2>
           <h3>Anos de experiência</h3>
         </div>
         <div>
@@ -82,7 +82,7 @@ export default function PersonalInfos({ darkMode }) {
           <h3>Skills no asernal</h3>
         </div>
         <div>
-          <h2>+650</h2>
+          <h2>+850</h2>
           <h3>Commits no GitHub</h3>
         </div>
       </div>
