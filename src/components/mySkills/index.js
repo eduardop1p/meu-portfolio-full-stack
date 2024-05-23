@@ -18,9 +18,9 @@ export default function MySkills({ darkMode, aboutRouter }) {
       img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
     },
     {
-      name: 'JavaScript',
+      name: 'Java',
       percentage: 90,
-      img: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg',
+      img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg',
     },
     {
       name: 'TypeScript',
@@ -28,9 +28,19 @@ export default function MySkills({ darkMode, aboutRouter }) {
       img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
     },
     {
+      name: 'JavaScript',
+      percentage: 90,
+      img: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg',
+    },
+    {
       name: 'NodeJs',
       percentage: 85,
       img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg',
+    },
+    {
+      name: 'NestJs',
+      percentage: 85,
+      img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original-wordmark.svg',
     },
     {
       name: 'React',
