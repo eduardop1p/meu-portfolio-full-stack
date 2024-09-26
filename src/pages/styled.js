@@ -725,7 +725,7 @@ export const PortfolioContainer = styled.section`
 
     & > .projects {
       display: grid;
-      grid-template-columns: repeat(4, 310px);
+      grid-template-columns: repeat(auto-fit, 300px);
       gap: 2rem;
       justify-content: center;
       animation-name: projectsAnimation;
@@ -745,18 +745,6 @@ export const PortfolioContainer = styled.section`
           transform: translateX(0);
           column-gap: 2rem;
         }
-      }
-
-      @media (max-width: 1510px) {
-        grid-template-columns: repeat(3, 310px);
-      }
-
-      @media (max-width: 1100px) {
-        grid-template-columns: repeat(2, 310px);
-      }
-
-      @media (max-width: 720px) {
-        grid-template-columns: repeat(1, 310px);
       }
 
       @media (max-width: 800px) {

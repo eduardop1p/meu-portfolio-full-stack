@@ -20,6 +20,8 @@ import policyPornonly from '../../assets/projectsImgs/policy-pornonly.png';
 import pornonly from '../../assets/projectsImgs/pornonly.png';
 import pornonlyApi from '../../assets/projectsImgs/pornonly-api.png';
 import veloApp from '../../assets/projectsImgs/velo-app.png';
+import storeVape from '../../assets/projectsImgs/store-vape.png';
+import claro from '../../assets/projectsImgs/claro.png';
 
 import { color5 } from '../../colors';
 import Main, {
@@ -32,35 +34,69 @@ import Main, {
 export default function Portfolio() {
   const dispatch = useDispatch();
 
-  const projects = useRef([
+  const projects = [
     {
-      name: 'Velo',
+      name: 'Claro',
+      imgUrl: claro,
+      projectType: 'Promoções da claro',
+      languages: [
+        'HTML',
+        'CSS',
+        'JavaScript',
+        'TypesScript',
+        'NextJs',
+        'ReactJs',
+        'TAILWIND CSS',
+        'MongoDB',
+      ],
+      repositorie: 'https://github.com/eduardop1p/claro',
+      link: 'https://clarooficialpromocoes.vercel.app/',
+    },
+    {
+      name: 'King vapes (Incompleto)',
+      imgUrl: storeVape,
+      projectType: 'Loja de vapes',
+      languages: [
+        'HTML',
+        'CSS',
+        'JavaScript',
+        'TypesScript',
+        'NextJs',
+        'ReactJs',
+        'TAILWIND CSS',
+        'MongoDB',
+      ],
+      repositorie: 'https://github.com/eduardop1p/store-vape',
+      link: 'https://store-vape.vercel.app/',
+    },
+    {
+      name: 'Velo (Incompleto)',
       imgUrl: veloApp,
-      projectType: 'Web app',
+      projectType: 'Realizar investimentos em cryptos',
       languages: ['HTML', 'CSS', 'JavaScript', 'TypesScript', 'NextJs', 'ReactJs', 'TAILWIND CSS'],
       repositorie: 'https://github.com/eduardop1p/velo-app',
       link: 'https://velo-app-pi.vercel.app/',
     },
     {
-      name: 'Pornonly',
+      name: 'Pornonly (Offline)',
       imgUrl: pornonly,
-      projectType: 'Web app',
+      projectType: 'Site adulto',
       languages: ['HTML', 'CSS', 'JavaScript', 'TypesScript', 'NextJs', 'ReactJs'],
       repositorie: 'https://github.com/eduardop1p/pornonly-app',
       link: 'https://pornonly.xyz',
     },
     {
-      name: 'Politicas pornonly',
+      name: 'Politicas pornonly (Offline)',
       imgUrl: policyPornonly,
-      projectType: 'Web site',
+      projectType: 'Politicas do site adulto',
       languages: ['HTML', 'CSS', 'JavaScript', 'TypesScript', 'NextJs', 'ReactJs'],
       repositorie: 'https://github.com/eduardop1p/pornonly-policys',
       link: 'https://policy.pornonly.xyz',
     },
     {
-      name: 'API Pornonly upload midia e CRUD',
+      name: 'API Pornonly upload midia e CRUD (Offline)',
       imgUrl: pornonlyApi,
-      projectType: 'API',
+      projectType: 'API Rest full',
       languages: ['JavaScript', 'NodeJs', 'MongoDB', 'ExpressJs'],
       repositorie: 'https://github.com/eduardop1p/pornonly-api',
       link: 'https://server.pornonly-api.shop/',
@@ -68,15 +104,15 @@ export default function Portfolio() {
     {
       name: 'Mflix app de filmes e series',
       imgUrl: movie,
-      projectType: 'Web app',
+      projectType: 'Infomações de filmes e series',
       languages: ['HTML', 'CSS', 'JavaScript', 'ReactJs'],
       repositorie: 'https://github.com/eduardop1p/mflix-app',
       link: 'https://mflix-app.vercel.app',
     },
     {
-      name: 'Cripto mining',
+      name: 'Cripto mining (Incompleto)',
       imgUrl: criptoMining,
-      projectType: 'Web service',
+      projectType: 'Investimentos em cryptos',
       languages: ['HTML', 'CSS', 'JavaScript', 'ReactJs', 'NextJs'],
       repositorie: 'https://github.com/eduardop1p/cryptomining',
       link: 'https://x-project-blush.vercel.app/',
@@ -84,15 +120,15 @@ export default function Portfolio() {
     {
       name: 'Grid com modal',
       imgUrl: mygrid,
-      projectType: 'Gallery',
+      projectType: 'Galeria',
       languages: ['HTML', 'CSS', 'JavaScript', 'ReactJs'],
       repositorie: 'https://github.com/eduardop1p/grid-modal-react',
       link: 'https://grid-modal-react.vercel.app/',
     },
     {
-      name: 'API com CRUD de usuário completo',
+      name: 'API com CRUD de usuário completo (Offline)',
       imgUrl: api,
-      projectType: 'API',
+      projectType: 'API REST',
       languages: ['NodeJs', 'ExpressJs', 'MongoDb', 'MulterJs'],
       repositorie: 'https://github.com/eduardop1p/api-rest-crud-usuario-completo',
       link: 'https://mflix-server.vercel.app',
@@ -100,7 +136,7 @@ export default function Portfolio() {
     {
       name: 'Meu protfólio',
       imgUrl: portfolioImg,
-      projectType: 'Web site',
+      projectType: 'Portfolio pessoal',
       languages: ['HTML', 'CSS', 'JavaScript', 'ReactJs'],
       repositorie: 'https://github.com/eduardop1p/meu-portfolio-full-stack',
       link: 'https://eduardo-lavoura.vercel.app',
@@ -108,7 +144,7 @@ export default function Portfolio() {
     {
       name: 'Calculadora de descontos',
       imgUrl: discount,
-      projectType: 'Web app',
+      projectType: 'Calculadora',
       languages: ['HTML', 'CSS', 'JavaScript'],
       repositorie: 'https://github.com/eduardop1p/calculadora-de-desconto',
       link: 'https://eduardop1p.github.io/calculadora-de-desconto/',
@@ -116,7 +152,7 @@ export default function Portfolio() {
     {
       name: 'Landing page do usuário',
       imgUrl: landingPage,
-      projectType: 'Web site',
+      projectType: 'Informações de um serviço',
       languages: ['HTML', 'CSS', 'JavaScript'],
       repositorie: 'https://github.com/eduardop1p/manage-landing-page',
       link: 'https://eduardop1p.github.io/manage-landing-page/',
@@ -124,7 +160,7 @@ export default function Portfolio() {
     {
       name: 'Rastreador de endereços ip',
       imgUrl: ipTracker,
-      projectType: 'Web app',
+      projectType: 'Rastreador de ip',
       languages: ['HTML', 'CSS', 'JavaScript'],
       repositorie: 'https://github.com/eduardop1p/IP-Address-Tracker-Rastreador-de-Enderecos-IP',
       link: 'https://eduardop1p.github.io/IP-Address-Tracker-Rastreador-de-Enderecos-IP/',
@@ -132,7 +168,7 @@ export default function Portfolio() {
     {
       name: 'Card resumo de pedido',
       imgUrl: cardResume,
-      projectType: 'Web site',
+      projectType: 'Pedido',
       languages: ['HTML', 'CSS'],
       repositorie: 'https://github.com/eduardop1p/FrontEnd-card-resumo-de-pedido',
       link: 'https://eduardop1p.github.io/FrontEnd-card-resumo-de-pedido/',
@@ -140,12 +176,12 @@ export default function Portfolio() {
     {
       name: 'Form simples de login',
       imgUrl: formSimple,
-      projectType: 'Web site',
+      projectType: 'Formulário',
       languages: ['HTML', 'CSS', 'JavaScript'],
       repositorie: 'https://github.com/eduardop1p/form-simples-facul',
       link: 'https://eduardop1p.github.io/form-simples-facul/',
     },
-  ]).current;
+  ];
 
   let projectDetails = useRef(null);
 
@@ -231,7 +267,7 @@ export default function Portfolio() {
                               <path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z" />
                             </svg>
                             <h2 className="">
-                              Linguagens:{' '}
+                              Principais tecnologias:{' '}
                               <span>{project.languages.map(language => language).join(', ')}</span>
                             </h2>
                           </div>
