@@ -9,7 +9,7 @@ const MySkillsContainer = styled.div`
   align-items: center;
   flex-direction: column;
 
-  & > h2 {
+  & > h1 {
     text-transform: uppercase;
     font-size: 1.7rem;
     font-weight: 600;
@@ -26,34 +26,33 @@ const MySkillsContainer = styled.div`
     }
   }
 
-  & > .my-skills-100-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
-    width: calc(100% - 3rem);
-    justify-content: space-between;
-    row-gap: 3.5rem;
+  & > h2 {
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 600;
+    color: ${colors.color1};
+    margin-bottom: 3rem;
+    transition: color 0.25s ease-in-out;
 
-    @media (max-width: 640px) {
-      grid-template-columns: 100%;
+    &[data-dark-mode='false'] {
+      color: ${colors.color6};
     }
-    /*
-    @media (max-width: 630px) {
-      grid-template: repeat(6, auto) / repeat(2, auto);
+
+    @media (max-width: 955px) {
+      text-align: center;
     }
-    @media (max-width: 450px) {
-      width: calc(100% - 1rem);
-    }
-    @media (max-width: 370px) {
-      grid-template: repeat(8, auto) / repeat(1, auto);
-      justify-content: center;
-    } */
   }
 
-  & > .my-skills {
+  & > div:not(:last-child) {
+    margin-bottom: 5rem;
+  }
+
+  & > .my-skills-100-grid {
     display: grid;
-    grid-template: repeat(2, auto) / repeat(4, auto);
-    column-gap: 4.5rem;
-    row-gap: 3rem;
+    grid-template-columns: repeat(auto-fit, 80px);
+    width: calc(100% - 3rem);
+    gap: 5rem;
+    justify-content: center;
   }
 `;
 

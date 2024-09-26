@@ -17,6 +17,7 @@ const Main = styled.main`
   width: 100%;
   position: relative;
   z-index: 1;
+  min-height: 100vh;
 `;
 
 export const BgActiveRouter = styled.div`
@@ -49,7 +50,7 @@ export const BgActiveRouter = styled.div`
 
 export const HomeContainer = styled.section`
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -99,31 +100,13 @@ export const HomeContainer = styled.section`
 
     @media (max-width: 1200px) {
       flex-direction: column;
-      margin-top: 13rem;
       margin-bottom: 5rem;
-    }
-    @media (max-width: 600px) {
-      margin-top: 15rem;
-    }
-    @media (max-width: 511px) {
-      margin-top: 18rem;
-    }
-    @media (max-width: 500px) {
-      margin-top: 23rem;
-    }
-    @media (max-width: 467px) {
-      margin-top: 26rem;
-    }
-    @media (max-width: 423px) {
-      margin-top: 28rem;
     }
 
     & > img {
-      height: 37vw;
-      width: 30%;
       object-position: bottom;
-      max-height: 505px;
-      max-width: 385px;
+      height: 505px;
+      width: 385px;
       object-fit: cover;
       box-shadow: 0 0 7px rgb(0 0 0 / 90%);
       border-radius: 2rem;

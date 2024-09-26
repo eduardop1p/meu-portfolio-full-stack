@@ -47,12 +47,13 @@ export default function Home() {
           <img data-dark-mode={darkMode} src={myPhoto} alt="my-photo" />
           <div className="more-information">
             <h1 data-dark-mode={darkMode}>
-              <span>EDUARDO LAVOURA</span> DESENVOLVEDOR WEB
+              <span>EDUARDO LAVOURA</span> DESENVOLVEDOR FULL STACK
             </h1>
             <p data-dark-mode={darkMode}>
-              Sou profissional em desenvolvimento web full-stack, focado em criar experiências
-              limpas e fáceis de usar. Sou apaixonado por criar um software excelente que melhore a
-              vida das pessoas ao meu redor.
+              Sou um desenvolvedor Full Stack apaixonado por transformar ideias em soluções digitais
+              eficientes e escaláveis. Com experiência em tecnologias modernas, tenho habilidade
+              para trabalhar em todas as camadas do desenvolvimento de software, desde o front-end
+              até o back-end, entregando produtos de qualidade e focados na experiência do usuário.
             </p>
             <SocialLink darkMode={darkMode} />
 

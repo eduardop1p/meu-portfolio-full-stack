@@ -24,6 +24,10 @@ const ExperienceEducationContainer = styled.div`
     @media (max-width: 955px) {
       text-align: center;
     }
+
+    @media (max-width: 630px) {
+      display: none;
+    }
   }
 
   & > .experience-education {
@@ -52,6 +56,25 @@ const ExperienceEducationContainer = styled.div`
       display: flex;
       flex-direction: column;
       width: 50%;
+
+      & > h2 {
+        display: none;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        font-weight: 600;
+        color: ${colors.color1};
+        margin-bottom: 2rem;
+        transition: color 0.25s ease-in-out;
+        text-align: center;
+
+        &[data-dark-mode='false'] {
+          color: ${colors.color6};
+        }
+
+        @media (max-width: 630px) {
+          display: block;
+        }
+      }
 
       @media (max-width: 630px) {
         width: 100%;

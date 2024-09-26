@@ -8,6 +8,7 @@ export default function ExperienceEducation({ darkMode }) {
       <h2 data-dark-mode={darkMode}>Experiência & Educação</h2>
       <div className="experience-education">
         <div className="experience">
+          <h2 data-dark-mode={darkMode}>Experiência</h2>
           <div data-dark-mode={darkMode}>
             <div>
               <svg
@@ -20,35 +21,16 @@ export default function ExperienceEducation({ darkMode }) {
             </div>
             <div>
               <h3>10/2022 - Atualmente</h3>
-              <h1>Freelancer como Desenvolvedor web</h1>
+              <h1>Freelancer como Desenvolvedor Full Stack</h1>
               <p>
-                Atualização de pacotes em servidores, desenvolvendo novas funcionalidades para
-                sistema existentes, correções de bugs em aplicações, desenvolvimento de novas
-                aplicações
-              </p>
-            </div>
-          </div>
-          <div data-dark-mode={darkMode}>
-            <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512 512"
-                data-dark-mode={darkMode}
-              >
-                <path d="M184 48H328c4.4 0 8 3.6 8 8V96H176V56c0-4.4 3.6-8 8-8zm-56 8V96H64C28.7 96 0 124.7 0 160v96H192 320 512V160c0-35.3-28.7-64-64-64H384V56c0-30.9-25.1-56-56-56H184c-30.9 0-56 25.1-56 56zM512 288H320v32c0 17.7-14.3 32-32 32H224c-17.7 0-32-14.3-32-32V288H0V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V288z" />
-              </svg>
-            </div>
-            <div>
-              <h3>2021 - Atualmente</h3>
-              <h1>Desenvolvedor web - Projetos pessoais</h1>
-              <p>
-                Coloco em pratica todo meu conhecimento desenvolvendo aplicações web com as
-                tecnologias atuais
+                Atualizações de pacotes, desenvolvimento de novas funcionalidades, correções de
+                bugs, melhorias em aplicações existentes e desenvolvimento de novas aplicações
               </p>
             </div>
           </div>
         </div>
         <div className="education">
+          <h2 data-dark-mode={darkMode}>Educação</h2>
           <div data-dark-mode={darkMode}>
             <div>
               <svg
@@ -76,9 +58,56 @@ export default function ExperienceEducation({ darkMode }) {
               </svg>
             </div>
             <div>
-              <h3>2021 - 06/2023</h3>
-              <h1>Desenvolvedor Full Stack - Luiz otávio Miranda</h1>
-              <p>Curso completo de desenvolvimento web Full Stack do básico ao avançado</p>
+              <h3>2022 - 06/2023</h3>
+              <h1>Curso de JavaScript e TypeScript do básico ao avançado JS/TS</h1>
+              <p>
+                Curso de JavaScript e TypeScript do básico ao avançado (JS e TS) - O curso mais
+                completo sobre todas as nuances do JavaScript você você vai encontrar na atualidade.
+                Aprenda Javascript moderno (ES6+) para front-end (com Webpack, babel, React, React
+                Hooks, Redux, HTML5, CSS3 e mais) e back-end (com Node, Express, MySQL / MariaDB,
+                MongoDB, PostgreSQL, Next.Js, Strapi e mais) e se torne um(a) desenvolvedor(a) full
+                stack.
+              </p>
+            </div>
+          </div>
+          <div data-dark-mode={darkMode}>
+            <div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                data-dark-mode={darkMode}
+              >
+                <path d="M184 48H328c4.4 0 8 3.6 8 8V96H176V56c0-4.4 3.6-8 8-8zm-56 8V96H64C28.7 96 0 124.7 0 160v96H192 320 512V160c0-35.3-28.7-64-64-64H384V56c0-30.9-25.1-56-56-56H184c-30.9 0-56 25.1-56 56zM512 288H320v32c0 17.7-14.3 32-32 32H224c-17.7 0-32-14.3-32-32V288H0V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V288z" />
+              </svg>
+            </div>
+            <div>
+              <h3>2022 - 10/2023</h3>
+              <h1>Curso de React.Js e Next.Js (nível intermediário e avançado)</h1>
+              <p>
+                Curso de React.Js + Next.Js completo do básico ao avançado. Aprenda ReactJS, NextJS,
+                Styled-Components, testes com Jest e Testing Library, Storybook, Server-Side
+                Rendering e demais siglas (SSR, SSG, ISR, CSR, SPA, PWA, etc...) no front-end.
+                Aprenda, também, Strapi para criarmos APIs de back-end.
+              </p>
+            </div>
+          </div>
+          <div data-dark-mode={darkMode}>
+            <div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                data-dark-mode={darkMode}
+              >
+                <path d="M184 48H328c4.4 0 8 3.6 8 8V96H176V56c0-4.4 3.6-8 8-8zm-56 8V96H64C28.7 96 0 124.7 0 160v96H192 320 512V160c0-35.3-28.7-64-64-64H384V56c0-30.9-25.1-56-56-56H184c-30.9 0-56 25.1-56 56zM512 288H320v32c0 17.7-14.3 32-32 32H224c-17.7 0-32-14.3-32-32V288H0V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V288z" />
+              </svg>
+            </div>
+            <div>
+              <h3>2024/04 - Atualmente</h3>
+              <h1>Java COMPLETO Programação Orientada a Objetos + Projetos</h1>
+              <p>
+                Curso mais didático e completo de Java e OO, UML, JDBC, JavaFX, Spring Boot, JPA,
+                Hibernate, MySQL, MongoDB e muito mais
+              </p>
             </div>
           </div>
         </div>
