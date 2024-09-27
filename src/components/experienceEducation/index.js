@@ -23,8 +23,32 @@ export default function ExperienceEducation({ darkMode }) {
               <h3>10/2022 - Atualmente</h3>
               <h1>Freelancer como Desenvolvedor Full Stack</h1>
               <p>
-                Atualizações de pacotes, desenvolvimento de novas funcionalidades, correções de
-                bugs, melhorias em aplicações existentes e desenvolvimento de novas aplicações
+                Criação de Aplicações Web do Zero: Desenvolvi aplicações completas para clientes,
+                desde a concepção da arquitetura até o deploy final, utilizando tecnologias como
+                React, Next.js, Node.js e MongoDB. As aplicações incluem portais de e-commerce,
+                sistemas de gerenciamento de estoque, dashboards interativos, entre outros.
+              </p>
+              <p>
+                Gerenciamento de Servidores Linux: Administrei servidores com Nginx, PM2, e
+                Iptables, realizando deploys automatizados e configurando proxies reversos para
+                otimização de performance.
+              </p>
+              <p>
+                Desenvolvimento de APIs Seguras: Criação e manutenção de APIs RESTful utilizando
+                Node.js, Express e MongoDB, com autenticação baseada em JWT e validação de dados.
+              </p>
+              <p>
+                Otimização e Atualização de Sistemas: Atualizei pacotes de sistemas existentes,
+                implementei novas funcionalidades e corrigi bugs, garantindo a continuidade de
+                serviços críticos para os clientes.
+              </p>
+              <p>
+                Automação de Processos: Integrei ferramentas de automação de tarefas e deploy
+                contínuo, resultando em uma redução de 30% no tempo de entrega das aplicações.
+              </p>
+              <p>
+                Certificação SSL e Segurança: Implementação de certificados SSL com Certbot e
+                aprimoramento da segurança de servidores web através de Helmet e Cors.
               </p>
             </div>
           </div>
@@ -63,10 +87,9 @@ export default function ExperienceEducation({ darkMode }) {
               <p>
                 Curso de JavaScript e TypeScript do básico ao avançado (JS e TS) - O curso mais
                 completo sobre todas as nuances do JavaScript você você vai encontrar na atualidade.
-                Aprenda Javascript moderno (ES6+) para front-end (com Webpack, babel, React, React
-                Hooks, Redux, HTML5, CSS3 e mais) e back-end (com Node, Express, MySQL / MariaDB,
-                MongoDB, PostgreSQL, Next.Js, Strapi e mais) e se torne um(a) desenvolvedor(a) full
-                stack.
+                Javascript moderno (ES6+) para front-end (com Webpack, babel, React, React Hooks,
+                Redux, HTML5, CSS3 e mais) e back-end (com Node, Express, MySQL / MariaDB, MongoDB,
+                PostgreSQL, Next.Js, Strapi e mais) e se torne um(a) desenvolvedor(a) full stack.
               </p>
             </div>
           </div>
@@ -84,10 +107,10 @@ export default function ExperienceEducation({ darkMode }) {
               <h3>2022 - 10/2023</h3>
               <h1>Curso de React.Js e Next.Js (nível intermediário e avançado)</h1>
               <p>
-                Curso de React.Js + Next.Js completo do básico ao avançado. Aprenda ReactJS, NextJS,
+                Curso de React.Js + Next.Js completo do básico ao avançado. ReactJS, NextJS,
                 Styled-Components, testes com Jest e Testing Library, Storybook, Server-Side
                 Rendering e demais siglas (SSR, SSG, ISR, CSR, SPA, PWA, etc...) no front-end.
-                Aprenda, também, Strapi para criarmos APIs de back-end.
+                Strapi para criação de APIs back-end.
               </p>
             </div>
           </div>
@@ -103,7 +126,7 @@ export default function ExperienceEducation({ darkMode }) {
             </div>
             <div>
               <h3>2024/04 - Atualmente</h3>
-              <h1>Java COMPLETO Programação Orientada a Objetos + Projetos</h1>
+              <h1>Curso Java COMPLETO Programação Orientada a Objetos + Projetos</h1>
               <p>
                 Curso mais didático e completo de Java e OO, UML, JDBC, JavaFX, Spring Boot, JPA,
                 Hibernate, MySQL, MongoDB e muito mais
