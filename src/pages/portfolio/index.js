@@ -22,6 +22,19 @@ import pornonlyApi from '../../assets/projectsImgs/pornonly-api.png';
 import veloApp from '../../assets/projectsImgs/velo-app.png';
 import storeVape from '../../assets/projectsImgs/store-vape.png';
 import claro from '../../assets/projectsImgs/claro.png';
+import starlink from '../../assets/projectsImgs/starlink.png';
+import placamp from '../../assets/projectsImgs/placamp.png';
+import magalu from '../../assets/projectsImgs/magalu.png';
+import trust from '../../assets/projectsImgs/trust.png';
+import amarielly from '../../assets/projectsImgs/amarielly.png';
+import cresol from '../../assets/projectsImgs/cresol.png';
+import ml from '../../assets/projectsImgs/ml.png';
+import banese from '../../assets/projectsImgs/banese.png';
+import unicred from '../../assets/projectsImgs/unicred.png';
+import kraken from '../../assets/projectsImgs/kraken.png';
+import propeller from '../../assets/projectsImgs/propeller.png';
+import javaApiRest from '../../assets/projectsImgs/java-api-rest.png';
+import socketServer from '../../assets/projectsImgs/socket-server.png';
 
 import { color5 } from '../../colors';
 import Main, {
@@ -36,17 +49,210 @@ export default function Portfolio() {
 
   const projects = [
     {
-      name: 'Claro',
-      imgUrl: claro,
-      projectType: 'Promoções da claro',
+      name: 'API REST com JAVA',
+      imgUrl: javaApiRest,
+      projectType: 'API REST construida com Java e Spring WEB',
+      languages: ['JAVA', 'Spring WEB', 'H2 Data Base'],
+      repositorie: 'https://github.com/eduardop1p/web-service-spring-boot-jpa',
+    },
+    {
+      name: 'Propeller',
+      imgUrl: propeller,
+      projectType: 'Propeller login',
       languages: [
-        'HTML',
-        'CSS',
+        'HTML5',
+        'CSS3',
         'JavaScript',
         'TypesScript',
         'NextJs',
         'ReactJs',
-        'TAILWIND CSS',
+        'TailwindCSS',
+        'SocketIO',
+      ],
+      repositorie: 'https://github.com/eduardop1p/propeller',
+      link: 'https://propeller-three.vercel.app/',
+    },
+    {
+      name: 'Servidor SocketIo',
+      imgUrl: socketServer,
+      projectType: 'SocketIo server',
+      languages: ['JavaScript', 'NodeJs', 'SocketIo'],
+      repositorie: 'https://github.com/eduardop1p/propeller-server',
+    },
+    {
+      name: 'Kraken',
+      imgUrl: kraken,
+      projectType: 'Kraken login',
+      languages: [
+        'HTML5',
+        'CSS3',
+        'JavaScript',
+        'TypesScript',
+        'NextJs',
+        'ReactJs',
+        'TailwindCSS',
+        'Next intl',
+        'SocketIO',
+      ],
+      repositorie: 'https://github.com/eduardop1p/kraken',
+      link: 'https://kraken-fake.vercel.app/',
+    },
+    {
+      name: 'Unicred',
+      imgUrl: unicred,
+      projectType: 'Clone landing page Unicred',
+      languages: [
+        'HTML5',
+        'CSS3',
+        'JavaScript',
+        'TypesScript',
+        'NextJs',
+        'ReactJs',
+        'TailwindCSS',
+        'SocketIO',
+      ],
+      repositorie: 'https://github.com/eduardop1p/unicred',
+      link: 'https://unicred.vercel.app/',
+    },
+    {
+      name: 'Banese',
+      imgUrl: banese,
+      projectType: 'Clone landing page Banese',
+      languages: [
+        'HTML5',
+        'CSS3',
+        'JavaScript',
+        'TypesScript',
+        'NextJs',
+        'ReactJs',
+        'TailwindCSS',
+        'SocketIO',
+      ],
+      repositorie: 'https://github.com/eduardop1p/banese',
+      link: 'https://banese.vercel.app/',
+    },
+    {
+      name: 'Mercado Livre',
+      imgUrl: ml,
+      projectType: 'Clone página do produto mercado livre',
+      languages: [
+        'HTML5',
+        'CSS3',
+        'JavaScript',
+        'TypesScript',
+        'NextJs',
+        'ReactJs',
+        'TailwindCSS',
+        'MongoDB',
+      ],
+      repositorie: 'https://github.com/eduardop1p/mp',
+      link: 'https://mercadolivre-br.vercel.app/',
+    },
+    {
+      name: 'Cresol',
+      imgUrl: cresol,
+      projectType: 'Página de login da cresol',
+      languages: [
+        'HTML5',
+        'CSS3',
+        'JavaScript',
+        'TypesScript',
+        'NextJs',
+        'ReactJs',
+        'TailwindCSS',
+        'SocketIO',
+      ],
+      repositorie: 'https://github.com/eduardop1p/cresol',
+      link: 'https://cresol-three.vercel.app/',
+    },
+    {
+      name: 'Amarielly store',
+      imgUrl: amarielly,
+      projectType: 'Página do produto',
+      languages: [
+        'HTML5',
+        'CSS3',
+        'JavaScript',
+        'TypesScript',
+        'NextJs',
+        'ReactJs',
+        'TailwindCSS',
+        'MongoDB',
+      ],
+      repositorie: 'https://github.com/eduardop1p/mini-game',
+      link: 'https://amarielly.vercel.app/',
+    },
+    {
+      name: 'Trust wallet',
+      imgUrl: trust,
+      projectType: 'Clone do site Trust',
+      languages: [
+        'HTML5',
+        'CSS3',
+        'JavaScript',
+        'TypesScript',
+        'NextJs',
+        'ReactJs',
+        'TailwindCSS',
+        'MongoDB',
+      ],
+      repositorie: 'https://github.com/eduardop1p/trust',
+      link: 'https://trustwallett.vercel.app/',
+    },
+    {
+      name: 'Magazine Luiza',
+      imgUrl: magalu,
+      projectType: 'Clone do site Magazine Luiza',
+      languages: [
+        'HTML5',
+        'CSS3',
+        'JavaScript',
+        'TypesScript',
+        'NextJs',
+        'ReactJs',
+        'TailwindCSS',
+        'MongoDB',
+      ],
+      repositorie: 'https://github.com/eduardop1p/magalu',
+      link: 'https://magazine-luiza.vercel.app/',
+    },
+    {
+      name: 'Placamp',
+      imgUrl: placamp,
+      projectType: 'Site de vendas para placas de veículos',
+      languages: ['HTML5', 'CSS3', 'JavaScript', 'TypesScript', 'NextJs', 'ReactJs', 'TailwindCSS'],
+      repositorie: 'https://github.com/eduardop1p/placamp',
+      link: 'https://placamp.vercel.app/',
+    },
+    {
+      name: 'Starlink (Incompleto)',
+      imgUrl: starlink,
+      projectType: 'Clone da Starlink',
+      languages: [
+        'HTML5',
+        'CSS3',
+        'JavaScript',
+        'TypesScript',
+        'NextJs',
+        'ReactJs',
+        'TailwindCSS',
+        'MongoDB',
+      ],
+      repositorie: 'https://github.com/eduardop1p/starlink',
+      link: 'https://starlink-theta.vercel.app/',
+    },
+    {
+      name: 'Claro',
+      imgUrl: claro,
+      projectType: 'Promoções da claro',
+      languages: [
+        'HTML5',
+        'CSS3',
+        'JavaScript',
+        'TypesScript',
+        'NextJs',
+        'ReactJs',
+        'TailwindCSS',
         'MongoDB',
       ],
       repositorie: 'https://github.com/eduardop1p/claro',
@@ -57,13 +263,13 @@ export default function Portfolio() {
       imgUrl: storeVape,
       projectType: 'Loja de vapes',
       languages: [
-        'HTML',
-        'CSS',
+        'HTML5',
+        'CSS3',
         'JavaScript',
         'TypesScript',
         'NextJs',
         'ReactJs',
-        'TAILWIND CSS',
+        'TailwindCSS',
         'MongoDB',
       ],
       repositorie: 'https://github.com/eduardop1p/store-vape',
@@ -73,7 +279,7 @@ export default function Portfolio() {
       name: 'Velo (Incompleto)',
       imgUrl: veloApp,
       projectType: 'Realizar investimentos em cryptos',
-      languages: ['HTML', 'CSS', 'JavaScript', 'TypesScript', 'NextJs', 'ReactJs', 'TAILWIND CSS'],
+      languages: ['HTML5', 'CSS3', 'JavaScript', 'TypesScript', 'NextJs', 'ReactJs', 'TailwindCSS'],
       repositorie: 'https://github.com/eduardop1p/velo-app',
       link: 'https://velo-app-pi.vercel.app/',
     },
@@ -81,7 +287,7 @@ export default function Portfolio() {
       name: 'Pornonly (Offline)',
       imgUrl: pornonly,
       projectType: 'Site adulto',
-      languages: ['HTML', 'CSS', 'JavaScript', 'TypesScript', 'NextJs', 'ReactJs'],
+      languages: ['HTML5', 'CSS3', 'JavaScript', 'TypesScript', 'NextJs', 'ReactJs'],
       repositorie: 'https://github.com/eduardop1p/pornonly-app',
       link: 'https://pornonly.xyz',
     },
@@ -89,7 +295,7 @@ export default function Portfolio() {
       name: 'Politicas pornonly (Offline)',
       imgUrl: policyPornonly,
       projectType: 'Politicas do site adulto',
-      languages: ['HTML', 'CSS', 'JavaScript', 'TypesScript', 'NextJs', 'ReactJs'],
+      languages: ['HTML5', 'CSS3', 'JavaScript', 'TypesScript', 'NextJs', 'ReactJs'],
       repositorie: 'https://github.com/eduardop1p/pornonly-policys',
       link: 'https://policy.pornonly.xyz',
     },
@@ -102,10 +308,10 @@ export default function Portfolio() {
       link: 'https://server.pornonly-api.shop/',
     },
     {
-      name: 'Mflix app de filmes e series',
+      name: 'Mflix app de filmes e series (Abandonado)',
       imgUrl: movie,
       projectType: 'Infomações de filmes e series',
-      languages: ['HTML', 'CSS', 'JavaScript', 'ReactJs'],
+      languages: ['HTML5', 'CSS3', 'JavaScript', 'ReactJs'],
       repositorie: 'https://github.com/eduardop1p/mflix-app',
       link: 'https://mflix-app.vercel.app',
     },
@@ -113,7 +319,7 @@ export default function Portfolio() {
       name: 'Cripto mining (Incompleto)',
       imgUrl: criptoMining,
       projectType: 'Investimentos em cryptos',
-      languages: ['HTML', 'CSS', 'JavaScript', 'ReactJs', 'NextJs'],
+      languages: ['HTML5', 'CSS3', 'JavaScript', 'ReactJs', 'NextJs'],
       repositorie: 'https://github.com/eduardop1p/cryptomining',
       link: 'https://x-project-blush.vercel.app/',
     },
@@ -121,7 +327,7 @@ export default function Portfolio() {
       name: 'Grid com modal',
       imgUrl: mygrid,
       projectType: 'Galeria',
-      languages: ['HTML', 'CSS', 'JavaScript', 'ReactJs'],
+      languages: ['HTML5', 'CSS3', 'JavaScript', 'ReactJs'],
       repositorie: 'https://github.com/eduardop1p/grid-modal-react',
       link: 'https://grid-modal-react.vercel.app/',
     },
@@ -137,7 +343,7 @@ export default function Portfolio() {
       name: 'Meu protfólio',
       imgUrl: portfolioImg,
       projectType: 'Portfolio pessoal',
-      languages: ['HTML', 'CSS', 'JavaScript', 'ReactJs'],
+      languages: ['HTML5', 'CSS3', 'JavaScript', 'ReactJs'],
       repositorie: 'https://github.com/eduardop1p/meu-portfolio-full-stack',
       link: 'https://eduardo-lavoura.vercel.app',
     },
@@ -145,7 +351,7 @@ export default function Portfolio() {
       name: 'Calculadora de descontos',
       imgUrl: discount,
       projectType: 'Calculadora',
-      languages: ['HTML', 'CSS', 'JavaScript'],
+      languages: ['HTML5', 'CSS3', 'JavaScript'],
       repositorie: 'https://github.com/eduardop1p/calculadora-de-desconto',
       link: 'https://eduardop1p.github.io/calculadora-de-desconto/',
     },
@@ -153,7 +359,7 @@ export default function Portfolio() {
       name: 'Landing page do usuário',
       imgUrl: landingPage,
       projectType: 'Informações de um serviço',
-      languages: ['HTML', 'CSS', 'JavaScript'],
+      languages: ['HTML5', 'CSS3', 'JavaScript'],
       repositorie: 'https://github.com/eduardop1p/manage-landing-page',
       link: 'https://eduardop1p.github.io/manage-landing-page/',
     },
@@ -161,7 +367,7 @@ export default function Portfolio() {
       name: 'Rastreador de endereços ip',
       imgUrl: ipTracker,
       projectType: 'Rastreador de ip',
-      languages: ['HTML', 'CSS', 'JavaScript'],
+      languages: ['HTML5', 'CSS3', 'JavaScript'],
       repositorie: 'https://github.com/eduardop1p/IP-Address-Tracker-Rastreador-de-Enderecos-IP',
       link: 'https://eduardop1p.github.io/IP-Address-Tracker-Rastreador-de-Enderecos-IP/',
     },
@@ -169,7 +375,7 @@ export default function Portfolio() {
       name: 'Card resumo de pedido',
       imgUrl: cardResume,
       projectType: 'Pedido',
-      languages: ['HTML', 'CSS'],
+      languages: ['HTML5', 'CSS3'],
       repositorie: 'https://github.com/eduardop1p/FrontEnd-card-resumo-de-pedido',
       link: 'https://eduardop1p.github.io/FrontEnd-card-resumo-de-pedido/',
     },
@@ -177,7 +383,7 @@ export default function Portfolio() {
       name: 'Form simples de login',
       imgUrl: formSimple,
       projectType: 'Formulário',
-      languages: ['HTML', 'CSS', 'JavaScript'],
+      languages: ['HTML5', 'CSS3', 'JavaScript'],
       repositorie: 'https://github.com/eduardop1p/form-simples-facul',
       link: 'https://eduardop1p.github.io/form-simples-facul/',
     },
@@ -284,32 +490,40 @@ export default function Portfolio() {
                               </a>
                             </h2>
                           </div>
-                          <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                              <path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z" />
-                            </svg>
-                            <h2>
-                              Acessar:{' '}
-                              <a href={project.link} target="_blank">
-                                {project.link.replace('https://', '')}
-                              </a>
-                            </h2>
-                          </div>
+                          {project.link && (
+                            <div>
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z" />
+                              </svg>
+                              <h2>
+                                Acessar:{' '}
+                                <a href={project.link} target="_blank">
+                                  {project.link.replace('https://', '')}
+                                </a>
+                              </h2>
+                            </div>
+                          )}
                         </div>
                       </div>
-                      <div className="site-iframe" data-dark-mode={darkMode}>
-                        <iframe
-                          loading="lazy"
-                          className={project.projectType === 'API' ? 'api-iframe-color-fff' : null}
-                        ></iframe>
-                        <Skeleton
-                          sx={{ bgcolor: darkMode ? '#202020' : color5 }}
-                          variant="rectangular"
-                          animation="wave"
-                          width="100%"
-                          height="100%"
-                        />
-                      </div>
+                      {project.link ? (
+                        <div className="site-iframe" data-dark-mode={darkMode}>
+                          <iframe
+                            loading="lazy"
+                            className={
+                              project.projectType === 'API' ? 'api-iframe-color-fff' : null
+                            }
+                          ></iframe>
+                          <Skeleton
+                            sx={{ bgcolor: darkMode ? '#202020' : color5 }}
+                            variant="rectangular"
+                            animation="wave"
+                            width="100%"
+                            height="100%"
+                          />
+                        </div>
+                      ) : (
+                        <img src={project.imgUrl} className="site-iframe" />
+                      )}
                     </div>
                   </div>
                 </PortfolioDetailsContainer>
