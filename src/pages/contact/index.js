@@ -1,10 +1,10 @@
 /* eslint-disable */
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
-import emailjs from '@emailjs/browser';
 import { isEmail } from 'validator/validator';
 import { ToastContainer, toast } from 'react-toastify';
 
+import emailTemplate from '../../services/emailTemplate';
 import Loading from '../../components/loader/index';
 
 import Main, {
@@ -48,12 +48,17 @@ export default function Contact() {
     try {
       setIsLoading(true);
 
-      await emailjs.send(
-        process.env.REACT_APP_SERVICE_ID,
-        process.env.REACT_APP_TEMPLATE_ID,
-        { name, emailClient, subject, message },
-        process.env.REACT_APP_PUBLIC_KEY
-      );
+      await fetch('https://adm-dasboard.vercel.app/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: 'eduardop1p87@gmail.com',
+          subject,
+          html: emailTemplate({ email: emailClient, name, message }),
+        }),
+      });
 
       toast.success('E-mail enviado com sucesso!', {
         position: 'top-center',
