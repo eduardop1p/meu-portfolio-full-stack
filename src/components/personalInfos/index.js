@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import myCv from '../../assets/cv/web-developer-30072023.pdf';
+import myCv from '../../assets/cv/dev-full-stack.pdf';
 import { ButtonContainer } from '../../pages/styled';
 import PersonalInfosContainer from './styled';
 
@@ -57,7 +57,7 @@ export default function PersonalInfos({ darkMode }) {
             </div>
           </div>
         </div>
-        <a className="download-cv" href={myCv} download="cv_eduardo_lavoura_dev_full_stack">
+        <a className="download-cv" href={myCv} download="dev-full-stack">
           <ButtonContainer data-dark-mode={darkMode}>
             Download cv
             <span>
